@@ -1,7 +1,7 @@
 //!
 //! @file rr_DebugUtils.h
 //! @author M. Nickels
-//! @brief Debug utilities for Arduino developtment
+//! @brief Debug utilities for Arduino development
 //! @version 0.1
 //! @date 2021-12-20
 //!
@@ -25,9 +25,6 @@
 
 #pragma once
 
-//! date and time when this module was built
-#define BUILD          __DATE__ " " __TIME__
-
 //! ANSI escape codes for the terminal window
 //! use "monitor_flags = --raw" in platformio.ini
 #define ANSI_ESC       "\033"
@@ -41,6 +38,13 @@
 #define ANSI_CLEARTABS ANSI_ESC "[3g"
 #define ANSI_SETTAB    ANSI_ESC "H"
 
+//! date and time when this module was built
+#define BUILD          __DATE__ " " __TIME__
+
+#define PRINT_BUILD()                                                                                                  \
+    PRINT_INFO("Build: " ANSI_GREEN_FG "%s" ANSI_NORMAL "  Git version: " ANSI_GREEN_FG "%s" ANSI_NORMAL, BUILD,       \
+               GIT_VERSION)
+
 class DebugUtils {
 
   public:
@@ -51,8 +55,8 @@ class DebugUtils {
     DebugUtils();
 
     //! generic print routines
-    void print(DebugLevel_t level, const char* function, unsigned line, const char* fmt, ...);
-    void print(DebugLevel_t level, const char* function, unsigned line, const __FlashStringHelper* fmt, ...);
+    bool print(DebugLevel_t level, const char* function, unsigned line, const char* fmt, ...);
+    bool print(DebugLevel_t level, const char* function, unsigned line, const __FlashStringHelper* fmt, ...);
 
     void setTab(unsigned column);
     void setDebugLevel(DebugLevel_t level);
@@ -76,6 +80,7 @@ extern DebugUtils Debug;
 #ifdef __PLATFORMIO_BUILD_DEBUG__
     #define PRINT_INFO(text, ...)    Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, text, __VA_ARGS__)
     #define PRINT_DEBUG(text, ...)   Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, text, __VA_ARGS__)
+    #define PRINT_VERBOSE(text, ...) Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, text, __VA_ARGS__)
     #define PRINT_WARNING(text, ...) Debug.print(DebugUtils::Warning, __FUNCTION__, __LINE__, text, __VA_ARGS__)
     #define PRINT(text, ...)         Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, text, __VA_ARGS__)
 
@@ -96,6 +101,7 @@ extern DebugUtils Debug;
     // disable these functions in order to save code space and execution time
     #define PRINT_INFO(text, ...)
     #define PRINT_DEBUG(text, ...)
+    #define PRINT_VERBOSE(text, ...)
     #define PRINT_WARNING(text, ...)
     #define PRINT(text, ...)
     #define ASSERT(expression)

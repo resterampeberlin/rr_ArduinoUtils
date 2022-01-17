@@ -24,14 +24,18 @@
 //!
 
 #include <Arduino.h>
+#include <limits.h>
 
 //! own includes
 #include "rr_Intervall.h"
 
 Intervall::Intervall() {
     maxPeriod = 0;
-    minPeriod = 0;
-    timeStamp = micros();
+    minPeriod = ULONG_MAX;
+    timeStamp = millis();
+
+    // assume a default og 100ms
+    setPeriod(100);
 }
 
 Intervall::Intervall(unsigned long newPeriod) : Intervall() {
@@ -43,18 +47,18 @@ void Intervall::setPeriod(unsigned long newPeriod) {
 }
 
 void Intervall::begin(void) {
-    timeStamp = micros();
+    timeStamp = millis();
 }
 
 Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
-    unsigned long delta  = micros() - timeStamp;
+    unsigned long delta  = millis() - timeStamp;
     Result_t      result = Success;
 
     minPeriod            = min(minPeriod, delta);
     maxPeriod            = max(maxPeriod, delta);
 
     if (delta < period) {
-        while (micros() - timeStamp < period) {
+        while (millis() - timeStamp < period) {
             if (userFunc != NULL && userFunc()) {
                 result = Abort;
                 break;
@@ -67,7 +71,15 @@ Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
         result = Overflow;
     }
 
-    timeStamp = micros();
+    timeStamp = millis();
 
     return result;
+}
+
+unsigned long Intervall::getMinPeriod() {
+    return minPeriod;
+}
+
+unsigned long Intervall::getMaxPeriod() {
+    return maxPeriod;
 }

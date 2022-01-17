@@ -1,13 +1,13 @@
 //!
 //! @file rr_DebugUtils.cpp
 //! @author M. Nickels
-//! @brief Debug utilities for Arduino developtment
+//! @brief Debug utilities for Arduino development
 //! @version 0.1
 //! @date 14.1.2022
 //!
 //! @copyright Copyright (c) 2022
 //!
-//! This file is part of the Application "rr_ArduinoUtils".
+//! This file is part of the Library "rr_ArduinoUtils".
 //!
 //! rr_ArduinoUtilsis free software: you can redistribute it and/or modify
 //! it under the terms of the GNU General Public License as published by
@@ -101,7 +101,7 @@ const char* DebugUtils::getTextMarking(DebugLevel_t level) {
 }
 
 //! generic print routine
-void DebugUtils::print(DebugLevel_t level, const char* function, unsigned line, const char* fmt, ...) {
+bool DebugUtils::print(DebugLevel_t level, const char* function, unsigned line, const char* fmt, ...) {
     if (shouldPrint(level) && output) {
         va_list args;
         char    text[256];
@@ -118,10 +118,15 @@ void DebugUtils::print(DebugLevel_t level, const char* function, unsigned line, 
         va_end(args);
 
         output->println(ANSI_NORMAL);
+
+        return true;
+    }
+    else {
+        return false;
     }
 }
 
-void DebugUtils::print(DebugLevel_t level, const char* function, unsigned line, const __FlashStringHelper* fmt, ...) {
+bool DebugUtils::print(DebugLevel_t level, const char* function, unsigned line, const __FlashStringHelper* fmt, ...) {
     if (shouldPrint(level) && output) {
         va_list args;
         char    text[256];
@@ -138,6 +143,11 @@ void DebugUtils::print(DebugLevel_t level, const char* function, unsigned line, 
         va_end(args);
 
         output->println(ANSI_NORMAL);
+
+        return true;
+    }
+    else {
+        return false;
     }
 }
 
@@ -181,5 +191,5 @@ void DebugUtils::setDebugOutputStream(Stream* stream) {
 //! @return false otherwise
 //!
 bool DebugUtils::shouldPrint(DebugLevel_t level) {
-    return level <= currentLevel;
+    return level <= currentLevel && level != None;
 }

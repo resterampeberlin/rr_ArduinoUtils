@@ -1,13 +1,13 @@
 //!
-//! @file rr_Intervall.h
+//! @file main.cpp
 //! @author M. Nickels
-//! @brief usefull class to work with intervalls/periodic execution
+//! @brief Main file for the Library "rr_ArduinoUtils"
 //! @version 0.1
 //! @date 2021-12-20
 //!
-//! @copyright Copyright (c) 2022
+//! @copyright Copyright (c) 2021
 //!
-//! This file is part of the Application "rr_ArduinoUtils".
+//! This file is part of the the Library "rr_ArduinoUtils".
 //!
 //! rr_ArduinoUtils is free software: you can redistribute it and/or modify
 //! it under the terms of the GNU General Public License as published by
@@ -23,28 +23,32 @@
 //! along with rr_ArduinoUtils.  If not, see <http://www.gnu.org/licenses/>.
 //!
 
-#pragma once
+#include <Arduino.h>
 
-#include <stddef.h>
+//! own includes
+#include "rr_DebugUtils.h"
 
-class Intervall {
+//!
+//! @brief Setup routine
+//!
+void setup() {
+    unsigned loop = 0;
 
-  public:
-    //! Available reporting levels
-    typedef enum { Success, Abort, Overflow } Result_t;
+    // Init serial communication
+    Serial.begin(115200);
 
-    //! Constructors
-    Intervall();
-    Intervall(unsigned long newPeriod);
+    while (!Serial && loop < 500) {
+        delay(100);
+        loop++;
+    }
 
-    void     setPeriod(unsigned long newPeriod);
-    void     begin(void);
+    // set a tab on column 30 to increase monitor output formatting
+    Debug.setTab(30);
+    PRINT_BUILD();
+}
 
-    Result_t wait(bool (*userFunc)(void) = NULL);
-
-  private:
-    unsigned long period;
-    unsigned long timeStamp;
-    unsigned long maxPeriod;
-    unsigned long minPeriod;
-};
+//!
+//! @brief Main loop
+//!
+void loop() {
+}
