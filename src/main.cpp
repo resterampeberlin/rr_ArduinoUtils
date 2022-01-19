@@ -45,6 +45,12 @@ void setup() {
     // set a tab on column 30 to increase monitor output formatting
     Debug.setTab(30);
     PRINT_BUILD();
+
+    PRINT_VERBOSE("Verbose", NULL);
+    PRINT_DEBUG("Debug", NULL);
+    PRINT_INFO("Info", NULL);
+    PRINT_WARNING("Warning", NULL);
+    PRINT_ERROR("Error", NULL);
 }
 
 //!

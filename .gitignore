@@ -8,6 +8,9 @@
 # generated documentation
 doc
 
+# generated packages
+*.tar.gz
+
 # OS X files
 .DS_STORE
 

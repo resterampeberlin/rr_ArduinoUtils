@@ -31,7 +31,7 @@
 
 #define ANSI_GREEN_FG  ANSI_ESC "[32m"
 #define ANSI_BLUE_FG   ANSI_ESC "[34m"
-#define ANSI_YELLOW_BG ANSI_ESC "[43m"
+#define ANSI_YELLOW_FG ANSI_ESC "[33m"
 #define ANSI_RED_BG    ANSI_ESC "[41m"
 #define ANSI_NORMAL    ANSI_ESC "[39;49m"
 

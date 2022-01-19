@@ -41,6 +41,7 @@ void SAMDsetPinFunction(unsigned pin, uint8_t function) {
 void SAMDsetWaveGen(Tcc* timer, uint32_t wave, uint32_t overflow) {
     // Set wave generation, frequency and pulse lengths
     timer->WAVE.reg |= wave;
+
     while (timer->SYNCBUSY.bit.WAVE)
         ;
 
