@@ -1,0 +1,20 @@
+{
+    "name": "RR Arduino Utilities",
+    "version": "0.1.0",
+    "description": "A library including useful utilities for Arduino development",
+    "keywords": "Debug, Logging, SAMD, Timer",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/resterampeberlin/rr_ArduinoUtils.git"
+    },
+    "authors": [
+        {
+            "name": "Markus Nickels",
+            "email": "markusnickels@mac.com",
+            "url": "https://github.com/resterampeberlin/rr_ArduinoUtils"
+        }
+    ],
+    "license": "GNU GPL",
+    "frameworks": "*",
+    "platforms": "*"
+}

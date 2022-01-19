@@ -65,7 +65,7 @@ const char* DebugUtils::getInfoMarking(DebugLevel_t level) {
         result = ANSI_BLUE_FG "D:";
         break;
     case Warning:
-        result = ANSI_YELLOW_BG "W:";
+        result = ANSI_YELLOW_FG "W:";
         break;
     case Error:
         result = ANSI_RED_BG "E:";
@@ -90,7 +90,7 @@ const char* DebugUtils::getTextMarking(DebugLevel_t level) {
         result = ANSI_RED_BG;
         break;
     case Warning:
-        result = ANSI_YELLOW_BG;
+        result = ANSI_YELLOW_FG;
         break;
     default:
         result = ANSI_NORMAL;
