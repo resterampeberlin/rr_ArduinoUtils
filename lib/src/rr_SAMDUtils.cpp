@@ -30,6 +30,16 @@
 
 #ifdef ARDUINO_ARCH_SAMD
 
+    #define SAMDTimerSync(timer, reg)                                                                                  \
+        while (timer->reg) {                                                                                           \
+        };
+
+//!
+//! @brief Enable pin function in multiplexer
+//!
+//! @param pin
+//! @param function
+//!
 void SAMDsetPinFunction(unsigned pin, uint8_t function) {
     // Enable the port multiplexer
     PORT->Group[g_APinDescription[pin].ulPort].PINCFG[g_APinDescription[pin].ulPin].bit.PMUXEN = 1;
@@ -38,37 +48,71 @@ void SAMDsetPinFunction(unsigned pin, uint8_t function) {
     PORT->Group[g_APinDescription[pin].ulPort].PMUX[g_APinDescription[pin].ulPin >> 1].reg |= function;
 }
 
+//!
+//! @brief
+//!
+//! @param timer
+//! @param wave
+//! @param overflow
+//!
 void SAMDsetWaveGen(Tcc* timer, uint32_t wave, uint32_t overflow) {
     // Set wave generation, frequency and pulse lengths
     timer->WAVE.reg |= wave;
-
-    while (timer->SYNCBUSY.bit.WAVE)
-        ;
+    SAMDTimerSync(timer, SYNCBUSY.bit.WAVE);
 
     timer->PER.reg = overflow - 1;
-    while (timer->SYNCBUSY.bit.PER)
-        ;
+    SAMDTimerSync(timer, SYNCBUSY.bit.PER);
 }
 
+//!
+//! @brief
+//!
+//! @param timer
+//! @param NRE
+//!
+void SAMDsetOneShot(Tcc* timer, uint32_t NRE) {
+    // Enable oneshot
+    timer->CTRLBSET.reg = TCC_CTRLBSET_ONESHOT;
+    SAMDTimerSync(timer, SYNCBUSY.bit.CTRLB);
+
+    // Set oneshot operation to output 0V when the timer is stopped
+    timer->DRVCTRL.reg |= NRE;
+}
+
+//!
+//! @brief
+//!
+//! @param timer
+//! @param channel
+//! @param value
+//!
 void SAMDsetCC(Tcc* timer, unsigned channel, uint32_t value) {
     timer->CC[channel].reg = value;
-    while (timer->SYNCBUSY.bit.CC0)
-        ;
+    SAMDTimerSync(timer, SYNCBUSY.bit.CC0);
 }
 
+//!
+//! @brief
+//!
+//! @param timer
+//! @param prescaler
+//!
 void SAMDenableTCC(Tcc* timer, uint32_t prescaler) {
     timer->CTRLA.reg |= prescaler; // Set prescaler
     timer->CTRLA.bit.ENABLE = 1;   // Enable output
-    while (timer->SYNCBUSY.bit.ENABLE)
-        ;
+    SAMDTimerSync(timer, SYNCBUSY.bit.ENABLE);
 }
 
+//!
+//! @brief
+//!
+//! @param timer
+//!
 void SAMDretrigger(Tcc* timer) {
     if (timer->STATUS.bit.STOP) // Check if the previous pulse is complete
     {
         timer->CTRLBSET.reg = TCC_CTRLBSET_CMD_RETRIGGER; // Retrigger the timer's One/Multi-Shot pulse
-        while (timer->SYNCBUSY.bit.CTRLB)
-            ;
+        SAMDTimerSync(timer, SYNCBUSY.bit.CTRLB);
     }
 }
 

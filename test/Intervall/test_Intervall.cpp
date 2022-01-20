@@ -87,11 +87,13 @@ void setup() {
     delay(2000);
 
     UNITY_BEGIN();
+
     // check all return codes for wait function
     RUN_TEST(test_normal);
     RUN_TEST(test_random);
     RUN_TEST(test_abort);
     RUN_TEST(test_overflow);
+
     UNITY_END();
 }
 

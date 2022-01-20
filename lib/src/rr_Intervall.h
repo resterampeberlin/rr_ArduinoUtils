@@ -44,10 +44,17 @@ class Intervall {
 
     unsigned long getMinPeriod();
     unsigned long getMaxPeriod();
+    unsigned long getAvgPeriod();
+
+    void resetStatistics(void);
 
   private:
     unsigned long period;
     unsigned long timeStamp;
+
+    // used for statistics
     unsigned long maxPeriod;
     unsigned long minPeriod;
+    unsigned long sumPeriods;
+    unsigned long numPeriods;
 };

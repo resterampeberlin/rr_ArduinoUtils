@@ -30,12 +30,11 @@
 #include "rr_Intervall.h"
 
 Intervall::Intervall() {
-    maxPeriod = 0;
-    minPeriod = ULONG_MAX;
     timeStamp = millis();
-
     // assume a default og 100ms
     setPeriod(100);
+
+    resetStatistics();
 }
 
 Intervall::Intervall(unsigned long newPeriod) : Intervall() {
@@ -54,8 +53,11 @@ Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
     unsigned long delta  = millis() - timeStamp;
     Result_t      result = Success;
 
-    minPeriod            = min(minPeriod, delta);
-    maxPeriod            = max(maxPeriod, delta);
+    // collect statistics
+    minPeriod = min(minPeriod, delta);
+    maxPeriod = max(maxPeriod, delta);
+    sumPeriods += delta;
+    numPeriods++;
 
     if (delta < period) {
         while (millis() - timeStamp < period) {
@@ -82,4 +84,16 @@ unsigned long Intervall::getMinPeriod() {
 
 unsigned long Intervall::getMaxPeriod() {
     return maxPeriod;
+}
+
+unsigned long Intervall::getAvgPeriod() {
+    return sumPeriods / numPeriods;
+}
+
+void Intervall::resetStatistics(void) {
+    maxPeriod  = 0;
+    minPeriod  = ULONG_MAX;
+
+    numPeriods = 0;
+    sumPeriods = 0;
 }

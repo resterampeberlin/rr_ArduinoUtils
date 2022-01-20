@@ -14,7 +14,7 @@
             "url": "https://github.com/resterampeberlin/rr_ArduinoUtils"
         }
     ],
-    "license": "GNU GPL",
+    "license": "GPL-3.0-or-later",
     "frameworks": "*",
     "platforms": "*"
 }

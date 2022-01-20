@@ -33,6 +33,8 @@
 void SAMDsetPinFunction(unsigned pin, uint8_t function);
 void SAMDsetCC(Tcc* timer, unsigned channel, uint32_t value);
 void SAMDsetWaveGen(Tcc* timer, uint32_t wave, uint32_t overflow);
+void SAMDsetOneShot(Tcc* timer, uint32_t NRE);
 void SAMDenableTCC(Tcc* timer, uint32_t prescaler);
 void SAMDretrigger(Tcc* timer);
+
 #endif
