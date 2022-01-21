@@ -30,7 +30,16 @@
 #include "rr_DebugUtils.h"
 
 //! our unique Debug object
-DebugUtils Debug;
+DebugUtils  Debug;
+
+const char* GITversion(void) {
+#ifdef GIT_VERSION
+    return GIT_VERSION;
+#else
+    #pragma WARN("GIT_VERSION not defined")
+    return "undefined";
+#endif
+}
 
 //!
 //! @brief Construct a new Debug Utils:: Debug Utils object

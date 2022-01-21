@@ -7,6 +7,9 @@
         "type": "git",
         "url": "https://github.com/resterampeberlin/rr_ArduinoUtils.git"
     },
+    "build": {
+        "extraScript": "git-version.py"
+    },
     "authors": [
         {
             "name": "Markus Nickels",

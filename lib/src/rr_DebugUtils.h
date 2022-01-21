@@ -43,7 +43,9 @@
 
 #define PRINT_BUILD()                                                                                                  \
     PRINT_INFO("Build: " ANSI_GREEN_FG "%s" ANSI_NORMAL "  Git version: " ANSI_GREEN_FG "%s" ANSI_NORMAL, BUILD,       \
-               GIT_VERSION)
+               GITversion())
+
+const char* GITversion(void);
 
 class DebugUtils {
 

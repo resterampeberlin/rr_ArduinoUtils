@@ -1,11 +1,14 @@
 {
     "name": "RR Arduino Utilities",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "A library including useful utilities for Arduino development",
     "keywords": "Debug, Logging, SAMD, Timer",
     "repository": {
         "type": "git",
         "url": "https://github.com/resterampeberlin/rr_ArduinoUtils.git"
+    },
+    "build": {
+        "extraScript": "git-version.py"
     },
     "authors": [
         {
