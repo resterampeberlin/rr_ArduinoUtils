@@ -1,7 +1,7 @@
-
 #include <Arduino.h>
 #include <unity.h>
 
+#include "rr_DebugUtils.h"
 #include "rr_Intervall.h"
 
 const unsigned int period = 500; // 500 milliss
@@ -29,6 +29,12 @@ void test_normal(void) {
         // t = period
         TEST_ASSERT_UINT_WITHIN(1, period, millis() - start);
     }
+
+    intervall.printStatistics();
+
+    TEST_ASSERT_UINT_WITHIN(1, period - 10, intervall.getMaxPeriod());
+    TEST_ASSERT_UINT_WITHIN(1, period - 10, intervall.getMinPeriod());
+    TEST_ASSERT_UINT_WITHIN(1, period - 10, intervall.getAvgPeriod());
 }
 
 // test a normal intervall with randomly wasted time
@@ -44,8 +50,11 @@ void test_random(void) {
         TEST_ASSERT_EQUAL(Intervall::Success, intervall.wait());
     }
 
+    intervall.printStatistics();
+
     TEST_ASSERT_UINT_WITHIN(6, period - 10, intervall.getMaxPeriod());
     TEST_ASSERT_UINT_WITHIN(6, period - 10, intervall.getMinPeriod());
+    TEST_ASSERT_UINT_WITHIN(6, period - 10, intervall.getAvgPeriod());
 }
 
 // test an aborted intervall
@@ -64,6 +73,8 @@ void test_abort(void) {
 
         TEST_ASSERT_EQUAL(Intervall::Abort, intervall.wait(abort_function));
     }
+
+    intervall.printStatistics();
 }
 
 // test overflowed intervall
@@ -79,8 +90,11 @@ void test_overflow(void) {
         TEST_ASSERT_EQUAL(Intervall::Overflow, intervall.wait());
     }
 
-    TEST_ASSERT_UINT_WITHIN(5, period + 10, intervall.getMaxPeriod());
-    TEST_ASSERT_UINT_WITHIN(5, period + 10, intervall.getMinPeriod());
+    intervall.printStatistics();
+
+    TEST_ASSERT_UINT_WITHIN(1, period + 10, intervall.getMaxPeriod());
+    TEST_ASSERT_UINT_WITHIN(1, period + 10, intervall.getMinPeriod());
+    TEST_ASSERT_UINT_WITHIN(1, period + 10, intervall.getAvgPeriod());
 }
 
 void setup() {
@@ -88,7 +102,7 @@ void setup() {
 
     UNITY_BEGIN();
 
-    // check all return codes for wait function
+    // check return codes for wait function
     RUN_TEST(test_normal);
     RUN_TEST(test_random);
     RUN_TEST(test_abort);

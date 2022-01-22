@@ -27,6 +27,7 @@
 #include <limits.h>
 
 //! own includes
+#include "rr_DebugUtils.h"
 #include "rr_Intervall.h"
 
 Intervall::Intervall() {
@@ -37,11 +38,11 @@ Intervall::Intervall() {
     resetStatistics();
 }
 
-Intervall::Intervall(unsigned long newPeriod) : Intervall() {
+Intervall::Intervall(Period_t newPeriod) : Intervall() {
     setPeriod(newPeriod);
 }
 
-void Intervall::setPeriod(unsigned long newPeriod) {
+void Intervall::setPeriod(Period_t newPeriod) {
     period = newPeriod;
 }
 
@@ -53,11 +54,23 @@ Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
     unsigned long delta  = millis() - timeStamp;
     Result_t      result = Success;
 
+#ifndef WITHOUT_INTERVALL_STATS
     // collect statistics
     minPeriod = min(minPeriod, delta);
     maxPeriod = max(maxPeriod, delta);
-    sumPeriods += delta;
-    numPeriods++;
+
+    // check for overflow
+    if (sumPeriods > ULONG_MAX - delta) {
+        PRINT_WARNING(F("Average overflow, resetting average"), NULL);
+
+        sumPeriods = getAvgPeriod() + delta;
+        numPeriods = 2;
+    }
+    else {
+        sumPeriods += delta;
+        numPeriods++;
+    }
+#endif
 
     if (delta < period) {
         while (millis() - timeStamp < period) {
@@ -70,6 +83,8 @@ Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
         }
     }
     else {
+        PRINT_WARNING("Intervall overflow. Intervall: %u  current: %u", period, delta);
+
         result = Overflow;
     }
 
@@ -78,22 +93,27 @@ Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
     return result;
 }
 
-unsigned long Intervall::getMinPeriod() {
+Intervall::Period_t Intervall::getMinPeriod() {
     return minPeriod;
 }
 
-unsigned long Intervall::getMaxPeriod() {
+Intervall::Period_t Intervall::getMaxPeriod() {
     return maxPeriod;
 }
 
-unsigned long Intervall::getAvgPeriod() {
+Intervall::Period_t Intervall::getAvgPeriod() {
     return sumPeriods / numPeriods;
 }
 
 void Intervall::resetStatistics(void) {
     maxPeriod  = 0;
-    minPeriod  = ULONG_MAX;
+    minPeriod  = UINT_MAX;
 
     numPeriods = 0;
     sumPeriods = 0;
+}
+
+void Intervall::printStatistics(void) {
+    PRINT_INFO("Intervall statistics: Period: %u  Min: %u  Max: %u  Average: %u", period, getMinPeriod(),
+               getMaxPeriod(), getAvgPeriod());
 }

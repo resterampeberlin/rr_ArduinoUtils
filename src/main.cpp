@@ -51,6 +51,8 @@ void setup() {
     PRINT_INFO("Info", NULL);
     PRINT_WARNING("Warning", NULL);
     PRINT_ERROR("Error", NULL);
+
+    PRINT_DEBUG("An integer: %d  unsigned: %u  float: %f   string: %s", -1234, 2345, 5678.9, "a string");
 }
 
 //!

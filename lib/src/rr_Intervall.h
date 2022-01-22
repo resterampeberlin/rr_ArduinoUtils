@@ -30,31 +30,34 @@
 class Intervall {
 
   public:
-    //! Available reporting levels
+    typedef unsigned int Period_t;
+
+    //! wait results
     typedef enum { Success, Abort, Overflow } Result_t;
 
     //! Constructors
     Intervall();
-    Intervall(unsigned long newPeriod);
+    Intervall(Period_t newPeriod);
 
-    void          setPeriod(unsigned long newPeriod);
-    void          begin(void);
+    void     setPeriod(Period_t newPeriod);
+    void     begin(void);
 
-    Result_t      wait(bool (*userFunc)(void) = NULL);
+    Result_t wait(bool (*userFunc)(void) = NULL);
 
-    unsigned long getMinPeriod();
-    unsigned long getMaxPeriod();
-    unsigned long getAvgPeriod();
+    Period_t getMinPeriod();
+    Period_t getMaxPeriod();
+    Period_t getAvgPeriod();
 
-    void resetStatistics(void);
+    void     resetStatistics(void);
+    void     printStatistics(void);
 
   private:
-    unsigned long period;
+    Period_t      period;
     unsigned long timeStamp;
 
     // used for statistics
-    unsigned long maxPeriod;
-    unsigned long minPeriod;
-    unsigned long sumPeriods;
+    Period_t      maxPeriod;
+    Period_t      minPeriod;
+    unsigned      sumPeriods;
     unsigned long numPeriods;
 };

@@ -115,9 +115,8 @@ void test_level_verbose(void) {
 void setup() {
     delay(2000);
 
-    Debug.setTab(30);
-
     UNITY_BEGIN();
+
     // check that default level is "verbose"
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, F("Test"), NULL));
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, F("Test"), NULL));
@@ -129,6 +128,7 @@ void setup() {
     RUN_TEST(test_level_info);
     RUN_TEST(test_level_debug);
     RUN_TEST(test_level_verbose);
+
     UNITY_END();
 }
 
