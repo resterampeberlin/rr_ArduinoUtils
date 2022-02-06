@@ -20,7 +20,7 @@
             "url": "https://github.com/resterampeberlin/rr_ArduinoUtils"
         }
     ],
-    "license": "CC-BY-NC-4.0",
+    "license": "CC-BY-SA-4.0",
     "frameworks": "*",
     "platforms": "*"
 }

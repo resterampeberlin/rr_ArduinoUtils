@@ -9,11 +9,9 @@
 //!
 //! This file is part of the Application "rr_ArduinoUtils".
 //!
-//! This work is licensed under the
+//!      Creative Commons Attribution-ShareAlike 4.0 International License.
 //!
-//!      Creative Commons Attribution-NonCommercial 4.0 International License.
-//!
-//! To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/4.0/
+//! To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/
 //! or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 //!
 //! This work has been inspired by the library "Arduino_DebugUtils"
@@ -53,6 +51,9 @@ class DebugUtils {
     //! Constructor
     DebugUtils();
 
+    //! start output to serial
+    void beginSerial(unsigned long baud = 115200, unsigned timeout = 500);
+
     //! generic print routines
     bool print(DebugLevel_t level, const char* function, unsigned line, const char* fmt, ...);
     bool print(DebugLevel_t level, const char* function, unsigned line, const __FlashStringHelper* fmt, ...);
@@ -70,18 +71,18 @@ class DebugUtils {
     const char*  getTextMarking(DebugLevel_t level);
 };
 
-extern DebugUtils Debug;
-
-// this function is always executed
-#define PRINT_ERROR(text, ...) Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, text, __VA_ARGS__)
-
 // following functions are only available/executed in a debug build
 #ifdef __PLATFORMIO_BUILD_DEBUG__
+
+// debug object only present in debug builds
+extern DebugUtils Debug;
+
     #define PRINT_INFO(text, ...)    Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, text, __VA_ARGS__)
     #define PRINT_DEBUG(text, ...)   Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, text, __VA_ARGS__)
     #define PRINT_VERBOSE(text, ...) Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, text, __VA_ARGS__)
     #define PRINT_WARNING(text, ...) Debug.print(DebugUtils::Warning, __FUNCTION__, __LINE__, text, __VA_ARGS__)
     #define PRINT(text, ...)         Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, text, __VA_ARGS__)
+    #define PRINT_ERROR(text, ...)   Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, text, __VA_ARGS__)
 
     // evaluate expression and print message if evals to false
     #define VERIFY(expression)                                                                                         \
@@ -102,6 +103,7 @@ extern DebugUtils Debug;
     #define PRINT_DEBUG(text, ...)
     #define PRINT_VERBOSE(text, ...)
     #define PRINT_WARNING(text, ...)
+    #define PRINT_ERROR(text, ...)
     #define PRINT(text, ...)
     #define ASSERT(expression)
 

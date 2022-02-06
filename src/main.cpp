@@ -24,15 +24,8 @@
 //! @brief Setup routine
 //!
 void setup() {
-    unsigned loop = 0;
-
-    // Init serial communication
-    Serial.begin(115200);
-
-    while (!Serial && loop < 500) {
-        delay(100);
-        loop++;
-    }
+    // start debugging on serial
+    Debug.beginSerial();
 
     // set a tab on column 30 to increase monitor output formatting
     Debug.setTab(30);
