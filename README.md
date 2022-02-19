@@ -16,6 +16,28 @@ It is invoked with `pio run - t doc`
 - **library packaging** provides a build target to package a PlatformIO library. 
 It is invoked with `pio run - t package`
 
+# Installation
+
+# Generate Doxygen source code documentation
+
+In order to document your source code you need 3 components:
+
+1. doxygen installed (e.g. on Mac OS X `brew install doxygen`)
+2. A doxygen configation file `Doxyfile` in the project directory. Create it from scratch with `doxygen -g`
+3. Documented source code (see [doxygen documentation](https://www.doxygen.nl/)for details)
+
+When ypu invoke `pio run - t doc` the documentation will be produced. 
+
+The following settings in the 'Doxyfile' will be automatically set with this command:
+- **PROJECT_NUMBER** will be replaced by 'git tag'
+- **PROJECT_BRIEF** will be replaced by library description in `library-template.json`
+- **PROJECT_NAME** will be replaced by library name in `library-template.json`
+
+The last two points are only applicable if you build a library. 
+For a normal programm you should set those values in `Doxyfile`
+
+# Create a PlatformIO library and package it
+
 # Documentation
 
 For source code documentation see this [page](doc/html/index.html).

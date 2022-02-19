@@ -1,6 +1,5 @@
 {
     "name": "RRArduinoUtilities",
-    "version": "GIT_VERSION",
     "description": "A library including useful utilities for Arduino development",
     "keywords": [
         "Debug",

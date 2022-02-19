@@ -1,27 +1,27 @@
 {
-    "name": "RRArduinoUtilities",
-    "version": "0.2.0",
-    "description": "A library including useful utilities for Arduino development",
-    "keywords": [
-        "Debug",
-        "Logging"
+    "authors": [
+        {
+            "email": "markusnickels@mac.com",
+            "name": "Markus Nickels",
+            "url": "https://github.com/resterampeberlin/rr_ArduinoUtils"
+        }
     ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/resterampeberlin/rr_ArduinoUtils.git"
-    },
     "build": {
         "extraScript": "rr_ArduinoUtils.py",
         "flags": "!python3 -c 'import gitVersion; gitVersion.cppDefine()'"
     },
-    "authors": [
-        {
-            "name": "Markus Nickels",
-            "email": "markusnickels@mac.com",
-            "url": "https://github.com/resterampeberlin/rr_ArduinoUtils"
-        }
+    "description": "A library including useful utilities for Arduino development",
+    "frameworks": "*",
+    "keywords": [
+        "Debug",
+        "Logging"
     ],
     "license": "CC-BY-SA-4.0",
-    "frameworks": "*",
-    "platforms": "*"
+    "name": "RRArduinoUtilities",
+    "platforms": "*",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/resterampeberlin/rr_ArduinoUtils.git"
+    },
+    "version": "0.2.0"
 }

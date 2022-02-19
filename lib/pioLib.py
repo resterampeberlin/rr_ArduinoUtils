@@ -23,26 +23,31 @@ import os
 
 
 def package(source, target, env):
-    template = os.path.join(env["PROJECT_DIR"], "library-template.json")
+    # os.path.isfile(os.path.join(env['PROJECT_DIR'], "Doxyfile")):
+    template = "library-template.json"
+    target = "lib/library.json"
 
     # check for valid template file
     if os.path.isfile(template):
-        f = open(template)
-        data = json.load(f)
+        with open(template, 'r') as f:
+            data = json.load(f)
 
         if "name" in data:
-            print("Create library.json ...")
+            print("Create " + target + " ...")
 
             # create library.json with correct version tag
-            env.Execute(
-                "sed s/GIT_VERSION/"+gitVersion.short()+"/ "+template+" > lib/library.json")
+            data["version"] = gitVersion.short()
+
+            with open(target, 'w') as f:
+                json.dump(data, f, sort_keys=True,
+                          indent=4, ensure_ascii=False)
 
             # package library in tar.gz file
             print("Packaging library ...")
 
             env.Execute(
-                "pio package pack lib --output "+data["name"]+".tar.gz")
+                "pio package pack lib --output " + data["name"] + ".tar.gz")
         else:
-            print("Package name not defined in "+template)
+            print("Package name not defined in " + template)
     else:
-        print(template+" not found")
+        print(template + " not found")
