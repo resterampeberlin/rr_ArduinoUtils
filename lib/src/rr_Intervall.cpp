@@ -22,26 +22,54 @@
 #include "rr_DebugUtils.h"
 #include "rr_Intervall.h"
 
+//!
+//! @brief Construct a new Intervall:: Intervall object default intervall length
+//!
+//!
 Intervall::Intervall() {
     timeStamp = millis();
-    // assume a default og 100ms
+    // assume a default of 100ms
     setPeriod(100);
 
     resetStatistics();
 }
 
+//!
+//! @brief Construct a new Intervall:: Intervall object
+//!
+//! @param newPeriod the new period length for the interval
+//!
 Intervall::Intervall(Period_t newPeriod) : Intervall() {
     setPeriod(newPeriod);
 }
 
+//!
+//! @brief set the period length
+//!
+//! @param newPeriod period length in milliseconds
+//!
 void Intervall::setPeriod(Period_t newPeriod) {
     period = newPeriod;
 }
 
+//!
+//! @brief begin an intervall.
+//!
+//! Call this function at the start of a sequence of actions, which should be called in a certain intervall
+//!
 void Intervall::begin(void) {
     timeStamp = millis();
 }
 
+//!
+//! @brief wait until the next intervall shall be started
+//!
+//! This function terminates if the intervall length is reached, an overflow occurs
+//! or the userFunc returns true
+//!
+//! @param userFunc if not null and this functions returns true, the intervall is aborted
+//! @return Intervall::Result_t result of the intervall
+//!
 Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
     unsigned long delta  = millis() - timeStamp;
     Result_t      result = Success;
@@ -85,18 +113,37 @@ Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
     return result;
 }
 
+//!
+//! @brief return the mininum wait period
+//!
+//! @return Intervall::Period_t
+//!
 Intervall::Period_t Intervall::getMinPeriod() {
     return minPeriod;
 }
 
+//!
+//! @brief retuns the maximum wait period
+//!
+//! @return Intervall::Period_t
+//!
 Intervall::Period_t Intervall::getMaxPeriod() {
     return maxPeriod;
 }
 
+//!
+//! @brief return the average wait period
+//!
+//! @return Intervall::Period_t
+//!
 Intervall::Period_t Intervall::getAvgPeriod() {
     return sumPeriods / numPeriods;
 }
 
+//!
+//! @brief reset max/min/average statistics
+//!
+//!
 void Intervall::resetStatistics(void) {
     maxPeriod  = 0;
     minPeriod  = UINT_MAX;
@@ -105,6 +152,10 @@ void Intervall::resetStatistics(void) {
     sumPeriods = 0;
 }
 
+//!
+//! @brief show all statistics
+//!
+//!
 void Intervall::printStatistics(void) {
     PRINT_INFO("Intervall statistics: Period: %u  Min: %u  Max: %u  Average: %u", period, getMinPeriod(),
                getMaxPeriod(), getAvgPeriod());

@@ -22,20 +22,21 @@
 
 //! ANSI escape codes for the terminal window
 //! use "monitor_flags = --raw" in platformio.ini
-#define ANSI_ESC       "\033"
-
-#define ANSI_GREEN_FG  ANSI_ESC "[32m"
-#define ANSI_BLUE_FG   ANSI_ESC "[34m"
-#define ANSI_YELLOW_FG ANSI_ESC "[33m"
-#define ANSI_RED_BG    ANSI_ESC "[41m"
-#define ANSI_NORMAL    ANSI_ESC "[39;49m"
-
-#define ANSI_CLEARTABS ANSI_ESC "[3g"
-#define ANSI_SETTAB    ANSI_ESC "H"
+//! for a detailed definition see
+//! https://en.wikipedia.org/wiki/ANSI_escape_code
+#define ANSI_ESC       "\033"             //!< Escape code
+#define ANSI_GREEN_FG  ANSI_ESC "[32m"    //!< Print green foreground
+#define ANSI_BLUE_FG   ANSI_ESC "[34m"    //!< Print blue foreground
+#define ANSI_YELLOW_FG ANSI_ESC "[33m"    //!< Print yellow foreground
+#define ANSI_RED_BG    ANSI_ESC "[41m"    //!< Print red background
+#define ANSI_NORMAL    ANSI_ESC "[39;49m" //!< Print normal foreground/background
+#define ANSI_CLEARTABS ANSI_ESC "[3g"     //!< clear all tabs
+#define ANSI_SETTAB    ANSI_ESC "H"       //!< set tab at current cursor position
 
 //! date and time when this module was built
 #define BUILD          __DATE__ " " __TIME__
 
+//! print current build
 #define PRINT_BUILD()                                                                                                  \
     PRINT_INFO("Build: " ANSI_GREEN_FG "%s" ANSI_NORMAL "  Git version: " ANSI_GREEN_FG "%s" ANSI_NORMAL, BUILD,       \
                GITversion())
@@ -59,6 +60,7 @@ class DebugUtils {
     bool print(DebugLevel_t level, const char* function, unsigned line, const __FlashStringHelper* fmt, ...);
 
     void setTab(unsigned column);
+    void setTabs(unsigned columns[], unsigned count);
     void setDebugLevel(DebugLevel_t level);
     void setDebugOutputStream(Stream* stream);
 
@@ -84,12 +86,13 @@ extern DebugUtils Debug;
     #define PRINT(text, ...)         Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, text, __VA_ARGS__)
     #define PRINT_ERROR(text, ...)   Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, text, __VA_ARGS__)
 
-    // evaluate expression and print message if evals to false
+    //! evaluate expression and print message if evals to false
     #define VERIFY(expression)                                                                                         \
         if (!(expression)) {                                                                                           \
             PRINT_ERROR(F("ERROR, verify failed"), NULL);                                                              \
         }
 
+    //! evaluate expression and print message if evals to false
     #define ASSERT(expression)                                                                                         \
         if (!(expression)) {                                                                                           \
             PRINT_ERROR(F("ERROR, assertion failed"), NULL);                                                           \

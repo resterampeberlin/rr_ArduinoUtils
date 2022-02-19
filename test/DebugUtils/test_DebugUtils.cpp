@@ -118,7 +118,7 @@ void setup() {
     UNITY_BEGIN();
 
     // check that default level is "verbose"
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, F("Test"), NULL));
+    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, F("Test"), NULL));
 
     // check all levels

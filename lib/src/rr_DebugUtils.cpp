@@ -26,14 +26,21 @@
 //! own includes
 #include "rr_DebugUtils.h"
 
-//! our unique Debug object
-DebugUtils  Debug;
+//! our unique Debug object, only declared in debug build
+#ifdef __PLATFORMIO_BUILD_DEBUG__
+DebugUtils Debug;
+#endif
 
+//!
+//! @brief return current git version
+//!
+//! @return const char* current version
+//!
 const char* GITversion(void) {
 #ifdef GIT_VERSION
     return GIT_VERSION;
 #else
-    #pragma WARN("GIT_VERSION not defined")
+    #pragma message("GIT_VERSION not defined")
     return "undefined";
 #endif
 }
@@ -178,8 +185,31 @@ void DebugUtils::setTab(unsigned column) {
     if (output) {
         char text[20];
 
-        snprintf(text, sizeof(text), ANSI_CLEARTABS ANSI_ESC "[%dC" ANSI_SETTAB, column);
+        output->print(ANSI_CLEARTABS);
+
+        snprintf(text, sizeof(text), ANSI_ESC "[%dC" ANSI_SETTAB, column);
         output->println(text);
+    }
+}
+
+//!
+//! @brief sets a number of tabs for the output
+//!
+//! @param columns array, which contains ascending tab position in absolute columns
+//! @param count number of tabs
+//!
+void DebugUtils::setTabs(unsigned columns[], unsigned count) {
+    if (output) {
+        output->print(ANSI_CLEARTABS);
+
+        for (unsigned loop = 0, lastTab = 0; loop < count; loop++) {
+            char text[20];
+
+            snprintf(text, sizeof(text), ANSI_ESC "[%dC" ANSI_SETTAB, columns[loop] - lastTab);
+            output->println(text);
+        }
+
+        output->println();
     }
 }
 

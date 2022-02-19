@@ -5,8 +5,11 @@
 .vscode/launch.json
 .vscode/ipch
 
-# generated documentation
+# Documentation
 doc
+
+# python
+__pycache__
 
 # generated packages
 *.tar.gz

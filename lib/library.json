@@ -1,5 +1,5 @@
 {
-    "name": "RR Arduino Utilities",
+    "name": "RRArduinoUtilities",
     "version": "0.2.0",
     "description": "A library including useful utilities for Arduino development",
     "keywords": [
@@ -11,7 +11,8 @@
         "url": "https://github.com/resterampeberlin/rr_ArduinoUtils.git"
     },
     "build": {
-        "extraScript": "git-version.py"
+        "extraScript": "rr_ArduinoUtils.py",
+        "flags": "!python3 -c 'import gitVersion; gitVersion.cppDefine()'"
     },
     "authors": [
         {
