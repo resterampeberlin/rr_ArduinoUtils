@@ -40,7 +40,7 @@ For a normal programm you should set those values in `Doxyfile`
 
 # Documentation
 
-For source code documentation see this [page](doc/html/index.html).
+For source code documentation see this [page](https://resterampeberlin.github.io/rr_ArduinoUtils/).
 
 # License:
 
