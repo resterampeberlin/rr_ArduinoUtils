@@ -6,7 +6,7 @@
 .vscode/ipch
 
 # Documentation
-doc
+docs
 
 # python
 __pycache__
