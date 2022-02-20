@@ -16,11 +16,28 @@
     "authors": [
         {
             "name": "Markus Nickels",
-            "email": "markusnickels@mac.com",
-            "url": "https://github.com/resterampeberlin/rr_ArduinoUtils"
+            "email": "markusnickels@mac.com"
         }
     ],
     "license": "CC-BY-SA-4.0",
     "frameworks": "*",
-    "platforms": "*"
+    "platforms": "*",
+    "examples": [
+        {
+            "name": "Debug output",
+            "base": "examples/rr_DebugUtils",
+            "files": [
+                "platformio.ini",
+                "main.cpp"
+            ]
+        },
+        {
+            "name": "Intervall",
+            "base": "examples/rr_Intervall",
+            "files": [
+                "platformio.ini",
+                "main.cpp"
+            ]
+        }
+    ]
 }

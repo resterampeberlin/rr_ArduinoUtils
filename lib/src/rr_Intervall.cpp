@@ -31,7 +31,9 @@ Intervall::Intervall() {
     // assume a default of 100ms
     setPeriod(100);
 
+#ifndef WITHOUT_INTERVALL_STATS
     resetStatistics();
+#endif
 }
 
 //!
@@ -113,6 +115,8 @@ Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
     return result;
 }
 
+#ifndef WITHOUT_INTERVALL_STATS
+
 //!
 //! @brief return the mininum wait period
 //!
@@ -160,3 +164,5 @@ void Intervall::printStatistics(void) {
     PRINT_INFO("Intervall statistics: Period: %u  Min: %u  Max: %u  Average: %u", period, getMinPeriod(),
                getMaxPeriod(), getAvgPeriod());
 }
+
+#endif // WITHOUT_INTERVALL_STATS
