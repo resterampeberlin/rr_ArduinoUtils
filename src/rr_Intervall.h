@@ -36,20 +36,26 @@ class Intervall {
 
     Result_t wait(bool (*userFunc)(void) = NULL);
 
+//! add -DWITHOUT_INTERVALL_STATS to your compiler flags to exclude statistics and save some
+//! bytes and milliseconds
+#ifndef WITHOUT_INTERVALL_STATS
     Period_t getMinPeriod();
     Period_t getMaxPeriod();
     Period_t getAvgPeriod();
 
     void     resetStatistics(void);
     void     printStatistics(void);
+#endif
 
   private:
     Period_t      period;
     unsigned long timeStamp;
 
+#ifndef WITHOUT_INTERVALL_STATS
     // used for statistics
     Period_t      maxPeriod;
     Period_t      minPeriod;
     unsigned      sumPeriods;
     unsigned long numPeriods;
+#endif
 };
