@@ -1,3 +1,8 @@
+[![License](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0)
+[![Issues](https://img.shields.io/github/issues/resterampeberlin/rr_ArduinoUtils)](https://github.com/resterampeberlin/rr_ArduinoUtils/issues)
+[![Tags](https://img.shields.io/github/v/tag/resterampeberlin/rr_ArduinoUtils)](https://github.com/resterampeberlin/rr_ArduinoUtils/tags)
+[![Download](https://img.shields.io/github/downloads/resterampeberlin/rr_ArduinoUtils/total)](https://github.com/resterampeberlin/rr_ArduinoUtils.git)
+
 # Purpose
 
 This library is a collection of useful utilities for Arduino development, especially with PlatformIO. It 
@@ -24,7 +29,7 @@ In order to document your source code you need 3 components:
 
 1. doxygen installed (e.g. on Mac OS X `brew install doxygen`)
 2. A doxygen configation file `Doxyfile` in the project directory. Create it from scratch with `doxygen -g`
-3. Documented source code (see [doxygen documentation](https://www.doxygen.nl/)for details)
+3. Documented source code (see [doxygen documentation](https://www.doxygen.nl/) for details)
 
 When ypu invoke `pio run - t doc` the documentation will be produced. 
 
@@ -42,13 +47,11 @@ For a normal programm you should set those values in `Doxyfile`
 
 For source code documentation see this [page](https://resterampeberlin.github.io/rr_ArduinoUtils/).
 
-# License:
+# Credits
 
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+This open source code project is has been proudfully produced in Berlin (and other places around the globe) by
 
-This open source code project is has been proudfully producted in Berlin (and other places around the globe) by
-
-![Logo](Logo180x180.png)
+![Logo](img/Logo180x180.png)
 
 
 
