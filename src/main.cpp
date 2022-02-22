@@ -28,7 +28,7 @@ void setup() {
     Debug.beginSerial();
 
     // set a tab on column 30 to increase monitor output formatting
-    Debug.setTab(30);
+    Debug.setTab(15);
     PRINT_BUILD();
 
     PRINT_VERBOSE("Verbose", NULL);
