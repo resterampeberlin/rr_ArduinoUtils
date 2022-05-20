@@ -73,8 +73,8 @@ void Intervall::begin(void) {
 //! @return Intervall::Result_t result of the intervall
 //!
 Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
-    unsigned long delta  = millis() - timeStamp;
-    Result_t      result = Success;
+    Intervall::Period_t delta  = millis() - timeStamp;
+    Result_t            result = Success;
 
 #ifndef WITHOUT_INTERVALL_STATS
     // collect statistics
