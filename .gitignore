@@ -8,6 +8,9 @@
 # Documentation
 docs
 
+# generated files
+lib/library.json
+
 # python
 __pycache__
 
