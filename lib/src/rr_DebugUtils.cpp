@@ -1,9 +1,6 @@
 //!
-//! @file rr_DebugUtils.cpp
 //! @author M. Nickels
 //! @brief Debug utilities for Arduino development
-//! @version 0.1
-//! @date 14.1.2022
 //!
 //! @copyright Copyright (c) 2022
 //!

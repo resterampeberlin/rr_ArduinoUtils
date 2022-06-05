@@ -1,9 +1,6 @@
 #
-# @file packageLib.py
 # @author M. Nickels
 # @brief package the library into a .tar.gz file
-# @version 0.1
-# @date 2021-12-20
 #
 # @copyright Copyright (c) 2021
 #
