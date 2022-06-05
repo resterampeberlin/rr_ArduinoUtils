@@ -66,14 +66,14 @@ void Intervall::begin(void) {
 //!
 //! @brief check if ccurent period is over
 //!
-//! @return true if current time > planned time
-//! @return false if current time <= planned time
+//! @return true if current time >= planned time
+//! @return false if current time < planned time
 //!
 bool Intervall::isPeriodOver(void) {
     if (timeStamp > 0)
         return true;
     else
-        return millis() - timeStamp > period;
+        return millis() - timeStamp >= period;
 }
 
 //!
