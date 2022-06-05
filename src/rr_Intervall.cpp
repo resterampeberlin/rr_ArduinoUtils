@@ -27,7 +27,7 @@
 //!
 //!
 Intervall::Intervall() {
-    timeStamp = millis();
+    timeStamp = 0;
     // assume a default of 100ms
     setPeriod(100);
 
@@ -55,7 +55,7 @@ void Intervall::setPeriod(Period_t newPeriod) {
 }
 
 //!
-//! @brief begin an intervall.
+//! @brief initialize an intervall.
 //!
 //! Call this function at the start of a sequence of actions, which should be called in a certain intervall
 //!
@@ -67,7 +67,8 @@ void Intervall::begin(void) {
 //! @brief wait until the next intervall shall be started
 //!
 //! This function terminates if the intervall length is reached, an overflow occurs
-//! or the userFunc returns true
+//! or the userFunc returns true.
+//! Ensure that begin() has been called before.
 //!
 //! @param userFunc if not null and this functions returns true, the intervall is aborted
 //! @return Intervall::Result_t result of the intervall
@@ -75,6 +76,11 @@ void Intervall::begin(void) {
 Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
     Intervall::Period_t delta  = millis() - timeStamp;
     Result_t            result = Success;
+
+    if (timeStamp == 0) {
+        PRINT_ERROR("Intervall not initialized. Call begin() before wait(),", NULL);
+        return Intervall::Failure;
+    }
 
 #ifndef WITHOUT_INTERVALL_STATS
     // collect statistics
@@ -95,7 +101,7 @@ Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
 #endif
 
     if (delta < period) {
-        while (millis() - timeStamp < period) {
+        while (!isPeriodOver()) {
             if (userFunc != NULL && userFunc()) {
                 result = Abort;
                 break;
