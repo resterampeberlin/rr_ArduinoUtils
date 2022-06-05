@@ -1,4 +1,4 @@
-
+//!
 //! @author M. Nickels
 //! @brief unit test. Run tests with 'pio test -e test_no_statistics'
 //!
