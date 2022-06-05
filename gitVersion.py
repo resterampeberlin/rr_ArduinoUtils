@@ -1,9 +1,6 @@
 #
-# @file gitVersion.py
 # @author M. Nickels
 # @brief retrieve the git version tag for the current project
-# @version 0.1
-# @date 2021-12-20
 #
 # @copyright Copyright (c) 2021
 #

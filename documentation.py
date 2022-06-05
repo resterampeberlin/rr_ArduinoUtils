@@ -1,9 +1,6 @@
 #
-# @file documentation.py
 # @author M. Nickels
 # @brief Generate doxygen documentation for the current project
-# @version 0.1
-# @date 2021-12-20
 #
 # @copyright Copyright (c) 2021
 #

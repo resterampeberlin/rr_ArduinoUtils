@@ -1,9 +1,6 @@
 //!
-//! @file rr_Intervall.cpp
 //! @author M. Nickels
 //! @brief usefull class to work with intervalls/periodic execution
-//! @version 0.1
-//! @date 14.1.2022
 //!
 //! @copyright Copyright (c) 2022
 //!
