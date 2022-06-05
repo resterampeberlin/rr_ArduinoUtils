@@ -1,4 +1,4 @@
-#
+//!
 //! @author M. Nickels
 //! @brief unit test. Run tests with 'pio test -e test'
 //!
@@ -111,6 +111,26 @@ void test_overflow(void) {
     TEST_ASSERT_UINT_WITHIN(1, period + 10, intervall.getAvgPeriod());
 }
 
+// test failure without begin() before wait()
+void test_no_begin(void) {
+    Intervall intervall(period);
+
+    TEST_ASSERT_EQUAL(Intervall::Failure, intervall.wait());
+}
+
+// test isPeriodOver()
+void test_isPeriodOver(void) {
+    Intervall intervall(period);
+
+    intervall.begin();
+
+    TEST_ASSERT_FALSE(intervall.isPeriodOver());
+
+    delay(period);
+
+    TEST_ASSERT_TRUE(intervall.isPeriodOver());
+}
+
 void setup() {
     Debug.beginSerial(115200);
 
@@ -123,6 +143,8 @@ void setup() {
     RUN_TEST(test_random);
     RUN_TEST(test_abort);
     RUN_TEST(test_overflow);
+    RUN_TEST(test_no_begin);
+    RUN_TEST(test_isPeriodOver);
 
     UNITY_END();
 }

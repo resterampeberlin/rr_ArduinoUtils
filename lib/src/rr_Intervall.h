@@ -25,7 +25,7 @@ class Intervall {
     typedef unsigned int Period_t;
 
     //! wait results
-    typedef enum { Success, Abort, Overflow } Result_t;
+    typedef enum { Success, Abort, Overflow, Failure } Result_t;
 
     //! Constructors
     Intervall();
@@ -35,6 +35,8 @@ class Intervall {
     void     begin(void);
 
     Result_t wait(bool (*userFunc)(void) = NULL);
+
+    bool     isPeriodOver(void);
 
 //! add -DWITHOUT_INTERVALL_STATS to your compiler flags to exclude statistics and save some
 //! bytes and milliseconds
