@@ -70,7 +70,7 @@ void Intervall::begin(void) {
 //! @return false if current time < planned time
 //!
 bool Intervall::isPeriodOver(void) {
-    if (timeStamp > 0)
+    if (timeStamp == 0)
         return true;
     else
         return millis() - timeStamp >= period;
