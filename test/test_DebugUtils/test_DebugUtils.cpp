@@ -1,3 +1,16 @@
+//!
+//! @author M. Nickels
+//! @brief unit test. Run tests with 'pio test -e test'
+//!
+//! @copyright Copyright (c) 2022
+//!
+//! This file is part of the Application "rr_ArduinoUtils".
+//!
+//!      Creative Commons Attribution-ShareAlike 4.0 International License.
+//!
+//! To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/
+//! or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+//!
 
 #include <Arduino.h>
 #include <unity.h>
