@@ -17,6 +17,8 @@
 
 #pragma once
 
+#include <Arduino.h>
+
 //! ANSI escape codes for the terminal window
 //! use "monitor_flags = --raw" in platformio.ini
 //! for a detailed definition see
