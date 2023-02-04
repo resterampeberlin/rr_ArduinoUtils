@@ -23,17 +23,33 @@
 //! use "monitor_flags = --raw" in platformio.ini
 //! for a detailed definition see
 //! https://en.wikipedia.org/wiki/ANSI_escape_code
-#define ANSI_ESC       "\033"             //!< Escape code
-#define ANSI_GREEN_FG  ANSI_ESC "[32m"    //!< Print green foreground
-#define ANSI_BLUE_FG   ANSI_ESC "[34m"    //!< Print blue foreground
-#define ANSI_YELLOW_FG ANSI_ESC "[33m"    //!< Print yellow foreground
-#define ANSI_RED_BG    ANSI_ESC "[41m"    //!< Print red background
-#define ANSI_NORMAL    ANSI_ESC "[39;49m" //!< Print normal foreground/background
-#define ANSI_CLEARTABS ANSI_ESC "[3g"     //!< clear all tabs
-#define ANSI_SETTAB    ANSI_ESC "H"       //!< set tab at current cursor position
+
+#ifndef RR_DEBUG_NOCOLORS
+
+    #define ANSI_ESC       "\033"             //!< Escape code
+    #define ANSI_GREEN_FG  ANSI_ESC "[32m"    //!< Print green foreground
+    #define ANSI_BLUE_FG   ANSI_ESC "[34m"    //!< Print blue foreground
+    #define ANSI_YELLOW_FG ANSI_ESC "[33m"    //!< Print yellow foreground
+    #define ANSI_RED_BG    ANSI_ESC "[41m"    //!< Print red background
+    #define ANSI_NORMAL    ANSI_ESC "[39;49m" //!< Print normal foreground/background
+    #define ANSI_CLEARTABS ANSI_ESC "[3g"     //!< clear all tabs
+    #define ANSI_SETTAB    ANSI_ESC "H"       //!< set tab at current cursor position
+
+#else
+
+    #define ANSI_ESC       ""
+    #define ANSI_GREEN_FG  ""
+    #define ANSI_BLUE_FG   ""
+    #define ANSI_YELLOW_FG ""
+    #define ANSI_RED_BG    ""
+    #define ANSI_NORMAL    ""
+    #define ANSI_CLEARTABS ""
+    #define ANSI_SETTAB    ""
+
+#endif
 
 //! date and time when this module was built
-#define BUILD          __DATE__ " " __TIME__
+#define BUILD __DATE__ " " __TIME__
 
 //! print current build
 #define PRINT_BUILD()                                                                                                  \
@@ -55,8 +71,8 @@ class DebugUtils {
     void beginSerial(unsigned long baud = 115200, unsigned timeout = 500);
 
     //! generic print routines
-    bool print(DebugLevel_t level, const char* function, unsigned line, const char* fmt, ...);
-    bool print(DebugLevel_t level, const char* function, unsigned line, const __FlashStringHelper* fmt, ...);
+    bool print(DebugLevel_t level, const char* location, unsigned line, const char* fmt, ...);
+    bool print(DebugLevel_t level, const char* location, unsigned line, const __FlashStringHelper* fmt, ...);
 
     void setTab(unsigned column);
     void setTabs(unsigned columns[], unsigned count);
@@ -75,15 +91,32 @@ class DebugUtils {
 // following functions are only available/executed in a debug build
 #ifdef __PLATFORMIO_BUILD_DEBUG__
 
-// debug object only present in debug builds
+//! debug object only present in debug builds
 extern DebugUtils Debug;
 
-    #define PRINT_INFO(text, ...)    Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, text, __VA_ARGS__)
-    #define PRINT_DEBUG(text, ...)   Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, text, __VA_ARGS__)
-    #define PRINT_VERBOSE(text, ...) Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, text, __VA_ARGS__)
-    #define PRINT_WARNING(text, ...) Debug.print(DebugUtils::Warning, __FUNCTION__, __LINE__, text, __VA_ARGS__)
-    #define PRINT(text, ...)         Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, text, __VA_ARGS__)
-    #define PRINT_ERROR(text, ...)   Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, text, __VA_ARGS__)
+    // set file display as default
+    #ifndef RR_DEBUG_LOCATION
+        #define RR_DEBUG_LOCATION 1
+    #endif
+
+    //! select location depending on option
+    //! 0 no informatin to save maximum RAM
+    //! 1 only filenme
+    //! others function name (consumes most RAM)
+    #if RR_DEBUG_LOCATION == 0
+        #define RR_DEBUG_LOC ""
+    #elif RR_DEBUG_LOCATION == 1
+        #define RR_DEBUG_LOC __FILE__
+    #else
+        #define RR_DEBUG_LOC __FUNCTION__
+    #endif
+
+    #define PRINT_INFO(text, ...)    Debug.print(DebugUtils::Info, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
+    #define PRINT_DEBUG(text, ...)   Debug.print(DebugUtils::Debug, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
+    #define PRINT_VERBOSE(text, ...) Debug.print(DebugUtils::Verbose, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
+    #define PRINT_WARNING(text, ...) Debug.print(DebugUtils::Warning, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
+    #define PRINT(text, ...)         Debug.print(DebugUtils::Verbose, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
+    #define PRINT_ERROR(text, ...)   Debug.print(DebugUtils::Error, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
 
     //! evaluate expression and print message if evals to false
     #define VERIFY(expression)                                                                                         \

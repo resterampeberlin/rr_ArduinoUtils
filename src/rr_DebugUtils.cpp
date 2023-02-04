@@ -123,13 +123,13 @@ const char* DebugUtils::getTextMarking(DebugLevel_t level) {
 }
 
 //! generic print routine
-bool DebugUtils::print(DebugLevel_t level, const char* function, unsigned line, const char* fmt, ...) {
+bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, const char* fmt, ...) {
     if (shouldPrint(level) && output) {
         va_list args;
-        char    text[256];
+        char    text[128];
 
         // print diagnostic information
-        snprintf(text, sizeof(text), "%s %s:%d\t", getInfoMarking(level), function, line);
+        snprintf(text, sizeof(text), "%s %s:%d" ANSI_NORMAL "\t", getInfoMarking(level), location, line);
         output->print(text);
         output->print(getTextMarking(level));
 
@@ -148,18 +148,19 @@ bool DebugUtils::print(DebugLevel_t level, const char* function, unsigned line, 
     }
 }
 
-bool DebugUtils::print(DebugLevel_t level, const char* function, unsigned line, const __FlashStringHelper* fmt, ...) {
+bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, const __FlashStringHelper* fmt, ...) {
     if (shouldPrint(level) && output) {
         va_list args;
-        char    text[256];
+        char    text[128];
         String  fmt_str(fmt);
 
         // print diagnostic information
-        snprintf(text, sizeof(text), "%s %s:%d" ANSI_NORMAL "\t", getInfoMarking(level), function, line);
+        snprintf(text, sizeof(text), "%s %s:%d" ANSI_NORMAL "\t", getInfoMarking(level), location, line);
         output->print(text);
         output->print(getTextMarking(level));
 
         // print formatted text
+        va_start(args, fmt);
         vsnprintf(text, sizeof(text), fmt_str.c_str(), args);
         output->print(text);
         va_end(args);
