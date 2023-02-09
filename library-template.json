@@ -21,7 +21,12 @@
     ],
     "license": "CC-BY-SA-4.0",
     "frameworks": "*",
-    "platforms": "*",
+    "platforms": [
+        "atmelavr",
+        "raspberrypi",
+        "espressif8266",
+        "espressif32"
+    ],
     "examples": [
         {
             "name": "Debug output",

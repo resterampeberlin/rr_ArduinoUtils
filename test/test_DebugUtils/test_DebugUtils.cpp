@@ -125,14 +125,17 @@ void test_level_verbose(void) {
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, F("Test"), NULL));
 }
 
-void setup() {
-    delay(2000);
+int runUnityTests(void) {
+    // Debug.beginSerial(115200);
 
     UNITY_BEGIN();
+    TEST_PRINTF("%s:%s", __FILE__, __FUNCTION__);
 
     // check that default level is "verbose"
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, "Test", NULL));
+    TEST_PRINTF("%s:%s", __FILE__, __FUNCTION__);
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, F("Test"), NULL));
+    TEST_PRINTF("%s:%s", __FILE__, __FUNCTION__);
 
     // check all levels
     RUN_TEST(test_level_none);
@@ -142,8 +145,28 @@ void setup() {
     RUN_TEST(test_level_debug);
     RUN_TEST(test_level_verbose);
 
-    UNITY_END();
+    return UNITY_END();
+}
+
+#ifdef ARDUINO
+
+// embedded environment
+void setup() {
+    delay(2000);
+
+    runUnityTests();
 }
 
 void loop() {
 }
+
+#else
+
+// native environment
+int main() {
+    Debug.setDebugOutputStream(NULL);
+
+    return runUnityTests();
+}
+
+#endif

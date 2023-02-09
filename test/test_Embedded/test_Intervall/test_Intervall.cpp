@@ -131,10 +131,8 @@ void test_isPeriodOver(void) {
     TEST_ASSERT_TRUE(intervall.isPeriodOver());
 }
 
-void setup() {
+int runUnityTests(void) {
     Debug.beginSerial(115200);
-
-    delay(2000);
 
     UNITY_BEGIN();
 
@@ -146,8 +144,26 @@ void setup() {
     RUN_TEST(test_no_begin);
     RUN_TEST(test_isPeriodOver);
 
-    UNITY_END();
+    return UNITY_END();
+}
+
+#ifdef ARDUINO
+
+// embedded environment
+void setup() {
+    delay(2000);
+
+    runUnityTests();
 }
 
 void loop() {
 }
+
+#else
+
+// native environment
+int main() {
+    return runUnityTests();
+}
+
+#endif
