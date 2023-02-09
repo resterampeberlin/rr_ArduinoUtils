@@ -19,6 +19,9 @@
 
 #include <Arduino.h>
 
+//! own includes
+// #include "rr_common.h"
+
 //! ANSI escape codes for the terminal window
 //! use "monitor_flags = --raw" in platformio.ini
 //! for a detailed definition see
@@ -130,6 +133,18 @@ extern DebugUtils Debug;
             PRINT_ERROR(F("ERROR, assertion failed"), NULL);                                                           \
         }
 
+    //! evaluate if expression lies with in given range
+    #define ASSERT_BETWEEN(expression, low, high)                                                                      \
+        if (!((expression) >= (low) && (expression) <= (high))) {                                                      \
+            PRINT_ERROR(F("ERROR, assertion failed"), NULL);                                                           \
+        }
+
+    //! evaluate if expression lies with in given range
+    #define ASSERT_ARRAYINDEX(array, index)                                                                            \
+        if (!((index) >= 0 && (index) < ARRAY_SIZE(array))) {                                                          \
+            PRINT_ERROR(F("ERROR, assertion failed"), NULL);                                                           \
+        }
+
     // display a "tracepoint"
     #define TP() PRINT_DEBUG("---", NULL)
 #else
@@ -141,6 +156,8 @@ extern DebugUtils Debug;
     #define PRINT_ERROR(text, ...)
     #define PRINT(text, ...)
     #define ASSERT(expression)
+    #define ASSERT_BETWEEN(expression, low, high)
+    #define ASSERT_ARRAYINDEX(array, index)
 
     #define TP()
 

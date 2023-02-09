@@ -35,7 +35,12 @@
     ],
     "license": "CC-BY-SA-4.0",
     "name": "RRArduinoUtilities",
-    "platforms": "*",
+    "platforms": [
+        "atmelavr",
+        "raspberrypi",
+        "espressif8266",
+        "espressif32"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/resterampeberlin/rr_ArduinoUtils.git"

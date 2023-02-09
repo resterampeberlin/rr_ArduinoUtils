@@ -12,8 +12,16 @@
 //! or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 //!
 
+// #ifdef ARDUINO
+
 #include <Arduino.h>
+
 #include <limits.h>
+#ifndef ARDUINO_ARCH_AVR
+    #include <algorithm> // std::min
+    #define min(a, b) std::min((a), (b))
+    #define max(a, b) std::max((a), (b))
+#endif
 
 //! own includes
 #include "rr_DebugUtils.h"
@@ -182,3 +190,5 @@ void Intervall::printStatistics(void) {
 }
 
 #endif // WITHOUT_INTERVALL_STATS
+
+// #endif // ARDUINO
