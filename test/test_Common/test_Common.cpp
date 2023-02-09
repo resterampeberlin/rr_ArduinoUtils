@@ -31,7 +31,9 @@ void test_Macros(void) {
 
 int runUnityTests(void) {
     UNITY_BEGIN();
+
     RUN_TEST(test_Macros);
+
     UNITY_END();
 
     return UNITY_END();
