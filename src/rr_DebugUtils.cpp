@@ -25,8 +25,6 @@
 //! own includes
 #include "rr_DebugUtils.h"
 
-#include <unity.h>
-
 //! our unique Debug object, only declared in debug build
 #ifdef __PLATFORMIO_BUILD_DEBUG__
 DebugUtils Debug;
@@ -130,12 +128,7 @@ const char* DebugUtils::getTextMarking(DebugLevel_t level) {
 
 //! generic print routine
 bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, const char* fmt, ...) {
-    TEST_PRINTF("output = %x line = %s", output, fmt);
-    TEST_PRINTF("%s:%s", __FILE__, __FUNCTION__);
-
     if (shouldPrint(level) && output) {
-        TEST_PRINTF("%s:%s", __FILE__, __FUNCTION__);
-
         va_list args;
         char    text[128];
 
@@ -155,14 +148,11 @@ bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, 
         return true;
     }
     else {
-        TEST_PRINTF("%s:%s", __FILE__, __FUNCTION__);
         return false;
     }
 }
 
 bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, const __FlashStringHelper* fmt, ...) {
-    TEST_PRINTF("output = %x line = %s", output, fmt);
-
     if (shouldPrint(level) && output) {
         va_list args;
         char    text[128];
@@ -232,8 +222,6 @@ void DebugUtils::setTabs(unsigned columns[], unsigned count) {
 //!
 void DebugUtils::setDebugLevel(DebugLevel_t level) {
     currentLevel = level;
-
-    TEST_PRINTF("Debug level = %d", currentLevel);
 }
 
 //!
@@ -243,8 +231,6 @@ void DebugUtils::setDebugLevel(DebugLevel_t level) {
 //!
 void DebugUtils::setDebugOutputStream(Stream* stream) {
     output = stream;
-
-    TEST_PRINTF("Output stream = %x", output);
 }
 
 //!

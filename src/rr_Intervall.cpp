@@ -190,5 +190,3 @@ void Intervall::printStatistics(void) {
 }
 
 #endif // WITHOUT_INTERVALL_STATS
-
-// #endif // ARDUINO
