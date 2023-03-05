@@ -9,6 +9,11 @@
         "extraScript": "rr_ArduinoUtils.py",
         "flags": "!python3 -c 'import gitVersion; gitVersion.cppDefine()'"
     },
+    "dependencies": [
+        {
+            "name": "Wire"
+        }
+    ],
     "description": "A library including useful utilities for Arduino development",
     "examples": [
         {
