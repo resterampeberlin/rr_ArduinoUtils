@@ -44,7 +44,7 @@ Intervall::Intervall() {
 //!
 //! @brief Construct a new Intervall:: Intervall object
 //!
-//! @param newPeriod the new period length for the interval
+//! @param newPeriod the new period length for the interval in milliseconds
 //!
 Intervall::Intervall(Period_t newPeriod) : Intervall() {
     setPeriod(newPeriod);
@@ -96,7 +96,7 @@ Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
     Result_t            result = Success;
 
     if (timeStamp == 0) {
-        PRINT_ERROR("Intervall not initialized. Call begin() before wait(),", NULL);
+        PRINT_ERROR(F("Intervall not initialized. Call begin() before wait()"), NULL);
         return Intervall::Failure;
     }
 
@@ -129,7 +129,7 @@ Intervall::Result_t Intervall::wait(bool (*userFunc)(void)) {
         }
     }
     else {
-        PRINT_WARNING("Intervall overflow. Intervall: %u  current: %u", period, delta);
+        PRINT_WARNING(F("Intervall overflow. Intervall: %u  current: %u"), period, delta);
 
         result = Overflow;
     }
@@ -185,7 +185,7 @@ void Intervall::resetStatistics(void) {
 //!
 //!
 void Intervall::printStatistics(void) {
-    PRINT_INFO("Intervall statistics: Period: %u  Min: %u  Max: %u  Average: %u", period, getMinPeriod(),
+    PRINT_INFO(F("Intervall statistics: Period: %u  Min: %u  Max: %u  Average: %u"), period, getMinPeriod(),
                getMaxPeriod(), getAvgPeriod());
 }
 

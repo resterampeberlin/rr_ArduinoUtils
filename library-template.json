@@ -27,6 +27,11 @@
         "espressif8266",
         "espressif32"
     ],
+    "dependencies": [
+        {
+            "name": "Wire"
+        }
+    ],
     "examples": [
         {
             "name": "Debug output",
