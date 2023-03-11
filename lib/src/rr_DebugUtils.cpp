@@ -49,7 +49,7 @@ const char* GITversion(void) {
 //! set output stream and debug level to default values
 //!
 DebugUtils::DebugUtils() {
-    setDebugOutputStream(&Serial);
+    setDebugOutput(&Serial);
     setDebugLevel(Verbose);
 }
 
@@ -57,10 +57,10 @@ void DebugUtils::beginSerial(unsigned long baud, unsigned timeout) {
     unsigned loop = 0;
 
     // Init serial communication
-    Serial.begin(baud);
+    output->begin(baud);
 
 #ifdef ARDUINO
-    while (!Serial && loop < timeout) {
+    while (!*output && loop < timeout) {
         delay(100);
         loop++;
     }
@@ -229,8 +229,8 @@ void DebugUtils::setDebugLevel(DebugLevel_t level) {
 //!
 //! @param stream pointer to the stream
 //!
-void DebugUtils::setDebugOutputStream(Stream* stream) {
-    output = stream;
+void DebugUtils::setDebugOutput(HardwareSerial* toSerial) {
+    output = toSerial;
 }
 
 //!

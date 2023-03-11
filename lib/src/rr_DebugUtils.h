@@ -71,7 +71,7 @@ class DebugUtils {
     DebugUtils();
 
     //! start output to serial
-    void beginSerial(unsigned long baud = 115200, unsigned timeout = 500);
+    void beginSerial(unsigned long baud = 115200, unsigned timeout = 50);
 
     //! generic print routines
     bool print(DebugLevel_t level, const char* location, unsigned line, const char* fmt, ...);
@@ -80,15 +80,15 @@ class DebugUtils {
     void setTab(unsigned column);
     void setTabs(unsigned columns[], unsigned count);
     void setDebugLevel(DebugLevel_t level);
-    void setDebugOutputStream(Stream* stream);
+    void setDebugOutput(HardwareSerial* toSerial);
 
   private:
-    DebugLevel_t currentLevel;
-    Stream*      output;
+    DebugLevel_t    currentLevel;
+    HardwareSerial* output;
 
-    bool         shouldPrint(DebugLevel_t level);
-    const char*  getInfoMarking(DebugLevel_t level);
-    const char*  getTextMarking(DebugLevel_t level);
+    bool            shouldPrint(DebugLevel_t level);
+    const char*     getInfoMarking(DebugLevel_t level);
+    const char*     getTextMarking(DebugLevel_t level);
 };
 
 // following functions are only available/executed in a debug build
