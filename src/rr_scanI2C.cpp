@@ -24,11 +24,13 @@
 #include "rr_DebugUtils.h"
 
 //!
-//! scan I2C bus and show devices
+//! @brief scan I2C bus and show devices
 //!
-void scanI2C(void) {
-    byte error, address; // variable for error and I2C address
-    int  nDevices;
+//! @return uint8_t number of found devices
+//!
+uint8_t scanI2C(void) {
+    byte    error, address; // variable for error and I2C address
+    uint8_t nDevices;
 
     PRINT_INFO(F("Scanning..."), NULL);
 
@@ -52,4 +54,6 @@ void scanI2C(void) {
         PRINT_WARNING(F("No I2C devices found"), NULL);
     else
         PRINT_INFO(F("done"), NULL);
+
+    return nDevices;
 }

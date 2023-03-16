@@ -79,8 +79,10 @@ class DebugUtils {
 
     void setTab(unsigned column);
     void setTabs(unsigned columns[], unsigned count);
-    void setDebugLevel(DebugLevel_t level);
-    void setDebugOutput(HardwareSerial* toSerial);
+    void clearTabs(void);
+
+    void setLevel(DebugLevel_t level);
+    void setOutput(HardwareSerial* toSerial);
 
   private:
     DebugLevel_t    currentLevel;
