@@ -18,7 +18,7 @@
 #include "rr_DebugUtils.h"
 
 void test_level_none(void) {
-    Debug.setDebugLevel(DebugUtils::None);
+    Debug.setLevel(DebugUtils::None);
 
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::None, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, "Test", NULL));
@@ -36,7 +36,7 @@ void test_level_none(void) {
 }
 
 void test_level_error(void) {
-    Debug.setDebugLevel(DebugUtils::Error);
+    Debug.setLevel(DebugUtils::Error);
 
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::None, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, "Test", NULL));
@@ -54,7 +54,7 @@ void test_level_error(void) {
 }
 
 void test_level_warning(void) {
-    Debug.setDebugLevel(DebugUtils::Warning);
+    Debug.setLevel(DebugUtils::Warning);
 
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::None, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, "Test", NULL));
@@ -72,7 +72,7 @@ void test_level_warning(void) {
 }
 
 void test_level_info(void) {
-    Debug.setDebugLevel(DebugUtils::Info);
+    Debug.setLevel(DebugUtils::Info);
 
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::None, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, "Test", NULL));
@@ -90,7 +90,7 @@ void test_level_info(void) {
 }
 
 void test_level_debug(void) {
-    Debug.setDebugLevel(DebugUtils::Debug);
+    Debug.setLevel(DebugUtils::Debug);
 
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::None, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, "Test", NULL));
@@ -108,7 +108,7 @@ void test_level_debug(void) {
 }
 
 void test_level_verbose(void) {
-    Debug.setDebugLevel(DebugUtils::Verbose);
+    Debug.setLevel(DebugUtils::Verbose);
 
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::None, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, "Test", NULL));

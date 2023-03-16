@@ -17,8 +17,6 @@
 //! See https://github.com/arduino-libraries/Arduino_DebugUtils
 //!
 
-// #ifdef ARDUINO
-
 #include <Arduino.h>
 #include <stdarg.h>
 
@@ -49,20 +47,27 @@ const char* GITversion(void) {
 //! set output stream and debug level to default values
 //!
 DebugUtils::DebugUtils() {
-    setDebugOutput(&Serial);
-    setDebugLevel(Verbose);
+#ifdef ARDUINO
+    setOutput(&Serial);
+#else
+    setOutput(NULL);
+#endif
+
+    setLevel(Verbose);
 }
 
 void DebugUtils::beginSerial(unsigned long baud, unsigned timeout) {
     unsigned loop = 0;
 
-    // Init serial communication
-    output->begin(baud);
-
 #ifdef ARDUINO
-    while (!*output && loop < timeout) {
-        delay(100);
-        loop++;
+    if (output) {
+        // Init serial communication
+        output->begin(baud);
+
+        while (!*output && loop < timeout) {
+            delay(100);
+            loop++;
+        }
     }
 #endif
 }
@@ -134,15 +139,16 @@ bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, 
 
         // print diagnostic information
         snprintf(text, sizeof(text), "%s %s:%d" ANSI_NORMAL "\t", getInfoMarking(level), location, line);
+
         output->print(text);
         output->print(getTextMarking(level));
 
         // print formatted text
         va_start(args, fmt);
         vsnprintf(text, sizeof(text), fmt, args);
-        output->print(text);
         va_end(args);
 
+        output->print(text);
         output->println(ANSI_NORMAL);
 
         return true;
@@ -166,9 +172,9 @@ bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, 
         // print formatted text
         va_start(args, fmt);
         vsnprintf(text, sizeof(text), fmt_str.c_str(), args);
-        output->print(text);
         va_end(args);
 
+        output->print(text);
         output->println(ANSI_NORMAL);
 
         return true;
@@ -209,9 +215,21 @@ void DebugUtils::setTabs(unsigned columns[], unsigned count) {
 
             snprintf(text, sizeof(text), ANSI_ESC "[%dC" ANSI_SETTAB, columns[loop] - lastTab);
             output->println(text);
+
+            lastTab = columns[loop];
         }
 
         output->println();
+    }
+}
+
+//!
+//! @brief clear all tabs in output
+//!
+//!
+void DebugUtils::clearTabs(void) {
+    if (output) {
+        output->print(ANSI_CLEARTABS);
     }
 }
 
@@ -220,7 +238,7 @@ void DebugUtils::setTabs(unsigned columns[], unsigned count) {
 //!
 //! @param level the maximum level
 //!
-void DebugUtils::setDebugLevel(DebugLevel_t level) {
+void DebugUtils::setLevel(DebugLevel_t level) {
     currentLevel = level;
 }
 
@@ -229,7 +247,7 @@ void DebugUtils::setDebugLevel(DebugLevel_t level) {
 //!
 //! @param stream pointer to the stream
 //!
-void DebugUtils::setDebugOutput(HardwareSerial* toSerial) {
+void DebugUtils::setOutput(HardwareSerial* toSerial) {
     output = toSerial;
 }
 

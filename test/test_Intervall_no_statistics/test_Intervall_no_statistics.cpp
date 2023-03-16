@@ -59,7 +59,7 @@ void test_overflow(void) {
     }
 }
 
-void setup() {
+int runUnityTests(void) {
     Debug.beginSerial(115200);
 
     delay(2000);
@@ -70,8 +70,64 @@ void setup() {
     RUN_TEST(test_normal);
     RUN_TEST(test_overflow);
 
-    UNITY_END();
+    return UNITY_END();
+}
+
+#ifdef ARDUINO
+
+// embedded environment
+void setup() {
+    delay(2000);
+
+    runUnityTests();
 }
 
 void loop() {
 }
+
+#else
+    #include <chrono>
+    #include <unistd.h>
+
+using namespace std::chrono;
+using namespace fakeit;
+
+long myRandom(long a, long b) {
+    long r = rand() % (b - a + 1) + a;
+
+    // TEST_PRINTF("r = %d", r);
+
+    return r;
+}
+
+unsigned long myMillis(void) {
+    unsigned long t = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
+
+    // TEST_PRINTF("t = %d", t);
+
+    return t;
+}
+
+void mySleep(unsigned long t) {
+    usleep(t * 1000);
+}
+
+// native environment
+int main() {
+    When(OverloadedMethod(ArduinoFake(), random, long(long, long))).AlwaysDo([](long a, long b) -> long {
+        return myRandom(a, b);
+    });
+    When(Method(ArduinoFake(), delay)).AlwaysDo([](unsigned long t) -> void { return mySleep(t); });
+    When(Method(ArduinoFake(), millis)).AlwaysDo([](void) -> unsigned long { return myMillis(); });
+
+    When(Method(ArduinoFake(), yield)).AlwaysReturn();
+
+    When(OverloadedMethod(ArduinoFake(Serial), begin, void(unsigned long))).AlwaysReturn();
+    When(OverloadedMethod(ArduinoFake(Serial), println, size_t())).AlwaysReturn();
+    When(OverloadedMethod(ArduinoFake(Serial), println, size_t(const char*))).AlwaysReturn();
+    When(OverloadedMethod(ArduinoFake(Serial), print, size_t(const char*))).AlwaysReturn();
+
+    return runUnityTests();
+}
+
+#endif

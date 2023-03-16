@@ -21,4 +21,4 @@
 #define ARRAY_SIZE(array) (sizeof(array) / sizeof(array[0]))
 
 //! scan I2C bus and print result
-void scanI2C(void);
+uint8_t scanI2C(void);
