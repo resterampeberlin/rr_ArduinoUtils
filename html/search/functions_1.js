@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['debugutils_0',['DebugUtils',['../class_debug_utils.html#aa3f28b44719033921b5a53f043bc54ca',1,'DebugUtils']]]
+  ['cleartabs_0',['clearTabs',['../class_debug_utils.html#a8513f833da76b11cac6f93749d39c1a7',1,'DebugUtils']]]
 ];

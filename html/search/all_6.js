@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_2ecpp_0',['main.cpp',['../src_2main_8cpp.html',1,'']]]
+  ['print_0',['print',['../class_debug_utils.html#adf4ed4cf67c47bf3cdfd110eb5bf4401',1,'DebugUtils']]],
+  ['printstatistics_1',['printStatistics',['../class_intervall.html#a7f4558309b41f39b188c785193ba8dbd',1,'Intervall']]]
 ];

@@ -9,10 +9,11 @@ var class_debug_utils =
       [ "Verbose", "class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a96601e4cb50924b4d10c65a010cc2d29", null ]
     ] ],
     [ "DebugUtils", "class_debug_utils.html#aa3f28b44719033921b5a53f043bc54ca", null ],
-    [ "beginSerial", "class_debug_utils.html#a6a01d942c1a74599fd13e36deef85c10", null ],
-    [ "print", "class_debug_utils.html#a3bc936b775176a44a92bf13026bc0ea0", null ],
-    [ "setDebugLevel", "class_debug_utils.html#a299959f732465c2c81416f5aec59bfe2", null ],
-    [ "setDebugOutputStream", "class_debug_utils.html#a437d5fffd1c4bc3ca39d54969249da9a", null ],
+    [ "beginSerial", "class_debug_utils.html#ae857c7d0cfa2b4276ca0c082df1a7f5a", null ],
+    [ "clearTabs", "class_debug_utils.html#a8513f833da76b11cac6f93749d39c1a7", null ],
+    [ "print", "class_debug_utils.html#adf4ed4cf67c47bf3cdfd110eb5bf4401", null ],
+    [ "setLevel", "class_debug_utils.html#aa113244fc3e8022a947a08c2778f9a5a", null ],
+    [ "setOutput", "class_debug_utils.html#a338fa912db4883da4aeae9206eea325c", null ],
     [ "setTab", "class_debug_utils.html#a87be4fff0e04f607812014b6301973d5", null ],
     [ "setTabs", "class_debug_utils.html#afbfac38886bbe25657a83d080371f7f0", null ]
 ];
