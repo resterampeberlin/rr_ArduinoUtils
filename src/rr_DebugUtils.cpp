@@ -2,7 +2,7 @@
 //! @author M. Nickels
 //! @brief Debug utilities for Arduino development
 //!
-//! @copyright Copyright (c) 2022
+//! @copyright Copyright (c) 2023
 //!
 //! This file is part of the Library "rr_ArduinoUtils".
 //!
