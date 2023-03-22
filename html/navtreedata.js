@@ -25,15 +25,13 @@
 var NAVTREE =
 [
   [ "RRArduinoUtilities", "index.html", [
+    [ "Purpose", "index.html#autotoc_md0", null ],
+    [ "Installation", "index.html#autotoc_md1", null ],
+    [ "Generate Doxygen source code documentation", "index.html#autotoc_md2", null ],
+    [ "Create a PlatformIO library and package it", "index.html#autotoc_md3", null ],
+    [ "Documentation", "index.html#autotoc_md4", null ],
+    [ "Credits", "index.html#autotoc_md5", null ],
     [ "LICENSE", "md__l_i_c_e_n_s_e.html", null ],
-    [ "README", "md__r_e_a_d_m_e.html", [
-      [ "Purpose", "md__r_e_a_d_m_e.html#autotoc_md0", null ],
-      [ "Installation", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Generate Doxygen source code documentation", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-      [ "Create a PlatformIO library and package it", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
-      [ "Documentation", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
-      [ "Credits", "md__r_e_a_d_m_e.html#autotoc_md5", null ]
-    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
