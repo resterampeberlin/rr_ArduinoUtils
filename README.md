@@ -15,8 +15,11 @@ Additionally it provides an interface to show to git version and build of a prog
 
 ![Screenshot](img/Screenshot.png)
 
-- **rr_Intervall** provied an interface for task which should be executed periodically in a programm. Additionally it provides
+- **rr_Intervall** provides an interface for task which should be executed periodically in a programm. Additionally it provides
 statistical functions to analyse program behauviour.
+
+- **rr_Common** provides useful macros for range checking and other debug tasks like printing the IDs connected
+  to a I2C-bus.
 
 - **documentation** provides a build target to produce source code documentation with doxgen. 
 It is invoked with `pio run - t doc`
