@@ -41,13 +41,13 @@ def generate(source, target, env):
 
         # feed values into doxygen
         command = "(cat Doxyfile; "
-        command = command + "echo \"PROJECT_NUMBER=" + projectNumber + "\";"
+        command = command + "echo PROJECT_NUMBER=\"" + projectNumber + "\";"
 
         if projectBrief:
-            command = command + "echo \"PROJECT_BRIEF=" + projectBrief + "\";"
+            command = command + "echo PROJECT_BRIEF=\"" + projectBrief + "\";"
 
         if projectName:
-            command = command + "echo \"PROJECT_NAME=" + projectName + "\";"
+            command = command + "echo PROJECT_NAME=\"" + projectName + "\";"
 
         command = command + " ) | doxygen -"
 
