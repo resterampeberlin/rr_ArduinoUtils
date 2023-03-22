@@ -18,7 +18,7 @@ import subprocess
 
 
 def short():
-    ret = subprocess.run(["git", "describe", "--abbrev=0"],
+    ret = subprocess.run(["git", "describe", "--abbrev=0","--tags"],
                          stdout=subprocess.PIPE, text=True)
     version = ret.stdout.strip()
 
@@ -32,7 +32,7 @@ def short():
 
 
 def long():
-    ret = subprocess.run(["git", "describe", "--dirty"],
+    ret = subprocess.run(["git", "describe", "--dirty","--tags"],
                          stdout=subprocess.PIPE, text=True)
     version = ret.stdout.strip()
 
