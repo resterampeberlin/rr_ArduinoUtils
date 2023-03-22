@@ -2,7 +2,7 @@
 //! @author M. Nickels
 //! @brief Main file for the Library "rr_ArduinoUtils"
 //!
-//! @copyright Copyright (c) 2021
+//! @copyright Copyright (c) 2023
 //!
 //! This work is licensed under the
 //!

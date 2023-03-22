@@ -2,7 +2,7 @@
 //! @author M. Nickels
 //! @brief unit test. Run tests with 'pio test -e test_no_statistics'
 //!
-//! @copyright Copyright (c) 2022
+//! @copyright Copyright (c) 2023
 //!
 //! This file is part of the Application "rr_ArduinoUtils".
 //!

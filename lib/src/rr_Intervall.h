@@ -2,7 +2,7 @@
 //! @author M. Nickels
 //! @brief usefull class to work with intervalls/periodic execution
 //!
-//! @copyright Copyright (c) 2022
+//! @copyright Copyright (c) 2023
 //!
 //! This file is part of the Application "rr_ArduinoUtils".
 //!
