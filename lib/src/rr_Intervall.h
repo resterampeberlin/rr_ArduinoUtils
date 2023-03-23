@@ -4,7 +4,7 @@
 //!
 //! @copyright Copyright (c) 2023
 //!
-//! This file is part of the Application "rr_ArduinoUtils".
+//! This file is part of the library "rr_ArduinoUtils".
 //!
 //!      Creative Commons Attribution-ShareAlike 4.0 International License.
 //!
@@ -17,12 +17,15 @@
 #include <stddef.h>
 
 //! own includes
-// #include "rr_common.h"
 
+//!
+//! @brief this class implements the intervall functions
+//!
+//!
 class Intervall {
 
   public:
-    typedef unsigned int Period_t;
+    typedef unsigned int Period_t; //!< current period in milliseconds
 
     //! wait results
     typedef enum { Success, Abort, Overflow, Failure } Result_t;
