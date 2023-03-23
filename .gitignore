@@ -9,7 +9,7 @@
 docs
 
 # generated files
-lib/library.json
+# lib/library.json
 
 # python
 __pycache__
