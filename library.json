@@ -1,0 +1,54 @@
+{
+    "authors": [
+        {
+            "email": "markusnickels@mac.com",
+            "name": "Markus Nickels"
+        }
+    ],
+    "build": {
+        "extraScript": "rr_ArduinoUtils.py",
+        "flags": "!python3 -c 'import gitVersion; gitVersion.cppDefine()'"
+    },
+    "dependencies": [
+        {
+            "name": "Wire"
+        }
+    ],
+    "description": "A library including useful utilities for Arduino development",
+    "examples": [
+        {
+            "base": "examples/rr_DebugUtils",
+            "files": [
+                "platformio.ini",
+                "main.cpp"
+            ],
+            "name": "Debug output"
+        },
+        {
+            "base": "examples/rr_Intervall",
+            "files": [
+                "platformio.ini",
+                "main.cpp"
+            ],
+            "name": "Intervall"
+        }
+    ],
+    "frameworks": "*",
+    "keywords": [
+        "Debug",
+        "Logging"
+    ],
+    "license": "CC-BY-SA-4.0",
+    "name": "RRArduinoUtilities",
+    "platforms": [
+        "atmelavr",
+        "raspberrypi",
+        "espressif8266",
+        "espressif32"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/resterampeberlin/rr_ArduinoUtils.git"
+    },
+    "version": "1.0.2"
+}
