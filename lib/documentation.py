@@ -19,14 +19,13 @@ import json
 
 # generate documentation
 
-
 def generate(source, target, env):
+    projectBrief = ""
+    projectName = ""
+    projectNumber = gitVersion.short()
+    
     if os.path.isfile(os.path.join(env['PROJECT_DIR'], "Doxyfile")):
         template = "library-template.json"
-
-        projectBrief = ""
-        projectName = ""
-        projectNumber = gitVersion.short()
 
         # extract information from libary-template.json
         if os.path.isfile(template):
@@ -38,21 +37,19 @@ def generate(source, target, env):
 
             if "description" in data:
                 projectBrief = data["description"]
+    
+    # feed values into doxygen
+    command = "(cat Doxyfile; "
+    command = command + "echo PROJECT_NUMBER=\"" + projectNumber + "\";"
 
-        # feed values into doxygen
-        command = "(cat Doxyfile; "
-        command = command + "echo PROJECT_NUMBER=\"" + projectNumber + "\";"
+    if projectBrief:
+        command = command + "echo PROJECT_BRIEF=\"" + projectBrief + "\";"
 
-        if projectBrief:
-            command = command + "echo PROJECT_BRIEF=\"" + projectBrief + "\";"
+    if projectName:
+        command = command + "echo PROJECT_NAME=\"" + projectName + "\";"
 
-        if projectName:
-            command = command + "echo PROJECT_NAME=\"" + projectName + "\";"
+    command = command + " ) | doxygen -"
 
-        command = command + " ) | doxygen -"
+    print("Creating documentation ...")
 
-        print("Creating documentation ...")
-
-        env.Execute(command)
-    else:
-        print("No Doxyfile found")
+    env.Execute(command)

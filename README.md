@@ -45,7 +45,7 @@ The following settings in the 'Doxyfile' will be automatically set with this com
 - **PROJECT_NAME** will be replaced by library name in `library-template.json`
 
 The last two points are only applicable if you build a library. 
-For a normal programm you should set those values in `Doxyfile`
+For a project you should set those values in `Doxyfile`
 
 # Create a PlatformIO library and package it
 
