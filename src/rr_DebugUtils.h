@@ -4,7 +4,7 @@
 //!
 //! @copyright Copyright (c) 2023
 //!
-//! This file is part of the Application "rr_ArduinoUtils".
+//! This file is part of the library "rr_ArduinoUtils".
 //!
 //!      Creative Commons Attribution-ShareAlike 4.0 International License.
 //!
@@ -20,7 +20,6 @@
 #include <Arduino.h>
 
 //! own includes
-// #include "rr_common.h"
 
 //! ANSI escape codes for the terminal window
 //! use "monitor_flags = --raw" in platformio.ini
@@ -61,6 +60,10 @@
 
 const char* GITversion(void);
 
+//!
+//! @brief this class encapsulates the debug output functions
+//!
+//!
 class DebugUtils {
 
   public:

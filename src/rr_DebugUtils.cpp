@@ -131,7 +131,17 @@ const char* DebugUtils::getTextMarking(DebugLevel_t level) {
     return result;
 }
 
-//! generic print routine
+//!
+//! @brief generic print routine
+//!
+//! @param level debug level
+//! @param location where does the print come from (file, function)
+//! @param line line number
+//! @param fmt format specification
+//! @param ... parameters
+//! @return true if parameter level is lower/equal current debug level
+//! @return false otherwise (message was not printed)
+//!
 bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, const char* fmt, ...) {
     if (shouldPrint(level) && output) {
         va_list args;
@@ -158,6 +168,17 @@ bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, 
     }
 }
 
+//!
+//! @brief generic print routine
+//!
+//! @param level debug level
+//! @param location where does the print come from (file, function)
+//! @param line line number
+//! @param fmt format specification
+//! @param ... parameters
+//! @return true if parameter level is lower/equal current debug level
+//! @return false otherwise (message was not printed)
+//!
 bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, const __FlashStringHelper* fmt, ...) {
     if (shouldPrint(level) && output) {
         va_list args;
@@ -245,7 +266,7 @@ void DebugUtils::setLevel(DebugLevel_t level) {
 //!
 //! @brief assign an output stream
 //!
-//! @param stream pointer to the stream
+//! @param toSerial pointer to the serial port
 //!
 void DebugUtils::setOutput(HardwareSerial* toSerial) {
     output = toSerial;
