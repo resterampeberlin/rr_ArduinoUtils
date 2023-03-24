@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getavgperiod_0',['getAvgPeriod',['../class_intervall.html#a3262f748c09049057c58528db5e1ef03',1,'Intervall']]],
-  ['getmaxperiod_1',['getMaxPeriod',['../class_intervall.html#a4f1c8d903b30371f47a7febb65c095c0',1,'Intervall']]],
-  ['getminperiod_2',['getMinPeriod',['../class_intervall.html#af6ffd7df59f8451686853bc9220c75f6',1,'Intervall']]]
+  ['debug_0',['Debug',['../class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984ae2aa1e5db251a2b127cff8c339072e55',1,'DebugUtils']]],
+  ['debuglevel_5ft_1',['DebugLevel_t',['../class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984',1,'DebugUtils']]],
+  ['debugutils_2',['DebugUtils',['../class_debug_utils.html',1,'DebugUtils'],['../class_debug_utils.html#aa3f28b44719033921b5a53f043bc54ca',1,'DebugUtils::DebugUtils()']]]
 ];

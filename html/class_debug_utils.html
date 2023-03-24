@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="Logo180x180.png"/></td>
   <td id="projectalign">
-   <div id="projectname">RRArduinoUtilities<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">RRArduinoUtilities<span id="projectnumber">&#160;1.1.0</span>
    </div>
    <div id="projectbrief">A library including useful utilities for Arduino development</div>
   </td>
@@ -109,13 +109,13 @@ $(document).ready(function(){initNavTree('class_debug_utils.html',''); initResiz
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ab7b7e3348a6172e00bad2822591e6984"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984">DebugLevel_t</a> { <br />
-&#160;&#160;<b>None</b>
-, <b>Error</b>
-, <b>Warning</b>
-, <b>Info</b>
+&#160;&#160;<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984ab74a86baef9102edebb608777e3ba59c">None</a>
+, <a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a0ef496b2f40ce3dd0b3fa377929fad80">Error</a>
+, <a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a7a876f1c73c3ba06a04e90d494ac945e">Warning</a>
+, <a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a06cfb2f14457a811c76b7fe58fef1981">Info</a>
 , <br />
-&#160;&#160;<b>Debug</b>
-, <b>Verbose</b>
+&#160;&#160;<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984ae2aa1e5db251a2b127cff8c339072e55">Debug</a>
+, <a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a96601e4cb50924b4d10c65a010cc2d29">Verbose</a>
 <br />
  }</td></tr>
 <tr class="memdesc:ab7b7e3348a6172e00bad2822591e6984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Available reporting levels.  <a href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984">More...</a><br /></td></tr>
@@ -124,14 +124,11 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa3f28b44719033921b5a53f043bc54ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_debug_utils.html#aa3f28b44719033921b5a53f043bc54ca">DebugUtils</a> ()</td></tr>
-<tr class="memdesc:aa3f28b44719033921b5a53f043bc54ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="memdesc:aa3f28b44719033921b5a53f043bc54ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Debug Utils:: Debug Utils object set output stream and debug level to default values.  <br /></td></tr>
 <tr class="separator:aa3f28b44719033921b5a53f043bc54ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae857c7d0cfa2b4276ca0c082df1a7f5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_debug_utils.html#ae857c7d0cfa2b4276ca0c082df1a7f5a">beginSerial</a> (unsigned long baud=115200, unsigned timeout=50)</td></tr>
 <tr class="memdesc:ae857c7d0cfa2b4276ca0c082df1a7f5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">start output to serial  <br /></td></tr>
 <tr class="separator:ae857c7d0cfa2b4276ca0c082df1a7f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf4ed4cf67c47bf3cdfd110eb5bf4401"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_debug_utils.html#adf4ed4cf67c47bf3cdfd110eb5bf4401">print</a> (<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984">DebugLevel_t</a> level, const char *location, unsigned line, const char *fmt,...)</td></tr>
-<tr class="memdesc:adf4ed4cf67c47bf3cdfd110eb5bf4401"><td class="mdescLeft">&#160;</td><td class="mdescRight">generic print routines  <br /></td></tr>
-<tr class="separator:adf4ed4cf67c47bf3cdfd110eb5bf4401"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a877265405fa59e4574c64afde2967a15"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_debug_utils.html#a877265405fa59e4574c64afde2967a15">print</a> (<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984">DebugLevel_t</a> level, const char *location, unsigned line, const __FlashStringHelper *fmt,...)</td></tr>
 <tr class="memdesc:a877265405fa59e4574c64afde2967a15"><td class="mdescLeft">&#160;</td><td class="mdescRight">generic print routine  <br /></td></tr>
 <tr class="separator:a877265405fa59e4574c64afde2967a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,7 +151,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>this class encapsulates the debug output functions </p>
 
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00067">67</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00074">74</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ab7b7e3348a6172e00bad2822591e6984" name="ab7b7e3348a6172e00bad2822591e6984"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7b7e3348a6172e00bad2822591e6984">&#9670;&#160;</a></span>DebugLevel_t</h2>
@@ -169,8 +166,22 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Available reporting levels. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab7b7e3348a6172e00bad2822591e6984ab74a86baef9102edebb608777e3ba59c" name="ab7b7e3348a6172e00bad2822591e6984ab74a86baef9102edebb608777e3ba59c"></a>None&#160;</td><td class="fielddoc"><p>no output at all </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab7b7e3348a6172e00bad2822591e6984a0ef496b2f40ce3dd0b3fa377929fad80" name="ab7b7e3348a6172e00bad2822591e6984a0ef496b2f40ce3dd0b3fa377929fad80"></a>Error&#160;</td><td class="fielddoc"><p>error messages, appear in red </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab7b7e3348a6172e00bad2822591e6984a7a876f1c73c3ba06a04e90d494ac945e" name="ab7b7e3348a6172e00bad2822591e6984a7a876f1c73c3ba06a04e90d494ac945e"></a>Warning&#160;</td><td class="fielddoc"><p>warning messages </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab7b7e3348a6172e00bad2822591e6984a06cfb2f14457a811c76b7fe58fef1981" name="ab7b7e3348a6172e00bad2822591e6984a06cfb2f14457a811c76b7fe58fef1981"></a>Info&#160;</td><td class="fielddoc"><p>general information </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab7b7e3348a6172e00bad2822591e6984ae2aa1e5db251a2b127cff8c339072e55" name="ab7b7e3348a6172e00bad2822591e6984ae2aa1e5db251a2b127cff8c339072e55"></a>Debug&#160;</td><td class="fielddoc"><p>debug message </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab7b7e3348a6172e00bad2822591e6984a96601e4cb50924b4d10c65a010cc2d29" name="ab7b7e3348a6172e00bad2822591e6984a96601e4cb50924b4d10c65a010cc2d29"></a>Verbose&#160;</td><td class="fielddoc"><p>everything else </p>
+</td></tr>
+</table>
 
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00071">71</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00080">80</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
 
 </div>
 </div>
@@ -190,10 +201,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor. </p>
 <p>Construct a new Debug Utils:: Debug Utils object set output stream and debug level to default values. </p>
 
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00049">49</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00039">39</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -226,7 +236,7 @@ Public Member Functions</h2></td></tr>
 
 <p>start output to serial </p>
 
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00059">59</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00049">49</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -248,12 +258,12 @@ Public Member Functions</h2></td></tr>
 
 <p>clear all tabs in output </p>
 
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00251">251</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00164">164</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a877265405fa59e4574c64afde2967a15" name="a877265405fa59e4574c64afde2967a15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a877265405fa59e4574c64afde2967a15">&#9670;&#160;</a></span>print() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a877265405fa59e4574c64afde2967a15">&#9670;&#160;</a></span>print()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -311,71 +321,7 @@ Public Member Functions</h2></td></tr>
 <dd>
 false otherwise (message was not printed) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00182">182</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
-
-</div>
-</div>
-<a id="adf4ed4cf67c47bf3cdfd110eb5bf4401" name="adf4ed4cf67c47bf3cdfd110eb5bf4401"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf4ed4cf67c47bf3cdfd110eb5bf4401">&#9670;&#160;</a></span>print() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool DebugUtils::print </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984">DebugLevel_t</a>&#160;</td>
-          <td class="paramname"><em>level</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>location</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>line</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>fmt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>generic print routines </p>
-<p>generic print routine</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">level</td><td>debug level </td></tr>
-    <tr><td class="paramname">location</td><td>where does the print come from (file, function) </td></tr>
-    <tr><td class="paramname">line</td><td>line number </td></tr>
-    <tr><td class="paramname">fmt</td><td>format specification </td></tr>
-    <tr><td class="paramname">...</td><td>parameters </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if parameter level is lower/equal current debug level </dd>
-<dd>
-false otherwise (message was not printed) </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00145">145</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00110">110</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -403,7 +349,7 @@ false otherwise (message was not printed) </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00262">262</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00170">170</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -431,7 +377,7 @@ false otherwise (message was not printed) </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00271">271</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00174">174</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -459,7 +405,7 @@ false otherwise (message was not printed) </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00213">213</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00136">136</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
 
 </div>
 </div>
@@ -498,7 +444,7 @@ false otherwise (message was not printed) </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00230">230</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00147">147</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
 
 </div>
 </div>

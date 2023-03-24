@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['resetstatistics_0',['resetStatistics',['../class_intervall.html#a2db1a3e3a059ea429d3488a479fbb866',1,'Intervall']]]
+  ['print_0',['print',['../class_debug_utils.html#a877265405fa59e4574c64afde2967a15',1,'DebugUtils']]],
+  ['printstatistics_1',['printStatistics',['../class_intervall.html#a7f4558309b41f39b188c785193ba8dbd',1,'Intervall']]]
 ];

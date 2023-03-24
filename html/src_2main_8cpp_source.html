@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="Logo180x180.png"/></td>
   <td id="projectalign">
-   <div id="projectname">RRArduinoUtilities<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">RRArduinoUtilities<span id="projectnumber">&#160;1.1.0</span>
    </div>
    <div id="projectbrief">A library including useful utilities for Arduino development</div>
   </td>
@@ -96,37 +96,57 @@ $(document).ready(function(){initNavTree('src_2main_8cpp_source.html',''); initR
   <div class="headertitle"><div class="title">main.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<a href="src_2main_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;rr_DebugUtils.h&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span> setup() {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// start debugging on serial</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    Debug.beginSerial();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// set a tab on column 30 to increase monitor output formatting</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    Debug.setTab(15);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    PRINT_BUILD();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    PRINT_VERBOSE(<span class="stringliteral">&quot;Verbose&quot;</span>, NULL);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    PRINT_DEBUG(<span class="stringliteral">&quot;Debug&quot;</span>, NULL);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    PRINT_INFO(<span class="stringliteral">&quot;Info&quot;</span>, NULL);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    PRINT_WARNING(<span class="stringliteral">&quot;Warning&quot;</span>, NULL);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    PRINT_ERROR(<span class="stringliteral">&quot;Error&quot;</span>, NULL);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    PRINT_DEBUG(<span class="stringliteral">&quot;An integer: %d  unsigned: %u  float: %f   string: %s&quot;</span>, -1234, 2345, 5678.9, <span class="stringliteral">&quot;a string&quot;</span>);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordtype">void</span> loop() {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// own includes</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="rr___common_8h.html">rr_Common.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="rr___debug_utils_8h.html">rr_DebugUtils.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="rr___intervall_8h.html">rr_Intervall.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="src_2main_8cpp.html#a66fe08888d132ffd37ed13b44b0edf5b">   22</a></span><a class="code hl_class" href="class_intervall.html">Intervall</a> intervall; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="src_2main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">   27</a></span><span class="keywordtype">void</span> setup() {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// start debugging on serial</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    Debug.beginSerial();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// set a tab on column 30 to increase monitor output formatting</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    Debug.setTab(15);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_define" href="rr___debug_utils_8h.html#ada1bfce06c076927f6183b50ec33780e">PRINT_BUILD</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    PRINT_VERBOSE(<span class="stringliteral">&quot;Verbose&quot;</span>, NULL);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    PRINT_DEBUG(<span class="stringliteral">&quot;Debug&quot;</span>, NULL);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    PRINT_INFO(<span class="stringliteral">&quot;Info&quot;</span>, NULL);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    PRINT_WARNING(<span class="stringliteral">&quot;Warning&quot;</span>, NULL);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    PRINT_ERROR(<span class="stringliteral">&quot;Error&quot;</span>, NULL);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    PRINT_DEBUG(<span class="stringliteral">&quot;An integer: %d  unsigned: %u  float: %f   string: %s&quot;</span>, -1234, 2345, 5678.9, <span class="stringliteral">&quot;a string&quot;</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    intervall.<a class="code hl_function" href="class_intervall.html#a9ebdae6cbbcf8b42b8216f99f20a3a89">begin</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    delay(100);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    intervall.<a class="code hl_function" href="class_intervall.html#a3eea7f5219049fb6b5c91b198479aed1">wait</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="src_2main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">   54</a></span><span class="keywordtype">void</span> loop() {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="ttc" id="aclass_intervall_html"><div class="ttname"><a href="class_intervall.html">Intervall</a></div><div class="ttdoc">this class implements the intervall functions</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8h_source.html#l00024">rr_Intervall.h:24</a></div></div>
+<div class="ttc" id="aclass_intervall_html_a3eea7f5219049fb6b5c91b198479aed1"><div class="ttname"><a href="class_intervall.html#a3eea7f5219049fb6b5c91b198479aed1">Intervall::wait</a></div><div class="ttdeci">Result_t wait(bool(*userFunc)(void)=NULL)</div><div class="ttdoc">wait until the next intervall shall be started</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8cpp_source.html#l00067">rr_Intervall.cpp:67</a></div></div>
+<div class="ttc" id="aclass_intervall_html_a9ebdae6cbbcf8b42b8216f99f20a3a89"><div class="ttname"><a href="class_intervall.html#a9ebdae6cbbcf8b42b8216f99f20a3a89">Intervall::begin</a></div><div class="ttdeci">void begin(void)</div><div class="ttdoc">initialize an intervall.</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8cpp_source.html#l00056">rr_Intervall.cpp:56</a></div></div>
+<div class="ttc" id="arr___common_8h_html"><div class="ttname"><a href="rr___common_8h.html">rr_Common.h</a></div><div class="ttdoc">Debug utilities for Arduino development.</div></div>
+<div class="ttc" id="arr___debug_utils_8h_html"><div class="ttname"><a href="rr___debug_utils_8h.html">rr_DebugUtils.h</a></div><div class="ttdoc">Debug utilities for Arduino development.</div></div>
+<div class="ttc" id="arr___debug_utils_8h_html_ada1bfce06c076927f6183b50ec33780e"><div class="ttname"><a href="rr___debug_utils_8h.html#ada1bfce06c076927f6183b50ec33780e">PRINT_BUILD</a></div><div class="ttdeci">#define PRINT_BUILD()</div><div class="ttdoc">print current build</div><div class="ttdef"><b>Definition:</b> <a href="rr___debug_utils_8h_source.html#l00059">rr_DebugUtils.h:59</a></div></div>
+<div class="ttc" id="arr___intervall_8h_html"><div class="ttname"><a href="rr___intervall_8h.html">rr_Intervall.h</a></div><div class="ttdoc">usefull class to work with intervalls/periodic execution</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><b>main.cpp</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="src_2main_8cpp.html">main.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

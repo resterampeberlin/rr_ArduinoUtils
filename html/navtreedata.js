@@ -27,10 +27,11 @@ var NAVTREE =
   [ "RRArduinoUtilities", "index.html", [
     [ "Purpose", "index.html#autotoc_md0", null ],
     [ "Installation", "index.html#autotoc_md1", null ],
-    [ "Generate Doxygen source code documentation", "index.html#autotoc_md2", null ],
-    [ "Create a PlatformIO library and package it", "index.html#autotoc_md3", null ],
-    [ "Documentation", "index.html#autotoc_md4", null ],
-    [ "Credits", "index.html#autotoc_md5", null ],
+    [ "Memory consumption", "index.html#autotoc_md2", null ],
+    [ "Generate Doxygen source code documentation", "index.html#autotoc_md3", null ],
+    [ "Create a PlatformIO library and package it", "index.html#autotoc_md4", null ],
+    [ "Documentation", "index.html#autotoc_md5", null ],
+    [ "Credits", "index.html#autotoc_md6", null ],
     [ "LICENSE", "md__l_i_c_e_n_s_e.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -39,11 +40,18 @@ var NAVTREE =
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
         [ "Typedefs", "functions_type.html", null ],
-        [ "Enumerations", "functions_enum.html", null ]
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];

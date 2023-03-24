@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="Logo180x180.png"/></td>
   <td id="projectalign">
-   <div id="projectname">RRArduinoUtilities<span id="projectnumber">&#160;1.0.2</span>
+   <div id="projectname">RRArduinoUtilities<span id="projectnumber">&#160;1.1.0</span>
    </div>
    <div id="projectbrief">A library including useful utilities for Arduino development</div>
   </td>
@@ -115,7 +115,26 @@ Screenshot</div></div>
 </ul>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Installation</h1>
+<ul>
+<li>set <code>libs_deps=<a href="https://github.com/resterampeberlin/RRArduinoUtilities.git">https://github.com/resterampeberlin/RRArduinoUtilities.git</a></code> in <code>platformio.ini</code></li>
+</ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
+Memory consumption</h1>
+<p>Tested with target UNO and <code>main.cpp</code></p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Environment   </th><th class="markdownTableHeadNone">RAM   </th><th class="markdownTableHeadNone">Flash   </th><th class="markdownTableHeadNone">Delta Flash   </th><th class="markdownTableHeadNone">Comment    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">uno_release   </td><td class="markdownTableBodyNone">25   </td><td class="markdownTableBodyNone">1014   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">release build    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">uno_debug_no_stats   </td><td class="markdownTableBodyNone">380   </td><td class="markdownTableBodyNone">6484   </td><td class="markdownTableBodyNone">+ 5470   </td><td class="markdownTableBodyNone">no statistics in <a class="el" href="class_intervall.html" title="this class implements the intervall functions">Intervall</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">uno_debug_no_fp   </td><td class="markdownTableBodyNone">390   </td><td class="markdownTableBodyNone">6858   </td><td class="markdownTableBodyNone">+ 374   </td><td class="markdownTableBodyNone">fp printf disabled    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">uno   </td><td class="markdownTableBodyNone">390   </td><td class="markdownTableBodyNone">8330   </td><td class="markdownTableBodyNone">+ 1472   </td><td class="markdownTableBodyNone">all features enabled   </td></tr>
+</table>
+<p>Be careful with memory consumption, especially the floating point version could make a UNO or NANO unusable</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Generate Doxygen source code documentation</h1>
 <p>In order to document your source code you need 3 components:</p>
 <ol type="1">
@@ -129,13 +148,16 @@ Generate Doxygen source code documentation</h1>
 <li><b>PROJECT_BRIEF</b> will be replaced by library description in <code>library-template.json</code></li>
 <li><b>PROJECT_NAME</b> will be replaced by library name in <code>library-template.json</code></li>
 </ul>
-<p>The last two points are only applicable if you build a library. For a normal programm you should set those values in <code>Doxyfile</code></p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<p>The last two points are only applicable if you build a library. For a project you should set those values in <code>Doxyfile</code></p>
+<p>Run the following command to create the documntation </p><pre class="fragment">    pio run -t doc
+</pre> <h1><a class="anchor" id="autotoc_md4"></a>
 Create a PlatformIO library and package it</h1>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<p>Run the following command to create a <code>.tar.gz</code> library </p><pre class="fragment">    pio run -t package
+</pre><p> This command will ensure that the current git tag is set as <code>version</code>in <code>library.json</code></p>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Documentation</h1>
 <p>For source code documentation see this <a href="https://resterampeberlin.github.io/rr_ArduinoUtils/">page</a>.</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 Credits</h1>
 <p>This open source code project is has been proudfully produced in Berlin (and other places around the globe) by</p>
 <div class="image">
