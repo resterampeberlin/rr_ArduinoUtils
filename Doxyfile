@@ -10,3 +10,4 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \
 HTML_COLORSTYLE        = LIGHT 
 GENERATE_TREEVIEW      = YES 
 GENERATE_LATEX         = NO
+PLANTUML_JAR_PATH      = /opt/homebrew/Cellar/plantuml/1.2023.4/libexec/plantuml.jar

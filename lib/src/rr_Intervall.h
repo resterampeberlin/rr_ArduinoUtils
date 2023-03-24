@@ -1,9 +1,9 @@
 //!
+//! @file rr_Intervall.h
 //! @author M. Nickels
 //! @brief usefull class to work with intervalls/periodic execution
 //!
-//! @copyright Copyright (c) 2023
-//!
+
 //! This file is part of the library "rr_ArduinoUtils".
 //!
 //!      Creative Commons Attribution-ShareAlike 4.0 International License.
@@ -16,7 +16,7 @@
 
 #include <stddef.h>
 
-//! own includes
+// own includes
 
 //!
 //! @brief this class implements the intervall functions

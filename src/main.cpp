@@ -1,9 +1,9 @@
 //!
+//! @file main.cpp
 //! @author M. Nickels
 //! @brief Main file for the Library "rr_ArduinoUtils"
 //!
-//! @copyright Copyright (c) 2023
-//!
+
 //! This work is licensed under the
 //!
 //!      Creative Commons Attribution-NonCommercial 4.0 International License.
@@ -14,7 +14,7 @@
 
 #include <Arduino.h>
 
-//! own includes
+// own includes
 #include "rr_DebugUtils.h"
 
 //!

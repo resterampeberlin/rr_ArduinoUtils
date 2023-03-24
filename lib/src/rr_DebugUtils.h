@@ -1,9 +1,9 @@
 //!
+//! @file rr_DebugUtils.h
 //! @author M. Nickels
 //! @brief Debug utilities for Arduino development
 //!
-//! @copyright Copyright (c) 2023
-//!
+
 //! This file is part of the library "rr_ArduinoUtils".
 //!
 //!      Creative Commons Attribution-ShareAlike 4.0 International License.
@@ -19,7 +19,7 @@
 
 #include <Arduino.h>
 
-//! own includes
+// own includes
 
 //! ANSI escape codes for the terminal window
 //! use "monitor_flags = --raw" in platformio.ini

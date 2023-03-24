@@ -1,9 +1,9 @@
 //!
+//! @file rr_Common.h
 //! @author M. Nickels
 //! @brief Debug utilities for Arduino development
 //!
-//! @copyright Copyright (c) 2023
-//!
+
 //! This file is part of the Application "rr_ArduinoUtils".
 //!
 //!      Creative Commons Attribution-ShareAlike 4.0 International License.

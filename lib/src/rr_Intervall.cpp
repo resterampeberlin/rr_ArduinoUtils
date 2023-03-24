@@ -1,9 +1,9 @@
 //!
+//! @file rr_Intervall.cpp
 //! @author M. Nickels
 //! @brief usefull class to work with intervalls/periodic execution
 //!
-//! @copyright Copyright (c) 2023
-//!
+
 //! This file is part of the Application "rr_ArduinoUtils".
 //!
 //!      Creative Commons Attribution-ShareAlike 4.0 International License.
@@ -23,7 +23,7 @@
     #define max(a, b) std::max((a), (b))
 #endif
 
-//! own includes
+// own includes
 #include "rr_DebugUtils.h"
 #include "rr_Intervall.h"
 

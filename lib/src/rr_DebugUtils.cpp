@@ -1,9 +1,9 @@
 //!
+//! @file rr_DebugUtils.cpp
 //! @author M. Nickels
 //! @brief Debug utilities for Arduino development
 //!
-//! @copyright Copyright (c) 2023
-//!
+
 //! This file is part of the Library "rr_ArduinoUtils".
 //!
 //! This work is licensed under the
@@ -20,7 +20,7 @@
 #include <Arduino.h>
 #include <stdarg.h>
 
-//! own includes
+// own includes
 #include "rr_DebugUtils.h"
 
 //! our unique Debug object, only declared in debug build

@@ -1,8 +1,8 @@
 //!
+//! @file test_DebugUtils.cpp
 //! @author M. Nickels
-//! @brief unit test. Run tests with 'pio test -e test'
-//!
-//! @copyright Copyright (c) 2023
+//! @brief unit test
+//! @note Run tests with 'pio test -e test_no_statistics'
 //!
 //! This file is part of the Application "rr_ArduinoUtils".
 //!
