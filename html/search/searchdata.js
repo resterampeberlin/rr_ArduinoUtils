@@ -2,14 +2,14 @@ var indexSectionsWithContent =
 {
   0: "abcdegilmnprstvw",
   1: "di",
-  2: "mrt",
+  2: "dgmprt",
   3: "bcdgilprsw",
   4: "i",
   5: "p",
   6: "dr",
   7: "deinvw",
   8: "abmp",
-  9: "lr"
+  9: "lm"
 };
 
 var indexSectionNames =

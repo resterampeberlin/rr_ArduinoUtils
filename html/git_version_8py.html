@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: src/main.cpp File Reference</title>
+<title>My Project: lib/gitVersion.py File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('src_2main_8cpp.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('git_version_8py.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -93,102 +93,100 @@ $(document).ready(function(){initNavTree('src_2main_8cpp.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">gitVersion.py File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Main file for the Library "rr_ArduinoUtils".  
+<p>retrieve the git version tag for the current project  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="rr___common_8h_source.html">rr_Common.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="rr___intervall_8h_source.html">rr_Intervall.h</a>&quot;</code><br />
-</div>
-<p><a href="src_2main_8cpp_source.html">Go to the source code of this file.</a></p>
+
+<p><a href="git_version_8py_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="src_2main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
-<tr class="memdesc:a4fc01d736fe50cf5b977f755b675f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup routine.  <br /></td></tr>
-<tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="src_2main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
-<tr class="memdesc:afe461d27b9c48d5921c00d521181f12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main loop.  <br /></td></tr>
-<tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a66fe08888d132ffd37ed13b44b0edf5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_intervall.html">Intervall</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="src_2main_8cpp.html#a66fe08888d132ffd37ed13b44b0edf5b">intervall</a></td></tr>
-<tr class="memdesc:a66fe08888d132ffd37ed13b44b0edf5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">500 ms intervall  <br /></td></tr>
-<tr class="separator:a66fe08888d132ffd37ed13b44b0edf5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d5fdb2938697ef5ca3fa96f8ca560aa"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="git_version_8py.html#a2d5fdb2938697ef5ca3fa96f8ca560aa">gitVersion.short</a> ()</td></tr>
+<tr class="memdesc:a2d5fdb2938697ef5ca3fa96f8ca560aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">generates a short version number ("x.x.x") from git  <br /></td></tr>
+<tr class="separator:a2d5fdb2938697ef5ca3fa96f8ca560aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a0e0da945e9be2195ba111fa7fc23c5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="git_version_8py.html#a8a0e0da945e9be2195ba111fa7fc23c5">gitVersion.long</a> ()</td></tr>
+<tr class="memdesc:a8a0e0da945e9be2195ba111fa7fc23c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">generates a long version number ("x.x.x-tag-dirty") from git  <br /></td></tr>
+<tr class="separator:a8a0e0da945e9be2195ba111fa7fc23c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dadefbade6904f0281f8de559debdc2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="git_version_8py.html#a9dadefbade6904f0281f8de559debdc2">gitVersion.cppDefine</a> ()</td></tr>
+<tr class="memdesc:a9dadefbade6904f0281f8de559debdc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">print the long version number ("x.x.x-tag-dirty") from git as a compiler flag  <br /></td></tr>
+<tr class="separator:a9dadefbade6904f0281f8de559debdc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Main file for the Library "rr_ArduinoUtils". </p>
+<div class="textblock"><p>retrieve the git version tag for the current project </p>
 <dl class="section author"><dt>Author</dt><dd>M. Nickels </dd></dl>
-
-<p class="definition">Definition in file <a class="el" href="src_2main_8cpp_source.html">main.cpp</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="afe461d27b9c48d5921c00d521181f12f" name="afe461d27b9c48d5921c00d521181f12f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&#160;</a></span>loop()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void loop </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Main loop. </p>
-
-<p class="definition">Definition at line <a class="el" href="src_2main_8cpp_source.html#l00054">54</a> of file <a class="el" href="src_2main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a4fc01d736fe50cf5b977f755b675f11d" name="a4fc01d736fe50cf5b977f755b675f11d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fc01d736fe50cf5b977f755b675f11d">&#9670;&#160;</a></span>setup()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setup </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Setup routine. </p>
-
-<p class="definition">Definition at line <a class="el" href="src_2main_8cpp_source.html#l00027">27</a> of file <a class="el" href="src_2main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a66fe08888d132ffd37ed13b44b0edf5b" name="a66fe08888d132ffd37ed13b44b0edf5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66fe08888d132ffd37ed13b44b0edf5b">&#9670;&#160;</a></span>intervall</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_intervall.html">Intervall</a> intervall</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>500 ms intervall </p>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021</dd></dl>
 <p>This work is licensed under the </p><pre class="fragment"> Creative Commons Attribution-NonCommercial 4.0 International License.
 </pre><p> To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-nc/4.0/">http://creativecommons.org/licenses/by-nc/4.0/</a> or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA. </p>
 
-<p class="definition">Definition at line <a class="el" href="src_2main_8cpp_source.html#l00022">22</a> of file <a class="el" href="src_2main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition in file <a class="el" href="git_version_8py_source.html">gitVersion.py</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a9dadefbade6904f0281f8de559debdc2" name="a9dadefbade6904f0281f8de559debdc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dadefbade6904f0281f8de559debdc2">&#9670;&#160;</a></span>cppDefine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gitVersion.cppDefine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>print the long version number ("x.x.x-tag-dirty") from git as a compiler flag </p>
+<dl class="section see"><dt>See also</dt><dd>build/flags in libary.json </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="git_version_8py_source.html#l00052">52</a> of file <a class="el" href="git_version_8py_source.html">gitVersion.py</a>.</p>
+
+</div>
+</div>
+<a id="a8a0e0da945e9be2195ba111fa7fc23c5" name="a8a0e0da945e9be2195ba111fa7fc23c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a0e0da945e9be2195ba111fa7fc23c5">&#9670;&#160;</a></span>long()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gitVersion.long </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>generates a long version number ("x.x.x-tag-dirty") from git </p>
+<dl class="section return"><dt>Returns</dt><dd>the version number </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="git_version_8py_source.html#l00033">33</a> of file <a class="el" href="git_version_8py_source.html">gitVersion.py</a>.</p>
+
+</div>
+</div>
+<a id="a2d5fdb2938697ef5ca3fa96f8ca560aa" name="a2d5fdb2938697ef5ca3fa96f8ca560aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d5fdb2938697ef5ca3fa96f8ca560aa">&#9670;&#160;</a></span>short()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gitVersion.short </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>generates a short version number ("x.x.x") from git </p>
+<dl class="section return"><dt>Returns</dt><dd>the version number </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="git_version_8py_source.html#l00018">18</a> of file <a class="el" href="git_version_8py_source.html">gitVersion.py</a>.</p>
 
 </div>
 </div>
@@ -197,7 +195,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="src_2main_8cpp.html">main.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="git_version_8py.html">gitVersion.py</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>
