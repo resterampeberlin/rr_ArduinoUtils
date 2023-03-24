@@ -41,6 +41,8 @@ void setup() {
     PRINT_WARNING("Warning", NULL);
     PRINT_ERROR("Error", NULL);
 
+    PRINT_DEBUG("An integer: %d  unsigned: %u  float: %f   string: %s", -1234, 2345, 5678.9, "a string");
+
     intervall.begin();
     delay(100);
     intervall.wait();

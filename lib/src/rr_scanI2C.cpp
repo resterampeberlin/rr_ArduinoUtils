@@ -32,7 +32,7 @@ uint8_t scanI2C(void) {
     byte    error, address; // variable for error and I2C address
     uint8_t nDevices;
 
-    PRINT_INFO(F("Scanning..."), NULL);
+    PRINT_INFO("Scanning...", NULL);
 
     nDevices = 0;
     for (address = 1; address < 127; address++) {
@@ -43,17 +43,17 @@ uint8_t scanI2C(void) {
         error = Wire.endTransmission();
 
         if (error == 0) {
-            PRINT_INFO(F("I2C device 0x%x"), address);
+            PRINT_INFO("I2C device 0x%x", address);
             nDevices++;
         }
         else if (error == 4) {
-            PRINT_WARNING(F("I2C error 0x%x"), address);
+            PRINT_WARNING("I2C error 0x%x", address);
         }
     }
     if (nDevices == 0)
-        PRINT_WARNING(F("No I2C devices found"), NULL);
+        PRINT_WARNING("No I2C devices found", NULL);
     else
-        PRINT_INFO(F("done"), NULL);
+        PRINT_INFO("done", NULL);
 
     return nDevices;
 }

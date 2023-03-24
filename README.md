@@ -38,9 +38,9 @@ Tested with target UNO and `main.cpp`
 | Environment        | RAM | Flash | Delta Flash | Comment                    |
 | ------------------ | --- | ----- | ----------- | -------------------------- |
 | uno_release        | 25  | 1014  | 0           | release build              |
-| uno_debug_no_stats | 510 | 6812  | + 5798      | no statistics in Intervall |
-| uno_debug_no_fp    | 520 | 7186  | + 374       | fp printf disabled         |
-| uno                | 520 | 8658  | + 1472      | all features enabled       |
+| uno_debug_no_stats | 380 | 6484  | + 5470      | no statistics in Intervall |
+| uno_debug_no_fp    | 390 | 6858  | + 374       | fp printf disabled         |
+| uno                | 390 | 8330  | + 1472      | all features enabled       |
 
 Be careful with memory consumption, especially the floating point version could make a UNO or NANO unusable
 

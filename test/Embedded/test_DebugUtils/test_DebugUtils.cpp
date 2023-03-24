@@ -28,13 +28,6 @@ void test_level_none(void) {
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, "Test", NULL));
-
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::None, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Warning, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, F("Test"), NULL));
 }
 
 void test_level_error(void) {
@@ -46,13 +39,6 @@ void test_level_error(void) {
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, "Test", NULL));
-
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::None, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Warning, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, F("Test"), NULL));
 }
 
 void test_level_warning(void) {
@@ -64,13 +50,6 @@ void test_level_warning(void) {
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, "Test", NULL));
-
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::None, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Warning, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, F("Test"), NULL));
 }
 
 void test_level_info(void) {
@@ -82,13 +61,6 @@ void test_level_info(void) {
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, "Test", NULL));
-
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::None, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Warning, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, F("Test"), NULL));
 }
 
 void test_level_debug(void) {
@@ -100,13 +72,6 @@ void test_level_debug(void) {
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_FALSE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, "Test", NULL));
-
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::None, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Warning, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, F("Test"), NULL));
 }
 
 void test_level_verbose(void) {
@@ -118,13 +83,6 @@ void test_level_verbose(void) {
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, "Test", NULL));
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, "Test", NULL));
-
-    TEST_ASSERT_FALSE(Debug.print(DebugUtils::None, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Error, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Warning, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Info, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Debug, __FUNCTION__, __LINE__, F("Test"), NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, F("Test"), NULL));
 }
 
 int runUnityTests(void) {
@@ -134,7 +92,6 @@ int runUnityTests(void) {
 
     // check that default level is "verbose"
     TEST_ASSERT_TRUE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, "Test", NULL));
-    TEST_ASSERT_TRUE(Debug.print(DebugUtils::Verbose, __FUNCTION__, __LINE__, F("Test"), NULL));
 
     // check all levels
     RUN_TEST(test_level_none);

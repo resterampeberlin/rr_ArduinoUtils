@@ -1,5 +1,5 @@
 //!
-//! @file test_no_statistics.cpp
+//! @file test_Intervall_no_statistics.cpp
 //! @author M. Nickels
 //! @brief unit test
 //! @note Run tests with 'pio test -e test_no_statistics'

@@ -107,32 +107,6 @@ const char* DebugUtils::getTextMarking(DebugLevel_t level) {
     return result;
 }
 
-bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, const char* fmt, ...) {
-    if (shouldPrint(level) && output) {
-        va_list args;
-        char    text[128];
-
-        // print diagnostic information
-        snprintf(text, sizeof(text), "%s %s:%d" ANSI_NORMAL "\t", getInfoMarking(level), location, line);
-
-        output->print(text);
-        output->print(getTextMarking(level));
-
-        // print formatted text
-        va_start(args, fmt);
-        vsnprintf(text, sizeof(text), fmt, args);
-        va_end(args);
-
-        output->print(text);
-        output->println(ANSI_NORMAL);
-
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
 bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, const __FlashStringHelper* fmt, ...) {
     if (shouldPrint(level) && output) {
         va_list args;

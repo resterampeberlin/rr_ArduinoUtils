@@ -96,7 +96,6 @@ class DebugUtils {
     void beginSerial(unsigned long baud = 115200, unsigned timeout = 50);
 
     //!
-    //! @name print functions
     //! @brief generic print routine
     //!
     //! @param level debug level
@@ -107,10 +106,7 @@ class DebugUtils {
     //! @return true if parameter level is lower/equal current debug level
     //! @return false otherwise (message was not printed)
     //!
-    //! @{
-    bool print(DebugLevel_t level, const char* location, unsigned line, const char* fmt, ...);
     bool print(DebugLevel_t level, const char* location, unsigned line, const __FlashStringHelper* fmt, ...);
-    //! @}
 
     //!
     //! @brief set the first tab for the output.
@@ -204,40 +200,45 @@ extern DebugUtils Debug; //!< ebug object only present in debug builds
 //! @name debug print routines
 //! @brief debug print routines
 //! @param text format specification
-//! @param ... parameters fot format
-//! @note you must provide at least one paramter. Use NULL if there is nothing to format
+//! @param ... parameters for format string
+//! @note You must provide at least one paramter. Use NULL if there is nothing to format.
+//!       The format specification must be a string literal (e.g. "a:%s") because it is converted to a
+//!       F(fmt) FalshStringHelper type. If you want to print a non literal use PRINT_INFO("%s", s) or
+//!       PRINT_INFO("%s", s.c_str()).
+//!       If you use "%f" in format specification you must use specific compiler flags for certain MCUs (UNO, NANO)
+//!       e.g. build_flags = -Wl,-u,vfprintf -lprintf_flt -lm
 //!
 //! @{
-    #define PRINT_INFO(text, ...)    Debug.print(DebugUtils::Info, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
-    #define PRINT_DEBUG(text, ...)   Debug.print(DebugUtils::Debug, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
-    #define PRINT_VERBOSE(text, ...) Debug.print(DebugUtils::Verbose, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
-    #define PRINT_WARNING(text, ...) Debug.print(DebugUtils::Warning, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
-    #define PRINT(text, ...)         Debug.print(DebugUtils::Verbose, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
-    #define PRINT_ERROR(text, ...)   Debug.print(DebugUtils::Error, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
+    #define PRINT_INFO(text, ...)    Debug.print(DebugUtils::Info, RR_DEBUG_LOC, __LINE__, F(text), __VA_ARGS__)
+    #define PRINT_DEBUG(text, ...)   Debug.print(DebugUtils::Debug, RR_DEBUG_LOC, __LINE__, F(text), __VA_ARGS__)
+    #define PRINT_VERBOSE(text, ...) Debug.print(DebugUtils::Verbose, RR_DEBUG_LOC, __LINE__, F(text), __VA_ARGS__)
+    #define PRINT_WARNING(text, ...) Debug.print(DebugUtils::Warning, RR_DEBUG_LOC, __LINE__, F(text), __VA_ARGS__)
+    #define PRINT(text, ...)         Debug.print(DebugUtils::Verbose, RR_DEBUG_LOC, __LINE__, F(text), __VA_ARGS__)
+    #define PRINT_ERROR(text, ...)   Debug.print(DebugUtils::Error, RR_DEBUG_LOC, __LINE__, F(text), __VA_ARGS__)
 //! @}
 
     //! @brief evaluate expression and print message if evals to false
     #define VERIFY(expression)                                                                                         \
         if (!(expression)) {                                                                                           \
-            PRINT_ERROR(F("ERROR, verify failed"), NULL);                                                              \
+            PRINT_ERROR("ERROR, verify failed", NULL);                                                                 \
         }
 
     //! @brief evaluate expression and print message if evals to false
     #define ASSERT(expression)                                                                                         \
         if (!(expression)) {                                                                                           \
-            PRINT_ERROR(F("ERROR, assertion failed"), NULL);                                                           \
+            PRINT_ERROR("ERROR, assertion failed", NULL);                                                              \
         }
 
     //! @brief evaluate if expression lies with in given range
     #define ASSERT_BETWEEN(expression, low, high)                                                                      \
         if (!((expression) >= (low) && (expression) <= (high))) {                                                      \
-            PRINT_ERROR(F("ERROR, assertion failed"), NULL);                                                           \
+            PRINT_ERROR("ERROR, assertion failed", NULL);                                                              \
         }
 
     //! @brief evaluate if expression lies with in given range
     #define ASSERT_ARRAYINDEX(array, index)                                                                            \
         if (!((index) >= 0 && (index) < ARRAY_SIZE(array))) {                                                          \
-            PRINT_ERROR(F("ERROR, assertion failed"), NULL);                                                           \
+            PRINT_ERROR("ERROR, assertion failed", NULL);                                                              \
         }
 
     // display a "tracepoint"
