@@ -19,6 +19,8 @@
 #include "rr_Common.h"
 #include "rr_DebugUtils.h"
 
+//! @cond
+
 void test_noDevice(void) {
     TEST_ASSERT_EQUAL(scanI2C(), 0);
 }
@@ -44,3 +46,5 @@ void setup() {
 
 void loop() {
 }
+
+//! @endcond

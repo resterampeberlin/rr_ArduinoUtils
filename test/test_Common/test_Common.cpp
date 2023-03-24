@@ -19,6 +19,8 @@
 //! code under test
 #include "rr_Common.h"
 
+//! @cond
+
 void test_Macros(void) {
     int         intArray[]    = {1, 2, 3};
     const char* stringArray[] = {"one", "two"};
@@ -59,3 +61,5 @@ int main() {
 }
 
 #endif
+
+//! @endcond

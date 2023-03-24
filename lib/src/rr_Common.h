@@ -3,7 +3,6 @@
 //! @author M. Nickels
 //! @brief Debug utilities for Arduino development
 //!
-
 //! This file is part of the Application "rr_ArduinoUtils".
 //!
 //!      Creative Commons Attribution-ShareAlike 4.0 International License.
@@ -17,8 +16,13 @@
 
 #pragma once
 
-//! calculate size of an array
+//! @brief calculate size of an array
 #define ARRAY_SIZE(array) (sizeof(array) / sizeof(array[0]))
 
-//! scan I2C bus and print result
+//!
+//! @brief  scan I2C bus and print result
+//!
+//! @return number of devices on I2C bus
+//! @pre call Wire.begin before calling this function
+//!
 uint8_t scanI2C(void);

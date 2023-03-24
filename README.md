@@ -29,6 +29,8 @@ It is invoked with `pio run - t package`
 
 # Installation
 
+- set `libs_deps=https://github.com/resterampeberlin/RRArduinoUtilities.git` in `platformio.ini`
+
 # Generate Doxygen source code documentation
 
 In order to document your source code you need 3 components:
@@ -47,7 +49,17 @@ The following settings in the 'Doxyfile' will be automatically set with this com
 The last two points are only applicable if you build a library. 
 For a project you should set those values in `Doxyfile`
 
+Run the following command to create the documntation
+
+        pio run -t doc
+
 # Create a PlatformIO library and package it
+
+Run the following command to create a `.tar.gz` library
+
+        pio run -t package
+
+This command will ensure that the current git tag is set as `version`in `library.json`
 
 # Documentation
 

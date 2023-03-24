@@ -18,6 +18,8 @@
 #include "rr_DebugUtils.h"
 #include "rr_Intervall.h"
 
+//! @cond
+
 const unsigned int period = 500; // 500 milliss
 
 // test a normal intervall
@@ -131,3 +133,5 @@ int main() {
 }
 
 #endif
+
+//! @endcond

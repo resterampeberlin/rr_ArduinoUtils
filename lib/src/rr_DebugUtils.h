@@ -3,7 +3,6 @@
 //! @author M. Nickels
 //! @brief Debug utilities for Arduino development
 //!
-
 //! This file is part of the library "rr_ArduinoUtils".
 //!
 //!      Creative Commons Attribution-ShareAlike 4.0 International License.
@@ -21,12 +20,14 @@
 
 // own includes
 
-//! ANSI escape codes for the terminal window
-//! use "monitor_flags = --raw" in platformio.ini
-//! for a detailed definition see
-//! https://en.wikipedia.org/wiki/ANSI_escape_code
-
 #ifndef RR_DEBUG_NOCOLORS
+
+//! @name ANSI escape sequences
+//! @note ANSI escape codes for the terminal window
+//!       use "monitor_flags = --raw" in platformio.ini
+//!       for a detailed definition see
+//!       https://en.wikipedia.org/wiki/ANSI_escape_code
+//! @{
 
     #define ANSI_ESC       "\033"             //!< Escape code
     #define ANSI_GREEN_FG  ANSI_ESC "[32m"    //!< Print green foreground
@@ -37,8 +38,9 @@
     #define ANSI_CLEARTABS ANSI_ESC "[3g"     //!< clear all tabs
     #define ANSI_SETTAB    ANSI_ESC "H"       //!< set tab at current cursor position
 
+//! @}
 #else
-
+//! @cond
     #define ANSI_ESC       ""
     #define ANSI_GREEN_FG  ""
     #define ANSI_BLUE_FG   ""
@@ -47,7 +49,7 @@
     #define ANSI_NORMAL    ""
     #define ANSI_CLEARTABS ""
     #define ANSI_SETTAB    ""
-
+//! @endcond
 #endif
 
 //! date and time when this module was built
@@ -58,6 +60,11 @@
     PRINT_INFO("Build: " ANSI_GREEN_FG "%s" ANSI_NORMAL "  Git version: " ANSI_GREEN_FG "%s" ANSI_NORMAL, BUILD,       \
                GITversion())
 
+//!
+//! @brief return current git version
+//!
+//! @return const char* current version
+//!
 const char* GITversion(void);
 
 //!
@@ -67,40 +74,114 @@ const char* GITversion(void);
 class DebugUtils {
 
   public:
-    //! Available reporting levels
-    typedef enum { None, Error, Warning, Info, Debug, Verbose } DebugLevel_t;
+    //!
+    //! @brief Available reporting levels
+    //!
+    typedef enum {
+        None,    //!< no output at all
+        Error,   //!< error messages, appear in red
+        Warning, //!< warning messages
+        Info,    //!< general information
+        Debug,   //!< debug message
+        Verbose  //!< everything else
+    } DebugLevel_t;
 
-    //! Constructor
+    //!
+    //! @brief Construct a new Debug Utils:: Debug Utils object
+    //! set output stream and debug level to default values
+    //!
     DebugUtils();
 
     //! start output to serial
     void beginSerial(unsigned long baud = 115200, unsigned timeout = 50);
 
-    //! generic print routines
+    //!
+    //! @name print functions
+    //! @brief generic print routine
+    //!
+    //! @param level debug level
+    //! @param location where does the print come from (file, function)
+    //! @param line line number
+    //! @param fmt format specification
+    //! @param ... parameters
+    //! @return true if parameter level is lower/equal current debug level
+    //! @return false otherwise (message was not printed)
+    //!
+    //! @{
     bool print(DebugLevel_t level, const char* location, unsigned line, const char* fmt, ...);
     bool print(DebugLevel_t level, const char* location, unsigned line, const __FlashStringHelper* fmt, ...);
+    //! @}
 
+    //!
+    //! @brief set the first tab for the output.
+    //!
+    //! @param column column for the tab
+    //!
     void setTab(unsigned column);
+
+    //!
+    //! @brief sets a number of tabs for the output
+    //!
+    //! @param columns array, which contains ascending tab position in absolute columns
+    //! @param count number of tabs
+    //!
     void setTabs(unsigned columns[], unsigned count);
+
+    //!
+    //! @brief clear all tabs in output
+    //!
     void clearTabs(void);
 
+    //!
+    //! @brief set the maximum level of output
+    //!
+    //! @param level the maximum level
+    //!
     void setLevel(DebugLevel_t level);
+
+    //!
+    //! @brief assign an output stream
+    //!
+    //! @param toSerial pointer to the serial port
+    //!
     void setOutput(HardwareSerial* toSerial);
 
   private:
-    DebugLevel_t    currentLevel;
-    HardwareSerial* output;
+    DebugLevel_t    currentLevel; //!< current debug level
+    HardwareSerial* output;       //!< pointer to serial interface, where print goes to
 
-    bool            shouldPrint(DebugLevel_t level);
-    const char*     getInfoMarking(DebugLevel_t level);
-    const char*     getTextMarking(DebugLevel_t level);
+    //!
+    //! @brief derive, if a message has to be printed
+    //!
+    //! @param level the debug level
+    //! @return true if debug level is lower/equal than current debug level
+    //! @return false otherwise
+    //!
+    bool shouldPrint(DebugLevel_t level);
+
+    //!
+    //! @brief get the markings (text, color) for the debug informatinon
+    //! depending from the debug level
+    //!
+    //! @param level the debug level
+    //! @return the marking, may include ANSI escape sequences
+    //!
+    const char* getInfoMarking(DebugLevel_t level);
+
+    //!
+    //! @brief get the markings (text, color) for the text
+    //! depending from the debug level
+    //!
+    //! @param level the debug level
+    //! @return the marking, may include ANSI escape sequences
+    //!
+    const char* getTextMarking(DebugLevel_t level);
 };
 
 // following functions are only available/executed in a debug build
 #ifdef __PLATFORMIO_BUILD_DEBUG__
 
-//! debug object only present in debug builds
-extern DebugUtils Debug;
+extern DebugUtils Debug; //!< ebug object only present in debug builds
 
     // set file display as default
     #ifndef RR_DEBUG_LOCATION
@@ -119,32 +200,41 @@ extern DebugUtils Debug;
         #define RR_DEBUG_LOC __FUNCTION__
     #endif
 
+//!
+//! @name debug print routines
+//! @brief debug print routines
+//! @param text format specification
+//! @param ... parameters fot format
+//! @note you must provide at least one paramter. Use NULL if there is nothing to format
+//!
+//! @{
     #define PRINT_INFO(text, ...)    Debug.print(DebugUtils::Info, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
     #define PRINT_DEBUG(text, ...)   Debug.print(DebugUtils::Debug, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
     #define PRINT_VERBOSE(text, ...) Debug.print(DebugUtils::Verbose, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
     #define PRINT_WARNING(text, ...) Debug.print(DebugUtils::Warning, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
     #define PRINT(text, ...)         Debug.print(DebugUtils::Verbose, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
     #define PRINT_ERROR(text, ...)   Debug.print(DebugUtils::Error, RR_DEBUG_LOC, __LINE__, text, __VA_ARGS__)
+//! @}
 
-    //! evaluate expression and print message if evals to false
+    //! @brief evaluate expression and print message if evals to false
     #define VERIFY(expression)                                                                                         \
         if (!(expression)) {                                                                                           \
             PRINT_ERROR(F("ERROR, verify failed"), NULL);                                                              \
         }
 
-    //! evaluate expression and print message if evals to false
+    //! @brief evaluate expression and print message if evals to false
     #define ASSERT(expression)                                                                                         \
         if (!(expression)) {                                                                                           \
             PRINT_ERROR(F("ERROR, assertion failed"), NULL);                                                           \
         }
 
-    //! evaluate if expression lies with in given range
+    //! @brief evaluate if expression lies with in given range
     #define ASSERT_BETWEEN(expression, low, high)                                                                      \
         if (!((expression) >= (low) && (expression) <= (high))) {                                                      \
             PRINT_ERROR(F("ERROR, assertion failed"), NULL);                                                           \
         }
 
-    //! evaluate if expression lies with in given range
+    //! @brief evaluate if expression lies with in given range
     #define ASSERT_ARRAYINDEX(array, index)                                                                            \
         if (!((index) >= 0 && (index) < ARRAY_SIZE(array))) {                                                          \
             PRINT_ERROR(F("ERROR, assertion failed"), NULL);                                                           \
@@ -153,7 +243,7 @@ extern DebugUtils Debug;
     // display a "tracepoint"
     #define TP() PRINT_DEBUG("---", NULL)
 #else
-    // disable these functions in order to save code space and execution time
+//! @cond
     #define PRINT_INFO(text, ...)
     #define PRINT_DEBUG(text, ...)
     #define PRINT_VERBOSE(text, ...)
@@ -166,6 +256,6 @@ extern DebugUtils Debug;
 
     #define TP()
 
-    // simply execute exp
     #define VERIFY(expression) expression
+//! @endcond
 #endif

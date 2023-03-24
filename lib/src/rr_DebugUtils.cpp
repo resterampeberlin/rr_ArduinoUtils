@@ -3,7 +3,6 @@
 //! @author M. Nickels
 //! @brief Debug utilities for Arduino development
 //!
-
 //! This file is part of the Library "rr_ArduinoUtils".
 //!
 //! This work is licensed under the
@@ -28,11 +27,6 @@
 DebugUtils Debug;
 #endif
 
-//!
-//! @brief return current git version
-//!
-//! @return const char* current version
-//!
 const char* GITversion(void) {
 #ifdef GIT_VERSION
     return GIT_VERSION;
@@ -42,10 +36,6 @@ const char* GITversion(void) {
 #endif
 }
 
-//!
-//! @brief Construct a new Debug Utils:: Debug Utils object
-//! set output stream and debug level to default values
-//!
 DebugUtils::DebugUtils() {
 #ifdef ARDUINO
     setOutput(&Serial);
@@ -72,13 +62,6 @@ void DebugUtils::beginSerial(unsigned long baud, unsigned timeout) {
 #endif
 }
 
-//!
-//! @brief get the markings (text, color) for the debug informatinon
-//! depending from the debug level
-//!
-//! @param level the debug level
-//! @return the marking, may include ANSI escape sequences
-//!
 const char* DebugUtils::getInfoMarking(DebugLevel_t level) {
     const char* result = NULL;
 
@@ -106,13 +89,6 @@ const char* DebugUtils::getInfoMarking(DebugLevel_t level) {
     return result;
 }
 
-//!
-//! @brief get the markings (text, color) for the text
-//! depending from the debug level
-//!
-//! @param level the debug level
-//! @return the marking, may include ANSI escape sequences
-//!
 const char* DebugUtils::getTextMarking(DebugLevel_t level) {
     const char* result = NULL;
 
@@ -131,17 +107,6 @@ const char* DebugUtils::getTextMarking(DebugLevel_t level) {
     return result;
 }
 
-//!
-//! @brief generic print routine
-//!
-//! @param level debug level
-//! @param location where does the print come from (file, function)
-//! @param line line number
-//! @param fmt format specification
-//! @param ... parameters
-//! @return true if parameter level is lower/equal current debug level
-//! @return false otherwise (message was not printed)
-//!
 bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, const char* fmt, ...) {
     if (shouldPrint(level) && output) {
         va_list args;
@@ -168,17 +133,6 @@ bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, 
     }
 }
 
-//!
-//! @brief generic print routine
-//!
-//! @param level debug level
-//! @param location where does the print come from (file, function)
-//! @param line line number
-//! @param fmt format specification
-//! @param ... parameters
-//! @return true if parameter level is lower/equal current debug level
-//! @return false otherwise (message was not printed)
-//!
 bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, const __FlashStringHelper* fmt, ...) {
     if (shouldPrint(level) && output) {
         va_list args;
@@ -205,11 +159,6 @@ bool DebugUtils::print(DebugLevel_t level, const char* location, unsigned line, 
     }
 }
 
-//!
-//! @brief set the first tab for the output.
-//!
-//! @param column column for the tab
-//!
 void DebugUtils::setTab(unsigned column) {
     if (output) {
         char text[20];
@@ -221,12 +170,6 @@ void DebugUtils::setTab(unsigned column) {
     }
 }
 
-//!
-//! @brief sets a number of tabs for the output
-//!
-//! @param columns array, which contains ascending tab position in absolute columns
-//! @param count number of tabs
-//!
 void DebugUtils::setTabs(unsigned columns[], unsigned count) {
     if (output) {
         output->print(ANSI_CLEARTABS);
@@ -244,41 +187,20 @@ void DebugUtils::setTabs(unsigned columns[], unsigned count) {
     }
 }
 
-//!
-//! @brief clear all tabs in output
-//!
-//!
 void DebugUtils::clearTabs(void) {
     if (output) {
         output->print(ANSI_CLEARTABS);
     }
 }
 
-//!
-//! @brief set the maximum level of output
-//!
-//! @param level the maximum level
-//!
 void DebugUtils::setLevel(DebugLevel_t level) {
     currentLevel = level;
 }
 
-//!
-//! @brief assign an output stream
-//!
-//! @param toSerial pointer to the serial port
-//!
 void DebugUtils::setOutput(HardwareSerial* toSerial) {
     output = toSerial;
 }
 
-//!
-//! @brief derive, if a message has to be printed
-//!
-//! @param level the debug level
-//! @return true if debug level is lower/equal than current debug level
-//! @return false otherwise
-//!
 bool DebugUtils::shouldPrint(DebugLevel_t level) {
     return level <= currentLevel && level != None;
 }

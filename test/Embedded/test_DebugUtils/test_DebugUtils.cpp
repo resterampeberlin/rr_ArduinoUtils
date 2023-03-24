@@ -17,6 +17,8 @@
 
 #include "rr_DebugUtils.h"
 
+//! @cond
+
 void test_level_none(void) {
     Debug.setLevel(DebugUtils::None);
 
@@ -173,3 +175,5 @@ int main() {
 }
 
 #endif
+
+//! @endcond
