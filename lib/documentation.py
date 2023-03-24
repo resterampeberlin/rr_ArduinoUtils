@@ -1,4 +1,5 @@
-#
+##
+# @file documentation.py
 # @author M. Nickels
 # @brief Generate doxygen documentation for the current project
 #
@@ -16,10 +17,12 @@ import gitVersion as gitVersion
 import os
 import json
 
-
-# generate documentation
-
 def generate(source, target, env):
+    """! generate documentation
+    @note invoked by pio run -t doc
+    @see rr_ArduinoUtils.py
+    """
+        
     projectBrief = ""
     projectName = ""
     projectNumber = gitVersion.short()

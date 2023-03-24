@@ -1,4 +1,5 @@
-#
+##
+# @file pioLib.py
 # @author M. Nickels
 # @brief package the library into a .tar.gz file
 #
@@ -16,10 +17,12 @@ import gitVersion
 import json
 import os
 
-# compile the library package if necessary
-
-
 def package(source, target, env):
+    """! package the current project
+    @note invoked by pio run -t package
+    @see rr_ArduinoUtils.py
+    """
+
     # os.path.isfile(os.path.join(env['PROJECT_DIR'], "Doxyfile")):
     template = "library-template.json"
     target = "lib/library.json"

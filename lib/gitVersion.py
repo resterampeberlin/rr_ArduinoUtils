@@ -1,4 +1,5 @@
-#
+##
+# @file gitVersion.py
 # @author M. Nickels
 # @brief retrieve the git version tag for the current project
 #
@@ -14,10 +15,11 @@
 
 import subprocess
 
-# get short version from git tag ("x.x.x")
-
-
 def short():
+    """! generates a short version number ("x.x.x") from git
+    @return the version number
+    """
+        
     ret = subprocess.run(["git", "describe", "--abbrev=0","--tags"],
                          stdout=subprocess.PIPE, text=True)
     version = ret.stdout.strip()
@@ -28,10 +30,11 @@ def short():
 
     return version
 
-# get long version from git tag ("x.x.x-tag-dirty")
-
-
 def long():
+    """! generates a long version number ("x.x.x-tag-dirty") from git
+    @return the version number
+    """
+        
     ret = subprocess.run(["git", "describe", "--dirty","--tags"],
                          stdout=subprocess.PIPE, text=True)
     version = ret.stdout.strip()
@@ -47,4 +50,7 @@ def long():
 
 
 def cppDefine():
+    """! print the long version number ("x.x.x-tag-dirty") from git as a compiler flag
+    @see build/flags in libary.json
+    """
     print("-DGIT_VERSION=\\\""+long()+"\\\"")
