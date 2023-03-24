@@ -8,5 +8,6 @@ var searchData=
   ['rr_5fdebugutils_2eh_5',['rr_DebugUtils.h',['../rr___debug_utils_8h.html',1,'']]],
   ['rr_5fintervall_2ecpp_6',['rr_Intervall.cpp',['../rr___intervall_8cpp.html',1,'']]],
   ['rr_5fintervall_2eh_7',['rr_Intervall.h',['../rr___intervall_8h.html',1,'']]],
-  ['rr_5fscani2c_2ecpp_8',['rr_scanI2C.cpp',['../rr__scan_i2_c_8cpp.html',1,'']]]
+  ['rr_5fscani2c_2ecpp_8',['rr_scanI2C.cpp',['../rr__scan_i2_c_8cpp.html',1,'']]],
+  ['rrarduinoutilities_9',['RRArduinoUtilities',['../index.html',1,'']]]
 ];
