@@ -1,5 +1,6 @@
 var class_intervall =
 [
+    [ "Period_t", "class_intervall.html#a5b6dd038ea0123f6c2bb7f15a6fff9cd", null ],
     [ "Result_t", "class_intervall.html#aa3357ff7158ee5f616031091b905c24a", [
       [ "Success", "class_intervall.html#aa3357ff7158ee5f616031091b905c24aaecd40d39ff959a95a71f71fff1759ec7", null ],
       [ "Abort", "class_intervall.html#aa3357ff7158ee5f616031091b905c24aae98c985227b9b7bfce8a8497419ae0a2", null ],

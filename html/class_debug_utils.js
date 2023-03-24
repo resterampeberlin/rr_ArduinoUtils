@@ -11,6 +11,7 @@ var class_debug_utils =
     [ "DebugUtils", "class_debug_utils.html#aa3f28b44719033921b5a53f043bc54ca", null ],
     [ "beginSerial", "class_debug_utils.html#ae857c7d0cfa2b4276ca0c082df1a7f5a", null ],
     [ "clearTabs", "class_debug_utils.html#a8513f833da76b11cac6f93749d39c1a7", null ],
+    [ "print", "class_debug_utils.html#a877265405fa59e4574c64afde2967a15", null ],
     [ "print", "class_debug_utils.html#adf4ed4cf67c47bf3cdfd110eb5bf4401", null ],
     [ "setLevel", "class_debug_utils.html#aa113244fc3e8022a947a08c2778f9a5a", null ],
     [ "setOutput", "class_debug_utils.html#a338fa912db4883da4aeae9206eea325c", null ],
