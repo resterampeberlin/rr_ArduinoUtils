@@ -22,11 +22,11 @@
 
 #ifndef RR_DEBUG_NOCOLORS
 
+//!
 //! @name ANSI escape sequences
-//! @note ANSI escape codes for the terminal window
-//!       use "monitor_flags = --raw" in platformio.ini
-//!       for a detailed definition see
-//!       https://en.wikipedia.org/wiki/ANSI_escape_code
+//! @details ANSI escape codes for the terminal window
+//!          use "monitor_flags = --raw" in platformio.ini
+//!          for a detailed definition see https://en.wikipedia.org/wiki/ANSI_escape_code
 //! @{
 
     #define ANSI_ESC       "\033"             //!< Escape code
@@ -179,15 +179,25 @@ class DebugUtils {
 
 extern DebugUtils Debug; //!< ebug object only present in debug builds
 
-    // set file display as default
+    //!
+    //! @brief set file display in PRINT_ function
+    //! @details use the following valus to save memory or make the output exhaustive.
+    //!          e.g.set `-D RR_DEBUG_LOCATION = 1` globally in `platformio.ini` or place a
+    //!          `#define RR_DEBUG_LOCATION = 1` locally before including rr_DebugUtils.h
+    //!
+    //!          Value | Description
+    //!          ----- | -----------
+    //!          0     | no output (least memory consumption)
+    //!          1     | print only the file
+    //!          empty | print function name (highest memory consumption)
+    //!
     #ifndef RR_DEBUG_LOCATION
         #define RR_DEBUG_LOCATION 1
     #endif
 
-    //! select location depending on option
-    //! 0 no informatin to save maximum RAM
-    //! 1 only filenme
-    //! others function name (consumes most RAM)
+    //!
+    //! @brief derive location based on #RR_DEBUG_LOCATION
+    //!
     #if RR_DEBUG_LOCATION == 0
         #define RR_DEBUG_LOC ""
     #elif RR_DEBUG_LOCATION == 1
@@ -197,24 +207,24 @@ extern DebugUtils Debug; //!< ebug object only present in debug builds
     #endif
 
 //!
-//! @name debug print routines
-//! @brief debug print routines
+//! @name Debug print routines
 //! @param text format specification
 //! @param ... parameters for format string
-//! @note You must provide at least one paramter. Use NULL if there is nothing to format.
-//!       The format specification must be a string literal (e.g. "a:%s") because it is converted to a
-//!       F(fmt) FalshStringHelper type. If you want to print a non literal use PRINT_INFO("%s", s) or
-//!       PRINT_INFO("%s", s.c_str()).
-//!       If you use "%f" in format specification you must use specific compiler flags for certain MCUs (UNO, NANO)
-//!       e.g. build_flags = -Wl,-u,vfprintf -lprintf_flt -lm
-//!
+//! @details You must provide at least one paramter. Use NULL if there is nothing to format.
+//!          The format specification must be a string literal (e.g. "a:%s") because it is converted to a
+//!          F(fmt) FlashStringHelper type. If you want to print a non literal use `PRINT_INFO("%s", s)` or
+//!          `PRINT_INFO("%s", s.c_str())`.
+//!          If you use "%f" in format specification you must use specific compiler flags for certain MCUs (UNO, NANO)
+//!          e.g. `build_flags = -Wl,-u,vfprintf -lprintf_flt -lm`
 //! @{
+
     #define PRINT_INFO(text, ...)    Debug.print(DebugUtils::Info, RR_DEBUG_LOC, __LINE__, F(text), __VA_ARGS__)
     #define PRINT_DEBUG(text, ...)   Debug.print(DebugUtils::Debug, RR_DEBUG_LOC, __LINE__, F(text), __VA_ARGS__)
     #define PRINT_VERBOSE(text, ...) Debug.print(DebugUtils::Verbose, RR_DEBUG_LOC, __LINE__, F(text), __VA_ARGS__)
     #define PRINT_WARNING(text, ...) Debug.print(DebugUtils::Warning, RR_DEBUG_LOC, __LINE__, F(text), __VA_ARGS__)
     #define PRINT(text, ...)         Debug.print(DebugUtils::Verbose, RR_DEBUG_LOC, __LINE__, F(text), __VA_ARGS__)
     #define PRINT_ERROR(text, ...)   Debug.print(DebugUtils::Error, RR_DEBUG_LOC, __LINE__, F(text), __VA_ARGS__)
+
 //! @}
 
     //! @brief evaluate expression and print message if evals to false
@@ -241,7 +251,7 @@ extern DebugUtils Debug; //!< ebug object only present in debug builds
             PRINT_ERROR("ERROR, assertion failed", NULL);                                                              \
         }
 
-    // display a "tracepoint"
+    //! @brief display a "tracepoint" (file, linenumber, text "---")
     #define TP() PRINT_DEBUG("---", NULL)
 #else
 //! @cond

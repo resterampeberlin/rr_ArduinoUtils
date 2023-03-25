@@ -1,7 +1,8 @@
 PROJECT_LOGO           = img/Logo180x180.png
 OUTPUT_DIRECTORY       = docs
 RECURSIVE              = YES
-EXCLUDE                = doxygen-awesome-css
+EXCLUDE                = doxygen-awesome-css \
+                         lib/README.md
 IMAGE_PATH             = img
 USE_MDFILE_AS_MAINPAGE = README.md
 SOURCE_BROWSER         = YES
@@ -10,4 +11,5 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \
 HTML_COLORSTYLE        = LIGHT 
 GENERATE_TREEVIEW      = YES 
 GENERATE_LATEX         = NO
-PLANTUML_JAR_PATH      = /opt/homebrew/Cellar/plantuml/1.2023.4/libexec/plantuml.jar
+PLANTUML_JAR_PATH      = /opt/homebrew/Cellar/plantuml/1.2023.5/libexec/plantuml.jar
+PREDEFINED             = __PLATFORMIO_BUILD_DEBUG__

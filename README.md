@@ -44,6 +44,8 @@ Tested with target UNO and `main.cpp`
 
 Be careful with memory consumption, especially the floating point version could make a UNO or NANO unusable
 
+Additionally the define #RR_DEBUG_LOCATION influences memory consumption
+
 # Generate Doxygen source code documentation
 
 In order to document your source code you need 3 components:
