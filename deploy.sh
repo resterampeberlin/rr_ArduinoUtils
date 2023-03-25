@@ -14,16 +14,21 @@ then
         exit 0
     fi
 
+    if [ -n "$(git tag | grep $VERSION)" ]; then 
+        echo "Version tag $VERSION exists. Use a unique version tag!"
+        exit 0
+    fi
+
     echo "Creating new version $1"
 
     # create version tag
     git tag $VERSION
 
     # this will create a lib/library.json with a new version number
-    pio run -t package
+    pio run --silent --target package
 
     git add --all
-    git commit -m "Deployed version $VERSION"
+    git commit --message "Deployed version $VERSION"
 
     # push source code 
     git push
@@ -38,14 +43,14 @@ else
 fi
 
 # create documentation
-pio run -t doc
+pio run --silent --target doc
 pushd docs
 
 # look for branch gh-pages in current directory/repo and 
 # push all files to repo
 if [[ $(git branch --no-color --show-current) = 'gh-pages' ]]; then
     git add --all
-    git commit -m "Documentation updated"
+    git commit --message "Documentation updated"
     git push origin gh-pages
 
     echo "Documentation updated"
