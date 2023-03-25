@@ -22,11 +22,12 @@ then
     # this will create a lib/library.json with a new version number
     pio run -t package
 
-    git add -all
+    git add --all
     git commit -m "Deployed version $VERSION"
 
     # push source code 
     git push
+    git push --tags
 
     # push subtree to PIO library
     git subtree push --prefix=lib $REMOTE_LIB_GIT master
