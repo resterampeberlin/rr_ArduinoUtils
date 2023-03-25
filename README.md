@@ -44,7 +44,7 @@ Tested with target UNO and `main.cpp`
 
 Be careful with memory consumption, especially the floating point version could make a UNO or NANO unusable
 
-Additionally the define #RR_DEBUG_LOCATION influences memory consumption
+Additionally the define RR_DEBUG_LOCATION influences memory consumption. See source code rr_DebugUtils.h for details.
 
 # Generate Doxygen source code documentation
 

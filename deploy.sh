@@ -10,12 +10,12 @@ VERSION=$(echo $1 | grep -Eo "^[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+$")
 if [ -n "$VERSION" ]
 then
     if [ -n "$(git status --porcelain)" ]; then 
-        echo "Commit changes before deploying"
+        tput setaf 1; echo "Commit changes before deploying"; tput setaf 7
         exit 0
     fi
 
     if [ -n "$(git tag | grep $VERSION)" ]; then 
-        echo "Version tag $VERSION exists. Use a unique version tag!"
+        tput setaf 1; echo "Version tag $VERSION exists. Use a unique version tag!"; tput setaf 7
         exit 0
     fi
 
@@ -37,14 +37,14 @@ then
     # push subtree to PIO library
     git subtree push --prefix=lib $REMOTE_LIB_GIT master
 
-    echo "New version $1 deployed"
+    echo tput setaf 2; "New version $1 deployed"; tput setaf 7
 else
     echo "No version number specified or wrong format. Will only update documentation"
 fi
 
 # create documentation
 pio run --silent --target doc
-pushd docs
+cd docs
 
 # look for branch gh-pages in current directory/repo and 
 # push all files to repo
@@ -53,11 +53,11 @@ if [[ $(git branch --no-color --show-current) = 'gh-pages' ]]; then
     git commit --message "Documentation updated"
     git push origin gh-pages
 
-    echo "Documentation updated"
+    tput setaf 2; echo "Documentation updated"; tput setaf 7 
 else
-    echo "No gh-pages branch found"
+    tput setaf 1; echo "No gh-pages branch found"; tput setaf 7 
 fi
 
-popd
+cd .. 
 
 exit 1
