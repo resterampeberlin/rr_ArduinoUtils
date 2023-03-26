@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RRArduinoUtilities: test/test_Intervall_no_statistics/test_Intervall_no_statistics.cpp Source File</title>
+<title>My Project: test/test_Intervall_no_statistics/test_Intervall_no_statistics.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,8 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="Logo180x180.png"/></td>
   <td id="projectalign">
-   <div id="projectname">RRArduinoUtilities
+   <div id="projectname">My Project
    </div>
-   <div id="projectbrief">A library including useful utilities for Arduino development</div>
   </td>
  </tr>
  </tbody>
@@ -147,7 +146,7 @@ $(document).ready(function(){initNavTree('test___intervall__no__statistics_8cpp_
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">int</span> runUnityTests(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    Debug.beginSerial(115200);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_variable" href="rr___debug_utils_8cpp.html#aecd2b5d43131136925f6481a76ef52e4">Debug</a>.<a class="code hl_function" href="class_debug_utils.html#ae857c7d0cfa2b4276ca0c082df1a7f5a">beginSerial</a>(115200);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    delay(2000);</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
@@ -220,11 +219,13 @@ $(document).ready(function(){initNavTree('test___intervall__no__statistics_8cpp_
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="ttc" id="aclass_debug_utils_html_ae857c7d0cfa2b4276ca0c082df1a7f5a"><div class="ttname"><a href="class_debug_utils.html#ae857c7d0cfa2b4276ca0c082df1a7f5a">DebugUtils::beginSerial</a></div><div class="ttdeci">void beginSerial(unsigned long baud=115200, unsigned timeout=50)</div><div class="ttdoc">start output to serial</div><div class="ttdef"><b>Definition:</b> <a href="rr___debug_utils_8cpp_source.html#l00049">rr_DebugUtils.cpp:49</a></div></div>
 <div class="ttc" id="aclass_intervall_html"><div class="ttname"><a href="class_intervall.html">Intervall</a></div><div class="ttdoc">this class implements the intervall functions</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8h_source.html#l00026">rr_Intervall.h:26</a></div></div>
 <div class="ttc" id="aclass_intervall_html_a3eea7f5219049fb6b5c91b198479aed1"><div class="ttname"><a href="class_intervall.html#a3eea7f5219049fb6b5c91b198479aed1">Intervall::wait</a></div><div class="ttdeci">Result_t wait(bool(*userFunc)(void)=NULL)</div><div class="ttdoc">wait until the next intervall shall be started</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8cpp_source.html#l00067">rr_Intervall.cpp:67</a></div></div>
 <div class="ttc" id="aclass_intervall_html_a9ebdae6cbbcf8b42b8216f99f20a3a89"><div class="ttname"><a href="class_intervall.html#a9ebdae6cbbcf8b42b8216f99f20a3a89">Intervall::begin</a></div><div class="ttdeci">void begin(void)</div><div class="ttdoc">initialize an intervall.</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8cpp_source.html#l00056">rr_Intervall.cpp:56</a></div></div>
 <div class="ttc" id="aclass_intervall_html_aa3357ff7158ee5f616031091b905c24aae2b5b25b3b0341c51dc1b12d61298122"><div class="ttname"><a href="class_intervall.html#aa3357ff7158ee5f616031091b905c24aae2b5b25b3b0341c51dc1b12d61298122">Intervall::Overflow</a></div><div class="ttdeci">@ Overflow</div><div class="ttdoc">wait did not terminate within period</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8h_source.html#l00035">rr_Intervall.h:35</a></div></div>
 <div class="ttc" id="aclass_intervall_html_aa3357ff7158ee5f616031091b905c24aaecd40d39ff959a95a71f71fff1759ec7"><div class="ttname"><a href="class_intervall.html#aa3357ff7158ee5f616031091b905c24aaecd40d39ff959a95a71f71fff1759ec7">Intervall::Success</a></div><div class="ttdeci">@ Success</div><div class="ttdoc">wait terminated within period</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8h_source.html#l00033">rr_Intervall.h:33</a></div></div>
+<div class="ttc" id="arr___debug_utils_8cpp_html_aecd2b5d43131136925f6481a76ef52e4"><div class="ttname"><a href="rr___debug_utils_8cpp.html#aecd2b5d43131136925f6481a76ef52e4">Debug</a></div><div class="ttdeci">DebugUtils Debug</div><div class="ttdoc">our unique Debug object, only declared in debug build</div><div class="ttdef"><b>Definition:</b> <a href="rr___debug_utils_8cpp_source.html#l00027">rr_DebugUtils.cpp:27</a></div></div>
 <div class="ttc" id="arr___debug_utils_8h_html"><div class="ttname"><a href="rr___debug_utils_8h.html">rr_DebugUtils.h</a></div><div class="ttdoc">Debug utilities for Arduino development.</div></div>
 <div class="ttc" id="arr___intervall_8h_html"><div class="ttname"><a href="rr___intervall_8h.html">rr_Intervall.h</a></div><div class="ttdoc">usefull class to work with intervalls/periodic execution</div></div>
 </div><!-- fragment --></div><!-- contents -->

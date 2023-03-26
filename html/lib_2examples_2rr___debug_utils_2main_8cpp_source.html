@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RRArduinoUtilities: lib/examples/rr_DebugUtils/main.cpp Source File</title>
+<title>My Project: lib/examples/rr_DebugUtils/main.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,8 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="Logo180x180.png"/></td>
   <td id="projectalign">
-   <div id="projectname">RRArduinoUtilities
+   <div id="projectname">My Project
    </div>
-   <div id="projectbrief">A library including useful utilities for Arduino development</div>
   </td>
  </tr>
  </tbody>
@@ -103,10 +102,10 @@ $(document).ready(function(){initNavTree('lib_2examples_2rr___debug_utils_2main_
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keywordtype">void</span> setup() {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">// start debugging on serial, 115200 baud</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    Debug.beginSerial();</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_variable" href="rr___debug_utils_8cpp.html#aecd2b5d43131136925f6481a76ef52e4">Debug</a>.<a class="code hl_function" href="class_debug_utils.html#ae857c7d0cfa2b4276ca0c082df1a7f5a">beginSerial</a>();</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">// set a tab on column 30 to increase monitor output formatting</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    Debug.setTab(30);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_variable" href="rr___debug_utils_8cpp.html#aecd2b5d43131136925f6481a76ef52e4">Debug</a>.<a class="code hl_function" href="class_debug_utils.html#a87be4fff0e04f607812014b6301973d5">setTab</a>(30);</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_define" href="rr___debug_utils_8h.html#ada1bfce06c076927f6183b50ec33780e">PRINT_BUILD</a>();</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// print some colored messages</span></div>
@@ -122,6 +121,9 @@ $(document).ready(function(){initNavTree('lib_2examples_2rr___debug_utils_2main_
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">void</span> loop() {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="ttc" id="aclass_debug_utils_html_a87be4fff0e04f607812014b6301973d5"><div class="ttname"><a href="class_debug_utils.html#a87be4fff0e04f607812014b6301973d5">DebugUtils::setTab</a></div><div class="ttdeci">void setTab(unsigned column)</div><div class="ttdoc">set the first tab for the output.</div><div class="ttdef"><b>Definition:</b> <a href="rr___debug_utils_8cpp_source.html#l00136">rr_DebugUtils.cpp:136</a></div></div>
+<div class="ttc" id="aclass_debug_utils_html_ae857c7d0cfa2b4276ca0c082df1a7f5a"><div class="ttname"><a href="class_debug_utils.html#ae857c7d0cfa2b4276ca0c082df1a7f5a">DebugUtils::beginSerial</a></div><div class="ttdeci">void beginSerial(unsigned long baud=115200, unsigned timeout=50)</div><div class="ttdoc">start output to serial</div><div class="ttdef"><b>Definition:</b> <a href="rr___debug_utils_8cpp_source.html#l00049">rr_DebugUtils.cpp:49</a></div></div>
+<div class="ttc" id="arr___debug_utils_8cpp_html_aecd2b5d43131136925f6481a76ef52e4"><div class="ttname"><a href="rr___debug_utils_8cpp.html#aecd2b5d43131136925f6481a76ef52e4">Debug</a></div><div class="ttdeci">DebugUtils Debug</div><div class="ttdoc">our unique Debug object, only declared in debug build</div><div class="ttdef"><b>Definition:</b> <a href="rr___debug_utils_8cpp_source.html#l00027">rr_DebugUtils.cpp:27</a></div></div>
 <div class="ttc" id="arr___debug_utils_8h_html"><div class="ttname"><a href="rr___debug_utils_8h.html">rr_DebugUtils.h</a></div><div class="ttdoc">Debug utilities for Arduino development.</div></div>
 <div class="ttc" id="arr___debug_utils_8h_html_ada1bfce06c076927f6183b50ec33780e"><div class="ttname"><a href="rr___debug_utils_8h.html#ada1bfce06c076927f6183b50ec33780e">PRINT_BUILD</a></div><div class="ttdeci">#define PRINT_BUILD()</div><div class="ttdoc">print current build</div><div class="ttdef"><b>Definition:</b> <a href="rr___debug_utils_8h_source.html#l00059">rr_DebugUtils.h:59</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

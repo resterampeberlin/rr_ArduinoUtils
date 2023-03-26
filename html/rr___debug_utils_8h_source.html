@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>RRArduinoUtilities: lib/src/rr_DebugUtils.h Source File</title>
+<title>My Project: lib/src/rr_DebugUtils.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,9 +28,8 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="Logo180x180.png"/></td>
   <td id="projectalign">
-   <div id="projectname">RRArduinoUtilities
+   <div id="projectname">My Project
    </div>
-   <div id="projectbrief">A library including useful utilities for Arduino development</div>
   </td>
  </tr>
  </tbody>
@@ -177,16 +176,16 @@ $(document).ready(function(){initNavTree('rr___debug_utils_8h_source.html',''); 
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment">// following functions are only available/executed in a debug build</span></div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="preprocessor">#ifdef __PLATFORMIO_BUILD_DEBUG__</span></div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="keyword">extern</span> <a class="code hl_class" href="class_debug_utils.html">DebugUtils</a> Debug; </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="keyword">extern</span> <a class="code hl_class" href="class_debug_utils.html">DebugUtils</a> <a class="code hl_variable" href="rr___debug_utils_8h.html#aecd2b5d43131136925f6481a76ef52e4">Debug</a>; </div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="preprocessor">    #ifndef RR_DEBUG_LOCATION</span></div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="preprocessor">        #define RR_DEBUG_LOCATION 1</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="rr___debug_utils_8h.html#a95558b0f3b5c2d1ba3c73d5bf6c081c7">  195</a></span><span class="preprocessor">        #define RR_DEBUG_LOCATION 1</span></div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="preprocessor">    #endif</span></div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="preprocessor">    #if RR_DEBUG_LOCATION == 0</span></div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="preprocessor">        #define RR_DEBUG_LOC &quot;&quot;</span></div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="preprocessor">    #elif RR_DEBUG_LOCATION == 1</span></div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="preprocessor">        #define RR_DEBUG_LOC __FILE__</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">  204</a></span><span class="preprocessor">        #define RR_DEBUG_LOC __FILE__</span></div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="preprocessor">    #else</span></div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="preprocessor">        #define RR_DEBUG_LOC __FUNCTION__</span></div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="preprocessor">    #endif</span></div>
@@ -200,27 +199,27 @@ $(document).ready(function(){initNavTree('rr___debug_utils_8h_source.html',''); 
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="preprocessor">    #define PRINT_ERROR(text, ...)   Debug.print(DebugUtils::Error, RR_DEBUG_LOC, __LINE__, F(text), __VA_ARGS__)</span></div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="preprocessor">    #define VERIFY(expression)                                                                                         \</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="rr___debug_utils_8h.html#ad88113bff3ebbd8347188cb06cebbf2d">  231</a></span><span class="preprocessor">    #define VERIFY(expression)                                                                                         \</span></div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">        if (!(expression)) {                                                                                           \</span></div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="preprocessor">            PRINT_ERROR(&quot;ERROR, verify failed&quot;</span>, NULL);                                                                 \</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        }</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="preprocessor">    #define ASSERT(expression)                                                                                         \</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="rr___debug_utils_8h.html#a87e006a00875d2e518652108f6cb5790">  237</a></span><span class="preprocessor">    #define ASSERT(expression)                                                                                         \</span></div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">        if (!(expression)) {                                                                                           \</span></div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">            PRINT_ERROR(&quot;ERROR, assertion failed&quot;</span>, NULL);                                                              \</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        }</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="preprocessor">    #define ASSERT_BETWEEN(expression, low, high)                                                                      \</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="rr___debug_utils_8h.html#a48ca06e17e2ab86b4e6af93fd98bf83d">  243</a></span><span class="preprocessor">    #define ASSERT_BETWEEN(expression, low, high)                                                                      \</span></div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="preprocessor">        if (!((expression) &gt;= (low) &amp;&amp; (expression) &lt;= (high))) {                                                      \</span></div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="preprocessor">            PRINT_ERROR(&quot;ERROR, assertion failed&quot;</span>, NULL);                                                              \</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        }</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="preprocessor">    #define ASSERT_ARRAYINDEX(array, index)                                                                            \</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="rr___debug_utils_8h.html#ad3373a4a137c5c7aadc56ae7f905cd15">  249</a></span><span class="preprocessor">    #define ASSERT_ARRAYINDEX(array, index)                                                                            \</span></div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="preprocessor">        if (!((index) &gt;= 0 &amp;&amp; (index) &lt; ARRAY_SIZE(array))) {                                                          \</span></div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="preprocessor">            PRINT_ERROR(&quot;ERROR, assertion failed&quot;</span>, NULL);                                                              \</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        }</div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="preprocessor">    #define TP() PRINT_DEBUG(&quot;---&quot;</span>, NULL)</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="rr___debug_utils_8h.html#abbc96cf410a735f49f6d5531eac42afd">  255</a></span><span class="preprocessor">    #define TP() PRINT_DEBUG(&quot;---&quot;</span>, NULL)</div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="preprocessor">    #define PRINT_INFO(text, ...)</span></div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="preprocessor">    #define PRINT_DEBUG(text, ...)</span></div>
@@ -253,6 +252,7 @@ $(document).ready(function(){initNavTree('rr___debug_utils_8h_source.html',''); 
 <div class="ttc" id="aclass_debug_utils_html_ae857c7d0cfa2b4276ca0c082df1a7f5a"><div class="ttname"><a href="class_debug_utils.html#ae857c7d0cfa2b4276ca0c082df1a7f5a">DebugUtils::beginSerial</a></div><div class="ttdeci">void beginSerial(unsigned long baud=115200, unsigned timeout=50)</div><div class="ttdoc">start output to serial</div><div class="ttdef"><b>Definition:</b> <a href="rr___debug_utils_8cpp_source.html#l00049">rr_DebugUtils.cpp:49</a></div></div>
 <div class="ttc" id="aclass_debug_utils_html_afbfac38886bbe25657a83d080371f7f0"><div class="ttname"><a href="class_debug_utils.html#afbfac38886bbe25657a83d080371f7f0">DebugUtils::setTabs</a></div><div class="ttdeci">void setTabs(unsigned columns[], unsigned count)</div><div class="ttdoc">sets a number of tabs for the output</div><div class="ttdef"><b>Definition:</b> <a href="rr___debug_utils_8cpp_source.html#l00147">rr_DebugUtils.cpp:147</a></div></div>
 <div class="ttc" id="arr___debug_utils_8h_html_a73a6e4c95f8aff8774ba85b88184f4c3"><div class="ttname"><a href="rr___debug_utils_8h.html#a73a6e4c95f8aff8774ba85b88184f4c3">GITversion</a></div><div class="ttdeci">const char * GITversion(void)</div><div class="ttdoc">return current git version</div><div class="ttdef"><b>Definition:</b> <a href="rr___debug_utils_8cpp_source.html#l00030">rr_DebugUtils.cpp:30</a></div></div>
+<div class="ttc" id="arr___debug_utils_8h_html_aecd2b5d43131136925f6481a76ef52e4"><div class="ttname"><a href="rr___debug_utils_8h.html#aecd2b5d43131136925f6481a76ef52e4">Debug</a></div><div class="ttdeci">DebugUtils Debug</div><div class="ttdoc">ebug object only present in debug builds</div><div class="ttdef"><b>Definition:</b> <a href="rr___debug_utils_8cpp_source.html#l00027">rr_DebugUtils.cpp:27</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
