@@ -19,7 +19,9 @@
 
 //!
 //! @brief this class implements the intervall functions
-//!
+//! @startuml
+//! !include ../Intervall.puml
+//! @enduml
 //!
 class Intervall {
 
@@ -27,7 +29,12 @@ class Intervall {
     typedef unsigned int Period_t; //!< current period in milliseconds
 
     //! wait results
-    typedef enum { Success, Abort, Overflow, Failure } Result_t;
+    typedef enum {
+        Success,  //!< wait terminated within period
+        Abort,    //!< wait was aborted by callback
+        Overflow, //!< wait did not terminate within period
+        Failure   //!< an error occured
+    } Result_t;
 
     //!
     //! @brief Construct a new Intervall:: Intervall object default intervall length
@@ -67,6 +74,9 @@ class Intervall {
 
     //!
     //! @brief check if ccurent period is over
+    //! @startuml
+    //! !include ../isPeriodOver.puml
+    //! @enduml
     //!
     //! @return true if current time >= planned time
     //! @return false if current time < planned time
@@ -115,14 +125,14 @@ class Intervall {
 #endif
 
   private:
-    Period_t      period;
-    unsigned long timeStamp;
+    Period_t      period;    //!< current period
+    unsigned long timeStamp; //!< recorded timestamp with begin()
 
 #ifndef WITHOUT_INTERVALL_STATS
     // used for statistics
-    Period_t      maxPeriod;
-    Period_t      minPeriod;
-    unsigned      sumPeriods;
-    unsigned long numPeriods;
+    Period_t      maxPeriod;  //!< longest recorded period
+    Period_t      minPeriod;  //!< shortest recorded period
+    unsigned      sumPeriods; //!< total time in wait()
+    unsigned long numPeriods; //!< nubver of calls to wait()
 #endif
 };
