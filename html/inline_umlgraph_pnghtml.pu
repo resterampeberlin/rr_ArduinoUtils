@@ -1,0 +1,6 @@
+@startuml inline_umlgraph_1.png
+!include ../Intervall.puml
+@enduml
+@startuml inline_umlgraph_2.png
+!include ../isPeriodOver.puml
+@enduml

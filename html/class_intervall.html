@@ -108,10 +108,10 @@ $(document).ready(function(){initNavTree('class_intervall.html',''); initResizab
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aa3357ff7158ee5f616031091b905c24a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_intervall.html#aa3357ff7158ee5f616031091b905c24a">Result_t</a> { <b>Success</b>
-, <b>Abort</b>
-, <b>Overflow</b>
-, <b>Failure</b>
+<tr class="memitem:aa3357ff7158ee5f616031091b905c24a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_intervall.html#aa3357ff7158ee5f616031091b905c24a">Result_t</a> { <a class="el" href="class_intervall.html#aa3357ff7158ee5f616031091b905c24aaecd40d39ff959a95a71f71fff1759ec7">Success</a>
+, <a class="el" href="class_intervall.html#aa3357ff7158ee5f616031091b905c24aae98c985227b9b7bfce8a8497419ae0a2">Abort</a>
+, <a class="el" href="class_intervall.html#aa3357ff7158ee5f616031091b905c24aae2b5b25b3b0341c51dc1b12d61298122">Overflow</a>
+, <a class="el" href="class_intervall.html#aa3357ff7158ee5f616031091b905c24aada18ac19bae7815df6ad5c0609d551dc">Failure</a>
  }</td></tr>
 <tr class="memdesc:aa3357ff7158ee5f616031091b905c24a"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait results  <a href="class_intervall.html#aa3357ff7158ee5f616031091b905c24a">More...</a><br /></td></tr>
 <tr class="separator:aa3357ff7158ee5f616031091b905c24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,8 +160,11 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>this class implements the intervall functions </p>
-
-<p class="definition">Definition at line <a class="el" href="rr___intervall_8h_source.html#l00024">24</a> of file <a class="el" href="rr___intervall_8h_source.html">rr_Intervall.h</a>.</p>
+<div class="plantumlgraph">
+<img src="inline_umlgraph_1.png" />
+</div>
+ 
+<p class="definition">Definition at line <a class="el" href="rr___intervall_8h_source.html#l00026">26</a> of file <a class="el" href="rr___intervall_8h_source.html">rr_Intervall.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5b6dd038ea0123f6c2bb7f15a6fff9cd" name="a5b6dd038ea0123f6c2bb7f15a6fff9cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5b6dd038ea0123f6c2bb7f15a6fff9cd">&#9670;&#160;</a></span>Period_t</h2>
@@ -177,7 +180,7 @@ Public Member Functions</h2></td></tr>
 
 <p>current period in milliseconds </p>
 
-<p class="definition">Definition at line <a class="el" href="rr___intervall_8h_source.html#l00027">27</a> of file <a class="el" href="rr___intervall_8h_source.html">rr_Intervall.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rr___intervall_8h_source.html#l00029">29</a> of file <a class="el" href="rr___intervall_8h_source.html">rr_Intervall.h</a>.</p>
 
 </div>
 </div>
@@ -195,8 +198,18 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>wait results </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa3357ff7158ee5f616031091b905c24aaecd40d39ff959a95a71f71fff1759ec7" name="aa3357ff7158ee5f616031091b905c24aaecd40d39ff959a95a71f71fff1759ec7"></a>Success&#160;</td><td class="fielddoc"><p>wait terminated within period </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa3357ff7158ee5f616031091b905c24aae98c985227b9b7bfce8a8497419ae0a2" name="aa3357ff7158ee5f616031091b905c24aae98c985227b9b7bfce8a8497419ae0a2"></a>Abort&#160;</td><td class="fielddoc"><p>wait was aborted by callback </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa3357ff7158ee5f616031091b905c24aae2b5b25b3b0341c51dc1b12d61298122" name="aa3357ff7158ee5f616031091b905c24aae2b5b25b3b0341c51dc1b12d61298122"></a>Overflow&#160;</td><td class="fielddoc"><p>wait did not terminate within period </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa3357ff7158ee5f616031091b905c24aada18ac19bae7815df6ad5c0609d551dc" name="aa3357ff7158ee5f616031091b905c24aada18ac19bae7815df6ad5c0609d551dc"></a>Failure&#160;</td><td class="fielddoc"><p>an error occured </p>
+</td></tr>
+</table>
 
-<p class="definition">Definition at line <a class="el" href="rr___intervall_8h_source.html#l00030">30</a> of file <a class="el" href="rr___intervall_8h_source.html">rr_Intervall.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rr___intervall_8h_source.html#l00032">32</a> of file <a class="el" href="rr___intervall_8h_source.html">rr_Intervall.h</a>.</p>
 
 </div>
 </div>
@@ -357,6 +370,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>check if ccurent period is over </p>
+<div class="plantumlgraph">
+<img src="inline_umlgraph_2.png" />
+</div>
 <dl class="section return"><dt>Returns</dt><dd>true if current time &gt;= planned time </dd>
 <dd>
 false if current time &lt; planned time </dd></dl>

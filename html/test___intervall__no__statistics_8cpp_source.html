@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('test___intervall__no__statistics_8cpp_
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="comment">// t = period- 10</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        TEST_ASSERT_UINT_WITHIN(1, period - 10, millis() - start);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        TEST_ASSERT_EQUAL(Intervall::Success, intervall.<a class="code hl_function" href="class_intervall.html#a3eea7f5219049fb6b5c91b198479aed1">wait</a>());</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        TEST_ASSERT_EQUAL(<a class="code hl_enumvalue" href="class_intervall.html#aa3357ff7158ee5f616031091b905c24aaecd40d39ff959a95a71f71fff1759ec7">Intervall::Success</a>, intervall.<a class="code hl_function" href="class_intervall.html#a3eea7f5219049fb6b5c91b198479aed1">wait</a>());</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="comment">// t = period</span></div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        TEST_ASSERT_UINT_WITHIN(1, period, millis() - start);</div>
@@ -142,7 +142,7 @@ $(document).ready(function(){initNavTree('test___intervall__no__statistics_8cpp_
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="comment">// waste more time than expected</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        delay(period + 10);</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        TEST_ASSERT_EQUAL(Intervall::Overflow, intervall.<a class="code hl_function" href="class_intervall.html#a3eea7f5219049fb6b5c91b198479aed1">wait</a>());</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        TEST_ASSERT_EQUAL(<a class="code hl_enumvalue" href="class_intervall.html#aa3357ff7158ee5f616031091b905c24aae2b5b25b3b0341c51dc1b12d61298122">Intervall::Overflow</a>, intervall.<a class="code hl_function" href="class_intervall.html#a3eea7f5219049fb6b5c91b198479aed1">wait</a>());</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
@@ -220,9 +220,11 @@ $(document).ready(function(){initNavTree('test___intervall__no__statistics_8cpp_
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
-<div class="ttc" id="aclass_intervall_html"><div class="ttname"><a href="class_intervall.html">Intervall</a></div><div class="ttdoc">this class implements the intervall functions</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8h_source.html#l00024">rr_Intervall.h:24</a></div></div>
+<div class="ttc" id="aclass_intervall_html"><div class="ttname"><a href="class_intervall.html">Intervall</a></div><div class="ttdoc">this class implements the intervall functions</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8h_source.html#l00026">rr_Intervall.h:26</a></div></div>
 <div class="ttc" id="aclass_intervall_html_a3eea7f5219049fb6b5c91b198479aed1"><div class="ttname"><a href="class_intervall.html#a3eea7f5219049fb6b5c91b198479aed1">Intervall::wait</a></div><div class="ttdeci">Result_t wait(bool(*userFunc)(void)=NULL)</div><div class="ttdoc">wait until the next intervall shall be started</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8cpp_source.html#l00067">rr_Intervall.cpp:67</a></div></div>
 <div class="ttc" id="aclass_intervall_html_a9ebdae6cbbcf8b42b8216f99f20a3a89"><div class="ttname"><a href="class_intervall.html#a9ebdae6cbbcf8b42b8216f99f20a3a89">Intervall::begin</a></div><div class="ttdeci">void begin(void)</div><div class="ttdoc">initialize an intervall.</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8cpp_source.html#l00056">rr_Intervall.cpp:56</a></div></div>
+<div class="ttc" id="aclass_intervall_html_aa3357ff7158ee5f616031091b905c24aae2b5b25b3b0341c51dc1b12d61298122"><div class="ttname"><a href="class_intervall.html#aa3357ff7158ee5f616031091b905c24aae2b5b25b3b0341c51dc1b12d61298122">Intervall::Overflow</a></div><div class="ttdeci">@ Overflow</div><div class="ttdoc">wait did not terminate within period</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8h_source.html#l00035">rr_Intervall.h:35</a></div></div>
+<div class="ttc" id="aclass_intervall_html_aa3357ff7158ee5f616031091b905c24aaecd40d39ff959a95a71f71fff1759ec7"><div class="ttname"><a href="class_intervall.html#aa3357ff7158ee5f616031091b905c24aaecd40d39ff959a95a71f71fff1759ec7">Intervall::Success</a></div><div class="ttdeci">@ Success</div><div class="ttdoc">wait terminated within period</div><div class="ttdef"><b>Definition:</b> <a href="rr___intervall_8h_source.html#l00033">rr_Intervall.h:33</a></div></div>
 <div class="ttc" id="arr___debug_utils_8h_html"><div class="ttname"><a href="rr___debug_utils_8h.html">rr_DebugUtils.h</a></div><div class="ttdoc">Debug utilities for Arduino development.</div></div>
 <div class="ttc" id="arr___intervall_8h_html"><div class="ttname"><a href="rr___intervall_8h.html">rr_Intervall.h</a></div><div class="ttdoc">usefull class to work with intervalls/periodic execution</div></div>
 </div><!-- fragment --></div><!-- contents -->
