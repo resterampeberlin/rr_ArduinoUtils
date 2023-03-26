@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: lib/examples/rr_Commmon/main.cpp Source File</title>
+<title>RRArduinoUtilities: lib/examples/rr_Commmon/main.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,8 +28,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="Logo180x180.png"/></td>
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">RRArduinoUtilities
    </div>
+   <div id="projectbrief">A library including useful utilities for Arduino development</div>
   </td>
  </tr>
  </tbody>
@@ -105,7 +106,7 @@ $(document).ready(function(){initNavTree('lib_2examples_2rr___commmon_2main_8cpp
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keywordtype">void</span> setup() {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">// start debugging on serial, 115200 baud</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_variable" href="rr___debug_utils_8cpp.html#aecd2b5d43131136925f6481a76ef52e4">Debug</a>.<a class="code hl_function" href="class_debug_utils.html#ae857c7d0cfa2b4276ca0c082df1a7f5a">beginSerial</a>();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    Debug.beginSerial();</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    Wire.begin();</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
@@ -116,10 +117,8 @@ $(document).ready(function(){initNavTree('lib_2examples_2rr___commmon_2main_8cpp
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> loop() {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
-<div class="ttc" id="aclass_debug_utils_html_ae857c7d0cfa2b4276ca0c082df1a7f5a"><div class="ttname"><a href="class_debug_utils.html#ae857c7d0cfa2b4276ca0c082df1a7f5a">DebugUtils::beginSerial</a></div><div class="ttdeci">void beginSerial(unsigned long baud=115200, unsigned timeout=50)</div><div class="ttdoc">start output to serial</div><div class="ttdef"><b>Definition:</b> <a href="rr___debug_utils_8cpp_source.html#l00049">rr_DebugUtils.cpp:49</a></div></div>
 <div class="ttc" id="arr___common_8h_html"><div class="ttname"><a href="rr___common_8h.html">rr_Common.h</a></div><div class="ttdoc">Debug utilities for Arduino development.</div></div>
 <div class="ttc" id="arr___common_8h_html_ad344ca8ef3bba75cf103ce58f9959036"><div class="ttname"><a href="rr___common_8h.html#ad344ca8ef3bba75cf103ce58f9959036">scanI2C</a></div><div class="ttdeci">uint8_t scanI2C(void)</div><div class="ttdoc">scan I2C bus and print result</div><div class="ttdef"><b>Definition:</b> <a href="rr__scan_i2_c_8cpp_source.html#l00031">rr_scanI2C.cpp:31</a></div></div>
-<div class="ttc" id="arr___debug_utils_8cpp_html_aecd2b5d43131136925f6481a76ef52e4"><div class="ttname"><a href="rr___debug_utils_8cpp.html#aecd2b5d43131136925f6481a76ef52e4">Debug</a></div><div class="ttdeci">DebugUtils Debug</div><div class="ttdoc">our unique Debug object, only declared in debug build</div><div class="ttdef"><b>Definition:</b> <a href="rr___debug_utils_8cpp_source.html#l00027">rr_DebugUtils.cpp:27</a></div></div>
 <div class="ttc" id="arr___debug_utils_8h_html"><div class="ttname"><a href="rr___debug_utils_8h.html">rr_DebugUtils.h</a></div><div class="ttdoc">Debug utilities for Arduino development.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

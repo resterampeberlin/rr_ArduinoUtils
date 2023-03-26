@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "My Project", "index.html", [
+  [ "RRArduinoUtilities", "index.html", [
     [ "Purpose", "index.html#autotoc_md0", null ],
     [ "Installation", "index.html#autotoc_md1", null ],
     [ "Memory consumption", "index.html#autotoc_md2", null ],

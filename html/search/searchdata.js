@@ -4,12 +4,12 @@ var indexSectionsWithContent =
   1: "di",
   2: "dgmprt",
   3: "bcdgilprsw",
-  4: "di",
+  4: "i",
   5: "p",
   6: "dr",
   7: "adefinosvw",
-  8: "abmprtv",
-  9: "lm"
+  8: "abmp",
+  9: "lr"
 };
 
 var indexSectionNames =

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: lib/src/rr_DebugUtils.h File Reference</title>
+<title>RRArduinoUtilities: lib/src/rr_DebugUtils.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -28,8 +28,9 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="Logo180x180.png"/></td>
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">RRArduinoUtilities
    </div>
+   <div id="projectbrief">A library including useful utilities for Arduino development</div>
   </td>
  </tr>
  </tbody>
@@ -95,8 +96,7 @@ $(document).ready(function(){initNavTree('rr___debug_utils_8h.html',''); initRes
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">rr_DebugUtils.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -121,27 +121,6 @@ Macros</h2></td></tr>
 <tr class="memitem:ada1bfce06c076927f6183b50ec33780e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#ada1bfce06c076927f6183b50ec33780e">PRINT_BUILD</a>()</td></tr>
 <tr class="memdesc:ada1bfce06c076927f6183b50ec33780e"><td class="mdescLeft">&#160;</td><td class="mdescRight">print current build  <br /></td></tr>
 <tr class="separator:ada1bfce06c076927f6183b50ec33780e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95558b0f3b5c2d1ba3c73d5bf6c081c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#a95558b0f3b5c2d1ba3c73d5bf6c081c7">RR_DEBUG_LOCATION</a>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:a95558b0f3b5c2d1ba3c73d5bf6c081c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">set file display in PRINT_ function  <br /></td></tr>
-<tr class="separator:a95558b0f3b5c2d1ba3c73d5bf6c081c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3771943bf999c2d77da81ed85640412d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">RR_DEBUG_LOC</a>&#160;&#160;&#160;__FILE__</td></tr>
-<tr class="memdesc:a3771943bf999c2d77da81ed85640412d"><td class="mdescLeft">&#160;</td><td class="mdescRight">derive location based on <a class="el" href="rr___debug_utils_8h.html#a95558b0f3b5c2d1ba3c73d5bf6c081c7" title="set file display in PRINT_ function">RR_DEBUG_LOCATION</a>  <br /></td></tr>
-<tr class="separator:a3771943bf999c2d77da81ed85640412d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad88113bff3ebbd8347188cb06cebbf2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#ad88113bff3ebbd8347188cb06cebbf2d">VERIFY</a>(expression)</td></tr>
-<tr class="memdesc:ad88113bff3ebbd8347188cb06cebbf2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">evaluate expression and print message if evals to false  <br /></td></tr>
-<tr class="separator:ad88113bff3ebbd8347188cb06cebbf2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87e006a00875d2e518652108f6cb5790"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#a87e006a00875d2e518652108f6cb5790">ASSERT</a>(expression)</td></tr>
-<tr class="memdesc:a87e006a00875d2e518652108f6cb5790"><td class="mdescLeft">&#160;</td><td class="mdescRight">evaluate expression and print message if evals to false  <br /></td></tr>
-<tr class="separator:a87e006a00875d2e518652108f6cb5790"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48ca06e17e2ab86b4e6af93fd98bf83d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#a48ca06e17e2ab86b4e6af93fd98bf83d">ASSERT_BETWEEN</a>(expression,  low,  high)</td></tr>
-<tr class="memdesc:a48ca06e17e2ab86b4e6af93fd98bf83d"><td class="mdescLeft">&#160;</td><td class="mdescRight">evaluate if expression lies with in given range  <br /></td></tr>
-<tr class="separator:a48ca06e17e2ab86b4e6af93fd98bf83d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3373a4a137c5c7aadc56ae7f905cd15"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#ad3373a4a137c5c7aadc56ae7f905cd15">ASSERT_ARRAYINDEX</a>(array,  index)</td></tr>
-<tr class="memdesc:ad3373a4a137c5c7aadc56ae7f905cd15"><td class="mdescLeft">&#160;</td><td class="mdescRight">evaluate if expression lies with in given range  <br /></td></tr>
-<tr class="separator:ad3373a4a137c5c7aadc56ae7f905cd15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbc96cf410a735f49f6d5531eac42afd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#abbc96cf410a735f49f6d5531eac42afd">TP</a>()&#160;&#160;&#160;PRINT_DEBUG(&quot;---&quot;, NULL)</td></tr>
-<tr class="memdesc:abbc96cf410a735f49f6d5531eac42afd"><td class="mdescLeft">&#160;</td><td class="mdescRight">display a "tracepoint" (file, linenumber, text "---")  <br /></td></tr>
-<tr class="separator:abbc96cf410a735f49f6d5531eac42afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">ANSI escape sequences</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>ANSI escape codes for the terminal window use "monitor_flags = --raw" in platformio.ini for a detailed definition see <a href="https://en.wikipedia.org/wiki/ANSI_escape_code">https://en.wikipedia.org/wiki/ANSI_escape_code</a> </p>
 </div></td></tr>
@@ -169,40 +148,12 @@ Macros</h2></td></tr>
 <tr class="memitem:a0e3eb6a9d9bfcdd3f03c27b60628ecf1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#a0e3eb6a9d9bfcdd3f03c27b60628ecf1">ANSI_SETTAB</a>&#160;&#160;&#160;<a class="el" href="rr___debug_utils_8h.html#ab259b9d579e8f6337efbb2c541d071d3">ANSI_ESC</a> &quot;H&quot;</td></tr>
 <tr class="memdesc:a0e3eb6a9d9bfcdd3f03c27b60628ecf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">set tab at current cursor position  <br /></td></tr>
 <tr class="separator:a0e3eb6a9d9bfcdd3f03c27b60628ecf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Debug print routines</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">text</td><td>format specification </td></tr>
-    <tr><td class="paramname">...</td><td>parameters for format string</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>You must provide at least one paramter. Use NULL if there is nothing to format. The format specification must be a string literal (e.g. "a:%s") because it is converted to a F(fmt) FlashStringHelper type. If you want to print a non literal use <code>PRINT_INFO("%s", s)</code> or <code>PRINT_INFO("%s", s.c_str())</code>. If you use "%f" in format specification you must use specific compiler flags for certain MCUs (UNO, NANO) e.g. <code>build_flags = -Wl,-u,vfprintf -lprintf_flt -lm</code> </p>
-</div></td></tr>
-<tr class="memitem:a7f9cb57edd17027274c31fdea77663f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#a7f9cb57edd17027274c31fdea77663f2">PRINT_INFO</a>(text, ...)&#160;&#160;&#160;Debug.print(<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a06cfb2f14457a811c76b7fe58fef1981">DebugUtils::Info</a>, <a class="el" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">RR_DEBUG_LOC</a>, __LINE__, F(text), __VA_ARGS__)</td></tr>
-<tr class="separator:a7f9cb57edd17027274c31fdea77663f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75abf5b29f6e8c3e3bbcdf7e7f46997b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#a75abf5b29f6e8c3e3bbcdf7e7f46997b">PRINT_DEBUG</a>(text, ...)&#160;&#160;&#160;Debug.print(<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984ae2aa1e5db251a2b127cff8c339072e55">DebugUtils::Debug</a>, <a class="el" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">RR_DEBUG_LOC</a>, __LINE__, F(text), __VA_ARGS__)</td></tr>
-<tr class="separator:a75abf5b29f6e8c3e3bbcdf7e7f46997b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b494df8b95978ad09695a1c4dccb487"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#a5b494df8b95978ad09695a1c4dccb487">PRINT_VERBOSE</a>(text, ...)&#160;&#160;&#160;Debug.print(<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a96601e4cb50924b4d10c65a010cc2d29">DebugUtils::Verbose</a>, <a class="el" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">RR_DEBUG_LOC</a>, __LINE__, F(text), __VA_ARGS__)</td></tr>
-<tr class="separator:a5b494df8b95978ad09695a1c4dccb487"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f3c53dc547b5db229b96ce3d8b21a2b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#a0f3c53dc547b5db229b96ce3d8b21a2b">PRINT_WARNING</a>(text, ...)&#160;&#160;&#160;Debug.print(<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a7a876f1c73c3ba06a04e90d494ac945e">DebugUtils::Warning</a>, <a class="el" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">RR_DEBUG_LOC</a>, __LINE__, F(text), __VA_ARGS__)</td></tr>
-<tr class="separator:a0f3c53dc547b5db229b96ce3d8b21a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a510ed316e0edfa3a8a231df31b029db9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#a510ed316e0edfa3a8a231df31b029db9">PRINT</a>(text, ...)&#160;&#160;&#160;Debug.print(<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a96601e4cb50924b4d10c65a010cc2d29">DebugUtils::Verbose</a>, <a class="el" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">RR_DEBUG_LOC</a>, __LINE__, F(text), __VA_ARGS__)</td></tr>
-<tr class="separator:a510ed316e0edfa3a8a231df31b029db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78300c430e2d0dac8a929a57c46937fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#a78300c430e2d0dac8a929a57c46937fd">PRINT_ERROR</a>(text, ...)&#160;&#160;&#160;Debug.print(<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a0ef496b2f40ce3dd0b3fa377929fad80">DebugUtils::Error</a>, <a class="el" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">RR_DEBUG_LOC</a>, __LINE__, F(text), __VA_ARGS__)</td></tr>
-<tr class="separator:a78300c430e2d0dac8a929a57c46937fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a73a6e4c95f8aff8774ba85b88184f4c3"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#a73a6e4c95f8aff8774ba85b88184f4c3">GITversion</a> (void)</td></tr>
 <tr class="memdesc:a73a6e4c95f8aff8774ba85b88184f4c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">return current git version  <br /></td></tr>
 <tr class="separator:a73a6e4c95f8aff8774ba85b88184f4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:aecd2b5d43131136925f6481a76ef52e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_debug_utils.html">DebugUtils</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rr___debug_utils_8h.html#aecd2b5d43131136925f6481a76ef52e4">Debug</a></td></tr>
-<tr class="memdesc:aecd2b5d43131136925f6481a76ef52e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">ebug object only present in debug builds  <br /></td></tr>
-<tr class="separator:aecd2b5d43131136925f6481a76ef52e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Debug utilities for Arduino development. </p>
@@ -357,108 +308,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a87e006a00875d2e518652108f6cb5790" name="a87e006a00875d2e518652108f6cb5790"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87e006a00875d2e518652108f6cb5790">&#9670;&#160;</a></span>ASSERT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ASSERT</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">expression</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">        <span class="keywordflow">if</span> (!(expression)) {                                                                                           \</div>
-<div class="line">            PRINT_ERROR(<span class="stringliteral">&quot;ERROR, assertion failed&quot;</span>, NULL);                                                              \</div>
-<div class="line">        }</div>
-</div><!-- fragment -->
-<p>evaluate expression and print message if evals to false </p>
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00237">237</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
-
-</div>
-</div>
-<a id="ad3373a4a137c5c7aadc56ae7f905cd15" name="ad3373a4a137c5c7aadc56ae7f905cd15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3373a4a137c5c7aadc56ae7f905cd15">&#9670;&#160;</a></span>ASSERT_ARRAYINDEX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ASSERT_ARRAYINDEX</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">array, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">index&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">        <span class="keywordflow">if</span> (!((index) &gt;= 0 &amp;&amp; (index) &lt; <a class="code hl_define" href="rr___common_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array))) {                                                          \</div>
-<div class="line">            PRINT_ERROR(<span class="stringliteral">&quot;ERROR, assertion failed&quot;</span>, NULL);                                                              \</div>
-<div class="line">        }</div>
-<div class="ttc" id="arr___common_8h_html_a70c57aae3eb654e205459b4362c8089a"><div class="ttname"><a href="rr___common_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a></div><div class="ttdeci">#define ARRAY_SIZE(array)</div><div class="ttdoc">calculate size of an array</div><div class="ttdef"><b>Definition:</b> <a href="rr___common_8h_source.html#l00020">rr_Common.h:20</a></div></div>
-</div><!-- fragment -->
-<p>evaluate if expression lies with in given range </p>
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00249">249</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
-
-</div>
-</div>
-<a id="a48ca06e17e2ab86b4e6af93fd98bf83d" name="a48ca06e17e2ab86b4e6af93fd98bf83d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48ca06e17e2ab86b4e6af93fd98bf83d">&#9670;&#160;</a></span>ASSERT_BETWEEN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ASSERT_BETWEEN</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">expression, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">low, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">high&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">        <span class="keywordflow">if</span> (!((expression) &gt;= (low) &amp;&amp; (expression) &lt;= (high))) {                                                      \</div>
-<div class="line">            PRINT_ERROR(<span class="stringliteral">&quot;ERROR, assertion failed&quot;</span>, NULL);                                                              \</div>
-<div class="line">        }</div>
-</div><!-- fragment -->
-<p>evaluate if expression lies with in given range </p>
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00243">243</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
-
-</div>
-</div>
 <a id="a03505fe2d99ef550d9e1d39f57048908" name="a03505fe2d99ef550d9e1d39f57048908"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03505fe2d99ef550d9e1d39f57048908">&#9670;&#160;</a></span>BUILD</h2>
 
@@ -474,36 +323,6 @@ Variables</h2></td></tr>
 <p>date and time when this module was built </p>
 
 <p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00056">56</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
-
-</div>
-</div>
-<a id="a510ed316e0edfa3a8a231df31b029db9" name="a510ed316e0edfa3a8a231df31b029db9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a510ed316e0edfa3a8a231df31b029db9">&#9670;&#160;</a></span>PRINT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PRINT</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">text, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;Debug.print(<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a96601e4cb50924b4d10c65a010cc2d29">DebugUtils::Verbose</a>, <a class="el" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">RR_DEBUG_LOC</a>, __LINE__, F(text), __VA_ARGS__)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00225">225</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
 
 </div>
 </div>
@@ -534,249 +353,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a75abf5b29f6e8c3e3bbcdf7e7f46997b" name="a75abf5b29f6e8c3e3bbcdf7e7f46997b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75abf5b29f6e8c3e3bbcdf7e7f46997b">&#9670;&#160;</a></span>PRINT_DEBUG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PRINT_DEBUG</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">text, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;Debug.print(<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984ae2aa1e5db251a2b127cff8c339072e55">DebugUtils::Debug</a>, <a class="el" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">RR_DEBUG_LOC</a>, __LINE__, F(text), __VA_ARGS__)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00222">222</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
-
-</div>
-</div>
-<a id="a78300c430e2d0dac8a929a57c46937fd" name="a78300c430e2d0dac8a929a57c46937fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78300c430e2d0dac8a929a57c46937fd">&#9670;&#160;</a></span>PRINT_ERROR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PRINT_ERROR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">text, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;Debug.print(<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a0ef496b2f40ce3dd0b3fa377929fad80">DebugUtils::Error</a>, <a class="el" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">RR_DEBUG_LOC</a>, __LINE__, F(text), __VA_ARGS__)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00226">226</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
-
-</div>
-</div>
-<a id="a7f9cb57edd17027274c31fdea77663f2" name="a7f9cb57edd17027274c31fdea77663f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f9cb57edd17027274c31fdea77663f2">&#9670;&#160;</a></span>PRINT_INFO</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PRINT_INFO</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">text, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;Debug.print(<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a06cfb2f14457a811c76b7fe58fef1981">DebugUtils::Info</a>, <a class="el" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">RR_DEBUG_LOC</a>, __LINE__, F(text), __VA_ARGS__)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00221">221</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
-
-</div>
-</div>
-<a id="a5b494df8b95978ad09695a1c4dccb487" name="a5b494df8b95978ad09695a1c4dccb487"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b494df8b95978ad09695a1c4dccb487">&#9670;&#160;</a></span>PRINT_VERBOSE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PRINT_VERBOSE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">text, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;Debug.print(<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a96601e4cb50924b4d10c65a010cc2d29">DebugUtils::Verbose</a>, <a class="el" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">RR_DEBUG_LOC</a>, __LINE__, F(text), __VA_ARGS__)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00223">223</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
-
-</div>
-</div>
-<a id="a0f3c53dc547b5db229b96ce3d8b21a2b" name="a0f3c53dc547b5db229b96ce3d8b21a2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f3c53dc547b5db229b96ce3d8b21a2b">&#9670;&#160;</a></span>PRINT_WARNING</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PRINT_WARNING</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">text, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;Debug.print(<a class="el" href="class_debug_utils.html#ab7b7e3348a6172e00bad2822591e6984a7a876f1c73c3ba06a04e90d494ac945e">DebugUtils::Warning</a>, <a class="el" href="rr___debug_utils_8h.html#a3771943bf999c2d77da81ed85640412d">RR_DEBUG_LOC</a>, __LINE__, F(text), __VA_ARGS__)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00224">224</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
-
-</div>
-</div>
-<a id="a3771943bf999c2d77da81ed85640412d" name="a3771943bf999c2d77da81ed85640412d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3771943bf999c2d77da81ed85640412d">&#9670;&#160;</a></span>RR_DEBUG_LOC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RR_DEBUG_LOC&#160;&#160;&#160;__FILE__</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>derive location based on <a class="el" href="rr___debug_utils_8h.html#a95558b0f3b5c2d1ba3c73d5bf6c081c7" title="set file display in PRINT_ function">RR_DEBUG_LOCATION</a> </p>
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00204">204</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
-
-</div>
-</div>
-<a id="a95558b0f3b5c2d1ba3c73d5bf6c081c7" name="a95558b0f3b5c2d1ba3c73d5bf6c081c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95558b0f3b5c2d1ba3c73d5bf6c081c7">&#9670;&#160;</a></span>RR_DEBUG_LOCATION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RR_DEBUG_LOCATION&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>set file display in PRINT_ function </p>
-<p>use the following valus to save memory or make the output exhaustive. e.g.set <code>-D RR_DEBUG_LOCATION = 1</code> globally in <code>platformio.ini</code> or place a <code>#define RR_DEBUG_LOCATION = 1</code> locally before including <a class="el" href="rr___debug_utils_8h.html" title="Debug utilities for Arduino development.">rr_DebugUtils.h</a></p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Value   </th><th class="markdownTableHeadNone">Description    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">no output (least memory consumption)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">print only the file    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">empty   </td><td class="markdownTableBodyNone">print function name (highest memory consumption)   </td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00195">195</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
-
-</div>
-</div>
-<a id="abbc96cf410a735f49f6d5531eac42afd" name="abbc96cf410a735f49f6d5531eac42afd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbc96cf410a735f49f6d5531eac42afd">&#9670;&#160;</a></span>TP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TP</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;PRINT_DEBUG(&quot;---&quot;, NULL)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>display a "tracepoint" (file, linenumber, text "---") </p>
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00255">255</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
-
-</div>
-</div>
-<a id="ad88113bff3ebbd8347188cb06cebbf2d" name="ad88113bff3ebbd8347188cb06cebbf2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad88113bff3ebbd8347188cb06cebbf2d">&#9670;&#160;</a></span>VERIFY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VERIFY</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">expression</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">        <span class="keywordflow">if</span> (!(expression)) {                                                                                           \</div>
-<div class="line">            PRINT_ERROR(<span class="stringliteral">&quot;ERROR, verify failed&quot;</span>, NULL);                                                                 \</div>
-<div class="line">        }</div>
-</div><!-- fragment -->
-<p>evaluate expression and print message if evals to false </p>
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8h_source.html#l00231">231</a> of file <a class="el" href="rr___debug_utils_8h_source.html">rr_DebugUtils.h</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a73a6e4c95f8aff8774ba85b88184f4c3" name="a73a6e4c95f8aff8774ba85b88184f4c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a73a6e4c95f8aff8774ba85b88184f4c3">&#9670;&#160;</a></span>GITversion()</h2>
@@ -795,37 +371,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>return current git version </p>
-<dl class="section return"><dt>Returns</dt><dd>const char* current version </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const char* current version</dd></dl>
+<p>return current git version </p>
 
 <p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00030">30</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="aecd2b5d43131136925f6481a76ef52e4" name="aecd2b5d43131136925f6481a76ef52e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecd2b5d43131136925f6481a76ef52e4">&#9670;&#160;</a></span>Debug</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_debug_utils.html">DebugUtils</a> Debug</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>ebug object only present in debug builds </p>
-<p>ebug object only present in debug builds </p>
-
-<p class="definition">Definition at line <a class="el" href="rr___debug_utils_8cpp_source.html#l00027">27</a> of file <a class="el" href="rr___debug_utils_8cpp_source.html">rr_DebugUtils.cpp</a>.</p>
 
 </div>
 </div>
