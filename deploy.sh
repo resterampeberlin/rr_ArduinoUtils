@@ -6,17 +6,23 @@ REMOTE_LIB_GIT=https://github.com/resterampeberlin/RRArduinoUtilities.git
 # only accept version like 1.2.3
 VERSION=$(echo $1 | grep -Eo "^[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+$") 
 
+# check if tools installed
+if ! [ -x "$(command -v pio)" ]; then
+  tput setaf 1; echo 'Error: pio is not installed.' ; tput setaf 7
+  exit 1
+fi
+
 # create new tagged version
 if [ -n "$VERSION" ]
 then
     if [ -n "$(git status --porcelain)" ]; then 
         tput setaf 1; echo "Commit changes before deploying"; tput setaf 7
-        exit 0
+        exit 1
     fi
 
     if [ -n "$(git tag | grep $VERSION)" ]; then 
         tput setaf 1; echo "Version tag $VERSION exists. Use a unique version tag!"; tput setaf 7
-        exit 0
+        exit 1
     fi
 
     echo "Creating new version $1"
@@ -37,7 +43,7 @@ then
     # push subtree to PIO library
     git subtree push --prefix=lib $REMOTE_LIB_GIT master
 
-    echo tput setaf 2; "New version $1 deployed"; tput setaf 7
+    tput setaf 2; echo "New version $1 deployed"; tput setaf 7
 else
     echo "No version number specified or wrong format. Will only update documentation"
 fi
@@ -60,4 +66,4 @@ fi
 
 cd .. 
 
-exit 1
+exit 0
