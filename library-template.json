@@ -34,20 +34,44 @@
     ],
     "examples": [
         {
-            "name": "Debug output",
             "base": "examples/rr_DebugUtils",
             "files": [
                 "platformio.ini",
                 "main.cpp"
-            ]
+            ],
+            "name": "Debug output"
         },
         {
-            "name": "Intervall",
-            "base": "examples/rr_Intervall",
+            "base": "examples/rr_Intervall/begin_wait",
             "files": [
                 "platformio.ini",
                 "main.cpp"
-            ]
+            ],
+            "name": "Example using the begin / wait functions"
+        },
+        {
+            "base": "examples/rr_Intervall/callback",
+            "files": [
+                "platformio.ini",
+                "main.cpp"
+            ],
+            "name": "Example using the begin / wait functions with a callback"
+        },
+        {
+            "base": "examples/rr_Intervall/isBeriodOver",
+            "files": [
+                "platformio.ini",
+                "main.cpp"
+            ],
+            "name": "Example usign the begin / isBeriodOver functions"
+        },
+        {
+            "base": "examples/rr_Common",
+            "files": [
+                "platformio.ini",
+                "main.cpp"
+            ],
+            "name": "Example for the scanI2C function"
         }
     ]
 }

@@ -1,0 +1,18 @@
+!pragma teoz true
+
+participant App
+participant Intervall
+
+App -> Intervall: setPeriod(1000)
+|||
+{start} App -> Intervall: begin
+
+loop
+App -> App: doSomething
+|||
+App -> Intervall: isPeriodOver
+App <-- Intervall: false
+end
+{end} App <-- Intervall: true
+
+{start} <-> {end}: 1000 mS

@@ -20,7 +20,7 @@
 //!
 //! @brief this class implements the intervall functions
 //! @startuml
-//! !include ../Intervall.puml
+//! !include ../../img/Intervall.puml
 //! @enduml
 //!
 class Intervall {
@@ -75,7 +75,7 @@ class Intervall {
     //!
     //! @brief check if ccurent period is over
     //! @startuml
-    //! !include ../isPeriodOver.puml
+    //! !include ../../img/isPeriodOver.puml
     //! @enduml
     //!
     //! @return true if current time >= planned time
