@@ -6,13 +6,19 @@ participant Intervall
 App -> Intervall: setPeriod(1000)
 |||
 {start} App -> Intervall: begin
-
+Activate Intervall
 loop
 App -> App: doSomething
 |||
 App -> Intervall: isPeriodOver
+Alt continue
 App <-- Intervall: false
-end
-{end} App <-- Intervall: true
+else break
+ App <-- Intervall: true
 
+Deactivate Intervall
+
+End
+End
 {start} <-> {end}: 1000 mS
+{end} App -> App: continue
